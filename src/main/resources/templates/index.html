@@ -1,24 +1,87 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="UTF-8">
-    <title>Insert title here</title>
-    <link rel="stylesheet" href="css/homeStyle.css">
+    <title>Create Professional Resume And Download Free</title>
+    <link rel="stylesheet" th:href="@{/css/homeStyle.css}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <div class="navbar">
-        <img src="path_to_your_image.png" alt="Logo">
-        <a href="#">Home</a>
-        <div class="tools">
-            <a href="#">Resume</a>
-            <a href="#">CV</a>
+    <!-- Create a navbar -->
+    <nav class="navbar">
+        <div class="navbar-left">
+            <a th:href="@{/home}">
+                <img th:src="@{'/images/logo.jpg'}" alt="Logo">
+            </a>
         </div>
-        <div class="login-btn">
-            <a href="#">Login</a>
+        <div class="navbar-center">
+            <ul class="navbar-menu">
+                <li><a th:href="@{/home}">Home</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">Tools
+                        <i class="fa fa-sort-desc" aria-hidden="true"></i>
+                    </a>
+                    <div class="dropdown-content">
+                        <a href="#">Resume</a>
+                        <a href="#">C.V</a>
+                    </div>
+                </li>
+            </ul>
         </div>
+        <div class="navbar-right">
+            <a th:href="@{/login}">
+                <button class="login-button">Login</button>
+            </a>
+        </div>
+    </nav>
+    <!-- navbar end -->
+    <div>
+        <p>
+            <br>
+            <br>
+            <br>
+            <br>
+        </p>
     </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="resources">
+                <h3>Resources</h3>
+                <ul>
+                    <li><a href="resume.html">Resume</a></li>
+                    <li><a href="cv.html">CV</a></li>
+                </ul>
+            </div>
+            <div class="support">
+                <h3>Support</h3>
+                <ul>
+                    <li><a href="contact.html">Contact us</a></li>
+                    <li><a href="terms.html">Terms of Use</a></li>
+                    <li><a href="privacy.html">Privacy</a></li>
+                </ul>
+            </div>
+            <div class="additional-links">
+                <h3>Social Media</h3>
+                <ul>
+                    <li><a href="https://www.linkedin.com"><i class="fa fa-linkedin-square" aria-hidden="true" style="color: blue;"></i>
+                    </a></li>
+                    <li><a href="https://www.instagram.com"><i class="fa fa-instagram" aria-hidden="true" style="color: #C13584;"></i>
+                    </a></li>
+                    <li><a href="https://www.facebook.com"><i class="fa fa-facebook-square" aria-hidden="true" style="color: blue;"></i>
+                    </a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Footer -->
 </body>
-<script src="js/jquery-3.7.0.min.js"></script>
+<script th:src="@{/js/jquery-3.7.0.min.js}"></script>
+<script th:src="@{/js/script.js}"></script>
+
 </html>

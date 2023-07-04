@@ -1,32 +1,229 @@
- /* CSS for navbar */
- .navbar {
-    background-color: #f2f2f2;
-    overflow: hidden;
+* {
+    padding: 0;
+    margin: 0;
 }
 
-.navbar img {
-    float: left;
-    padding: 8px;
-    height: 40px;
+/* Navbar styles */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #ffffff;
+    padding: 10px;
+    font-family: 'Montserrat', sans-serif;
+    top: 0;
+    position: sticky;
 }
 
-.navbar a {
-    float: left;
-    display: block;
+/* Logo styles */
+.navbar-left img {
+    height: 80px;
+    width: 100px;
+    width: auto;
+    cursor: pointer;
+}
+
+/* Menu styles */
+.navbar-center .navbar-menu {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-menu li {
+    margin: 0 10px;
+    font-size: 20px;
+}
+
+.navbar-menu li a {
+    text-decoration: none;
     color: #333;
-    text-align: center;
-    padding: 14px 16px;
+}
+
+/* Dropdown styles */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: #333;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Login button styles */
+.navbar-right .login-button {
+    background-color: #3F93E2;
+    border: 1px solid #3F93E2;
+    border-radius: 20px;
+    color: #fff;
+    border: none;
+    padding: 10px 30px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.navbar-right .login-button:hover {
+    background-color: #fff;
+    color: #000;
+    border: 1px solid #3F93E2;
+    border-radius: 20px;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+    .navbar {
+        display: block;
+    }
+
+    .navbar-left img {
+        margin-left: 35%;
+    }
+
+    .navbar-right .login-button {
+        margin-left: 45%;
+        margin-top: 30px;
+    }
+}
+
+/* Footer styling */
+footer {
+    background-color: #f9f9f9;
+    padding: 20px;
+    bottom: 0;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 50px;
+}
+
+.resources,
+.support,
+.additional-links {
+    flex-basis: 50%;
+}
+
+.resources h3,
+.support h3,
+.additional-links h3 {
+    color: #333;
+}
+
+.resources ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.resources ul li{
+    padding-top: 15px;
+}
+.resources ul li a {
+    color: #777;
+    text-decoration: none;
+}
+.support ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.support ul li{
+    padding-top: 15px;
+}
+.support ul li a {
+    color: #777;
     text-decoration: none;
 }
 
-.navbar a:hover {
-    background-color: #ddd;
+.additional-links ul {
+    list-style: none;
+    padding: 10px;
+    margin: 0;
 }
 
-.navbar .tools {
-    float: left;
+.additional-links ul li {
+    padding-top: 15px;
 }
 
-.navbar .login-btn {
-    float: right;
+.additional-links ul li a {
+    color: #777;
+    text-decoration: none;
+}
+
+.additional-links ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Footer styling */
+footer {
+    background-color: #f9f9f9;
+    padding: 20px;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.resources,
+.support,
+.additional-links {
+    flex-basis: 30%;
+}
+
+.resources h3,
+.support h3,
+.additional-links ul li a {
+    color: #333;
+}
+
+.additional-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.additional-links ul li {
+    margin-bottom: 10px;
+}
+
+.additional-links ul li a {
+    color: #777;
+    text-decoration: none;
+}
+
+.additional-links ul li a:hover {
+    text-decoration: underline;
+}
+
+.social-media-icons {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.social-media-icons a {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.social-media-icons img {
+    height: 25px;
+    width: 25px;
 }
