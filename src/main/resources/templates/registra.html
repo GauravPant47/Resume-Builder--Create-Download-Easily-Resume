@@ -7,7 +7,7 @@
     <link rel="stylesheet" th:href="@{/css/homeStyle.css}" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
-    <link rel="stylesheet" th:href="@{/css/loginStyle.css}" />
+    <link rel="stylesheet" th:href="@{/css/registraStyle.css}" />
 </head>
 
 <body>
@@ -39,25 +39,36 @@
         </div>
     </nav>
     <!-- navbar end -->
-    <!-- Login Form -->
     <div class="login-form">
         <div class="login-container">
-            <h2>Login </h2>
+            <h3>Register New Account</h3>
             <form action="#" method="POST">
                 <div>
-                    <label for="email">Email</label>
-                    <input id="email" type="email" name="email" placeholder="Email" />
+                    <label for="fullName">Full Name:</label>
+                    <input id="fullName" type="text" placeholder="Full Name" />
+                </div>
+                <div>
+                    <label for="gender">Last Name:</label>
+                    <input id="gender" type="text" placeholder="Gender" />
+                </div>
+                <div>
+                    <label for="dob">Email:</label>
+                    <input id="dob" type="date" placeholder="Date Of Birth" />
+                </div>
+                <div>
+                    <label for="email">Email:</label>
+                    <input id="email" type="email" placeholder="Email" />
                 </div>
                 <div>
                     <label for="password">Password</label>
-                    <input id="password" type="password" placeholder="Password" inputmode="numeric" minlength="8" maxlength="12" size="12" />
+                    <input id="password" type="password" placeholder="Password" inputmode="numeric" minlength="8"
+                        maxlength="12" size="12" />
                 </div>
-                <input type="submit" value="Log In">
+                <input type="submit" value="Sign Up">
             </form>
-            <p>Don't have an account ? <a th:href="@{/registra}">Sign Up</a></p>
         </div>
     </div>
-    <!-- Login Form -->
+
     <!-- Footer -->
     <footer>
         <div class="footer-container">
