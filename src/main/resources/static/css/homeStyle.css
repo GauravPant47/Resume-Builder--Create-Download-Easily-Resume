@@ -1,0 +1,32 @@
+ /* CSS for navbar */
+ .navbar {
+    background-color: #f2f2f2;
+    overflow: hidden;
+}
+
+.navbar img {
+    float: left;
+    padding: 8px;
+    height: 40px;
+}
+
+.navbar a {
+    float: left;
+    display: block;
+    color: #333;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.navbar a:hover {
+    background-color: #ddd;
+}
+
+.navbar .tools {
+    float: left;
+}
+
+.navbar .login-btn {
+    float: right;
+}
