@@ -1,13 +1,19 @@
 $(document).ready(function () {
+    // TODO: it is help us to create a animation effext
+    function toggleText() {
+        $('.container h1').fadeOut(3000, function () {
+            $(this).fadeIn(3000);
+        })
+    };
+    setInterval(toggleText, 3000);
+    toggleText();
 
-    // $('.navbar-toggle').click(function () {
-    //     $(this).toggleClass('active');
-    //     $('.navbar-menu').slideToggle('fast');
-    // });
 
-    // $('.dropbtn').click(function (e) {
-    //     e.preventDefault();
-    //     $(this).parent().toggleClass('active');
-    //     $(this).next('.dropdown-content').slideToggle('fast');
-    // });
+    //TODO: here we can create a Slick slider
+    $('.slider').slick({
+        autoplay: true,
+        autoplaySpeed: 2000,
+        dots: true,
+        arrows: true
+    });
 });

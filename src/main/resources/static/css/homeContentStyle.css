@@ -1,0 +1,38 @@
+.container {
+    display: block;
+    align-items: center;
+    justify-content: center;
+}
+
+.container-para h1 {
+    color: #49BB99;
+    font-size: 80px;
+    margin: 20px;
+    margin-top: 80px;
+    margin-left: 15%;
+}
+
+.container-para p {
+    width: 50rem;
+    font-size: 2rem;
+    margin-left: 25%;
+    letter-spacing: .025em;
+    text-align: center;
+}
+
+.slider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.slider .slick-imag {
+    justify-content: space-between;
+}
+
+.slider .slick-imag img {
+    height: 500px;
+    width: 300px;
+    cursor: pointer;
+    display: inline;
+}
