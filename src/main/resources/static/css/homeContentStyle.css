@@ -22,17 +22,20 @@
 
 .slider {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    overflow: hidden;
 }
 
 .slider .slick-imag {
     justify-content: space-between;
+    margin: 10px;
 }
 
 .slider .slick-imag img {
-    height: 500px;
-    width: 300px;
+    border: 1px solid #2d2c2c;
+    border-radius: 5px;
+    height: 450px;
+    width: 275px;
     cursor: pointer;
     display: inline;
+    padding: 10px;
 }

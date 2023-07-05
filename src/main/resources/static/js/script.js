@@ -12,7 +12,7 @@ $(document).ready(function () {
     //TODO: here we can create a Slick slider
     $('.slider').slick({
         autoplay: true,
-        autoplaySpeed: 2000,
+        autoplaySpeed: 3000,
         dots: true,
         arrows: true
     });
