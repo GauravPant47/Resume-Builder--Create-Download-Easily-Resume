@@ -2,7 +2,7 @@
 
 <p align="center">
   <a href="" rel="noopener">
- <img width=200px height=200px src="https://i.imgur.com/6wj0hh6.jpg" alt="Project logo"></a>
+ <img width=200px height=200px src="https://github.com/GauravPant47/Resume-Builder--Create-Download-Easily-Resume/assets/115808373/6d5586cd-9940-4a78-b553-989248074234" alt="Project logo"></a>
 </p>
 
 <h3 align="center">Project Title</h3>
