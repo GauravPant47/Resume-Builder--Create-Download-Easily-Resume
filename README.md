@@ -5,7 +5,7 @@
  <img width=400px height=200px src="https://github.com/GauravPant47/Resume-Builder--Create-Download-Easily-Resume/assets/115808373/6d5586cd-9940-4a78-b553-989248074234" alt="Project logo"></a>
 </p>
 
-<h3 align="center">Project Title</h3>
+<h3 align="center">R.S Templates Bulding and Download Resume</h3>
 
 <div align="center">
 
@@ -87,15 +87,15 @@ Add notes about how to use the system.
 Add additional notes about how to deploy this on a live system.
 
 ## ⛏️ Built Using <a name = "built_using"></a>
-- [MongoDB](https://www.mongodb.com/) - Database
-- [Express](https://expressjs.com/) - Server Framework
-- [VueJs](https://vuejs.org/) - Web Framework
-- [NodeJs](https://nodejs.org/en/) - Server Environment
+- [MySQL](https://www.mysql.com/) - Database
+- [Maven](https://maven.apache.org/) - Server Framework
+- [Spring Boot](https://spring.io/projects/spring-boot/) - Web Framework
+- [Apache](https://httpd.apache.org/) - Server Environment
 
 ## ✍️ Authors <a name = "authors"></a>
-- [@kylelobo](https://github.com/kylelobo) - Idea & Initial work
+- [@GauravPant47](https://github.com/GauravPant47) - Idea & Initial work
 
-See also the list of [contributors](https://github.com/kylelobo/The-Documentation-Compendium/contributors) who participated in this project.
+See also the list of [contributors](https://github.com/GauravPant47/Resume-Builder--Create-Download-Easily-Resume/graphs/contributors) who participated in this project.
 
 ## 🎉 Acknowledgements <a name = "acknowledgement"></a>
 - Hat tip to anyone whose code was used
