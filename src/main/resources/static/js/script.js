@@ -10,7 +10,7 @@ $(document).ready(function () {
 
 
     //TODO: here we can create a Slick slider
-    $('.slider').slick({
+    $('.container .slider').slick({
         autoplay: true,
         autoplaySpeed: 3000,
         dots: true,
