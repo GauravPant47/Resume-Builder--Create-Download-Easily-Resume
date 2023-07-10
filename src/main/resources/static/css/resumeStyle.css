@@ -152,7 +152,7 @@ body {
 /* cart */
 .cart {
     display: flex;
-    height: 150px;
+    /* height: 150px; */
     width: 155vh;
     /* background-color: #ccc; */
     padding: 10px;
