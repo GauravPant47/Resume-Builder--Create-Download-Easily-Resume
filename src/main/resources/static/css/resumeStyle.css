@@ -1,0 +1,235 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+body {
+    background-color: rgb(240, 237, 237);
+}
+
+.container {
+    display: inline;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Open Sans', sans-serif;
+    height: auto;
+    max-width: 500px;
+}
+
+.container-user {
+    display: flex;
+    margin: 35px 0px 0px 45px;
+    height: 230px;
+    width: 155vh;
+    overflow: hidden;
+    padding: 20px 20px 20px 30px;
+    min-height: 264px;
+    background: var(--N100);
+    box-shadow: 0 6px 12px rgba(30, 10, 58, .04);
+    border-radius: 20px;
+    background-color: #fff;
+}
+
+.container-left {
+    position: relative;
+    display: inline-block;
+    align-items: center;
+    justify-content: space-around;
+    /* position: absolute; */
+    top: 0px;
+}
+
+.container-left:hover .hover-icon {
+    display: block;
+}
+
+.container-left img {
+    display: flex;
+    margin: 50px;
+    height: 200px;
+    width: 200px;
+    cursor: pointer;
+}
+
+.container-left:hover img {
+    filter: brightness(60%);
+}
+
+.hover-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+    cursor: pointer;
+}
+
+.hover-icon i {
+    display: inline;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #000;
+    border-radius: 50%;
+    font-size: 20px;
+    height: 5vh;
+    width: 5vh;
+    text-decoration: none;
+}
+
+.hover-icon i:hover {
+    color: #fff;
+}
+
+.container-right {
+    display: inline;
+    align-items: center;
+    justify-content: space-around;
+    position: relative;
+    top: 0;
+    left: 25%;
+}
+
+.container-right h5 {
+    margin-top: 50px;
+    font-size: 25px;
+    text-align: initial;
+    font-weight: bold;
+}
+
+.container-right i {
+    cursor: pointer;
+    color: #000;
+}
+
+.container-right hr {
+    width: 100vh;
+    margin: 10px 0px 10px;
+}
+
+.user-details {
+    display: inline-flex;
+    justify-content: space-between;
+}
+
+.user-details-left {
+    text-align: center;
+    position: relative;
+}
+
+.user-details-left p {
+    padding: 0px 10px 20px;
+    font-size: 15px;
+}
+
+.user-details hr {
+    top: 0;
+    width: 0;
+    height: 100px;
+}
+
+.user-details-right {
+    text-align: center;
+    position: relative;
+}
+
+.user-details-right p {
+    padding: 0px 10px 20px;
+    font-size: 15px;
+}
+
+.container-headline {
+    display: flex;
+    margin: 35px 0px 0px 45px;
+    height: 230px;
+    width: 155vh;
+    overflow: hidden;
+    padding: 20px 20px 20px 30px;
+    min-height: 264px;
+    background: var(--N100);
+    box-shadow: 0 6px 12px rgba(30, 10, 58, .04);
+    border-radius: 20px;
+    background-color: #fff;
+}
+
+/* cart */
+.cart {
+    display: flex;
+    height: 150px;
+    width: 155vh;
+    /* background-color: #ccc; */
+    padding: 10px;
+}
+
+.left-cart {
+    display: flex;
+    background-color: white;
+    padding: 10px;
+    width: 20%;
+    min-height: 500px;
+    box-shadow: 0 6px 12px rgba(30, 10, 58, .04);
+    width: 30%;
+    margin: 30px 0px 0px 35px;
+    border-radius: 20px
+}
+
+.right-cart {
+    display: inline;
+    align-items: center;
+    justify-content: center;
+}
+
+.right-cart-hedline {
+    background-color: white;
+    padding: 10px;
+    box-shadow: 0 6px 12px rgba(30, 10, 58, .04);
+    margin-left: 30px;
+    margin-top: 30px;
+    border-radius: 20px;
+}
+
+table {
+    width: 100%;
+    height: 100px;
+}
+
+th,
+td,
+a {
+    padding: 10px 10px 10px 10px;
+    font-weight: bold;
+    border: 1px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 15px;
+    color: #000;
+}
+
+th:hover,
+td:hover {
+    border-radius: 20px;
+    background-color: #e5e5e5;
+    color: blue;
+}
+
+.headline {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.headline i {
+    cursor: pointer;
+}
+
+.headline i:hover {
+    color: aqua;
+}
+
+.fa-pencil {
+    margin-right: 5px;
+}
+
+textarea {
+    width: 100%;
+    height: 100px;
+    padding: 5px;
+    resize: none;
+}

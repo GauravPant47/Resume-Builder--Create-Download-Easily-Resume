@@ -1,10 +1,168 @@
 <!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
+<html xmlns:th="http://www.thymeleaf.org">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume</title>
+    <link rel="stylesheet" th:href="@{/css/homeStyle.css}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/css/homeContentStyle.css}">
+    <link rel="stylesheet" th:href="@{/css/help.css}">
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" th:href="@{/css/resumeStyle.css}">
+</head>
+
+<body>
+    <!-- Create a navbar -->
+    <nav class="navbar">
+        <div class="navbar-left">
+            <a th:href="@{/home}">
+                <img th:src="@{'/images/logo.jpg'}" alt="Logo">
+            </a>
+        </div>
+        <div class="navbar-center">
+            <ul class="navbar-menu">
+                <li><a th:href="@{/home}">Home</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">Tools
+                        <i class="fa fa-sort-desc" aria-hidden="true"></i>
+                    </a>
+                    <div class="dropdown-content">
+                        <a href="#">Resume</a>
+                        <a href="#">C.V</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="navbar-right">
+            <a th:href="@{/login}">
+                <button class="login-button">Login</button>
+            </a>
+        </div>
+    </nav>
+    <!-- navbar end -->
+
+    <!-- main Content -->
+    <div class="container">
+        <div class="container-user" id="user">
+            <div class="container-left">
+                <img src="https://private-user-images.githubusercontent.com/115808373/252128008-4873b285-8053-4d05-9860-a154c41706f2.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXkiOiJrZXkxIiwiZXhwIjoxNjg4ODgxNDgyLCJuYmYiOjE2ODg4ODExODIsInBhdGgiOiIvMTE1ODA4MzczLzI1MjEyODAwOC00ODczYjI4NS04MDUzLTRkMDUtOTg2MC1hMTU0YzQxNzA2ZjIucG5nP1gtQW16LUFsZ29yaXRobT1BV1M0LUhNQUMtU0hBMjU2JlgtQW16LUNyZWRlbnRpYWw9QUtJQUlXTkpZQVg0Q1NWRUg1M0ElMkYyMDIzMDcwOSUyRnVzLWVhc3QtMSUyRnMzJTJGYXdzNF9yZXF1ZXN0JlgtQW16LURhdGU9MjAyMzA3MDlUMDUzOTQyWiZYLUFtei1FeHBpcmVzPTMwMCZYLUFtei1TaWduYXR1cmU9ZDhmZjA0N2JjZmVhOWYxYzljOTNiYzdkYjFjZTQ2Nzg3YTEwNmE3MmZiNzFjYWJiNGVkMGI3MjA5MzhiZWE3NSZYLUFtei1TaWduZWRIZWFkZXJzPWhvc3QmYWN0b3JfaWQ9MCZrZXlfaWQ9MCZyZXBvX2lkPTAifQ.1J5K5tTzQo-6dJYNITrIeezwO1sOiOeffrU4MMTNoAI"
+                    alt="">
+                <div class="hover-icon">
+                    <a href="#"><i class="fa fa-pencil">Profile Photo</i></a>
+                </div>
+            </div>
+            <div class="container-right">
+                <h5>Full Name</h5>
+                <a href="#"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+                <hr>
+                <div class="user-details">
+                    <div class="user-details-left">
+                        <p><i class="fa fa-map-marker" aria-hidden="true"></i> Current Location</p>
+                        <p><i class="fa fa-briefcase" aria-hidden="true"></i> Total Experience</p>
+                    </div>
+                    <hr>
+                    <div class="user-details-right">
+                        <p><i class="fa fa-mobile" aria-hidden="true"></i> Mobile Number</p>
+                        <p><i class="fa fa-envelope" aria-hidden="true"></i> Email Address</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <div class="cart">
+                <div class="left-cart">
+                    <table>
+                        <tr>
+                            <td><a href="#user">User Details</a></td>
+                        </tr>
+                        <tr>
+                            <td><a href="#hedline">Resume headline</a></td>
+                        </tr>
+                        <tr>
+                            <td><a href="">Row 3</a></td>
+                        </tr>
+                        <tr>
+                            <td><a href="">Row 4</a></td>
+                        </tr>
+                        <tr>
+                            <td><a href="">Row 5</a></td>
+                        </tr>
+                        <tr>
+                            <td><a href="">Row 6</a></td>
+                        </tr>
+                        <tr>
+                            <td><a href="">Row 7</a></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="right-cart">
+                    <div class="right-cart-hedline" id="hedline">
+                        <div class="headline">
+                            <a href=""><i class="fa fa-pencil" aria-hidden="true"></i> Resume Headline
+                            </a>
+                        </div>
+                        <p>Secure a responsible career opportunity to fully utilize my training and skills, while making
+                            a
+                            significant contribution to the success of the company.</p>
+                    </div>
+                    <div class="right-cart-hedline" id="hedline">
+                        <div class="headline">
+                            <a href=""><i class="fa fa-pencil" aria-hidden="true"></i> Key skills
+                            </a>
+                        </div>
+                        <p>Secure a responsible career opportunity to fully utilize my training and skills, while making
+                            a
+                            significant contribution to the success of the company.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end main Content -->
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="resources">
+                <h3>Resources</h3>
+                <ul>
+                    <li><a href="resume.html">Resume</a></li>
+                    <li><a href="cv.html">CV</a></li>
+                </ul>
+            </div>
+            <div class="support">
+                <h3>Support</h3>
+                <ul>
+                    <li><a href="contact.html">Contact us</a></li>
+                    <li><a href="terms.html">Terms of Use</a></li>
+                    <li><a href="privacy.html">Privacy</a></li>
+                </ul>
+            </div>
+            <div class="additional-links">
+                <h3>Social Media</h3>
+                <ul>
+                    <li><a href="https://www.linkedin.com"><i class="fa fa-linkedin-square" aria-hidden="true"
+                                style="color: blue;"></i>
+                        </a></li>
+                    <li><a href="https://www.instagram.com"><i class="fa fa-instagram" aria-hidden="true"
+                                style="color: #C13584;"></i>
+                        </a></li>
+                    <li><a href="https://www.facebook.com"><i class="fa fa-facebook-square" aria-hidden="true"
+                                style="color: blue;"></i>
+                        </a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Footer -->
 </body>
+
 </html>
