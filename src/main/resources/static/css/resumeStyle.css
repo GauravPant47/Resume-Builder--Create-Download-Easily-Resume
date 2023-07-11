@@ -162,10 +162,9 @@ body {
     display: flex;
     background-color: white;
     padding: 10px;
-    width: 20%;
-    min-height: 500px;
-    box-shadow: 0 6px 12px rgba(30, 10, 58, .04);
     width: 30%;
+    height: 500px;
+    box-shadow: 0 6px 12px rgba(30, 10, 58, .04);
     margin: 30px 0px 0px 35px;
     border-radius: 20px
 }
@@ -185,12 +184,15 @@ body {
     border-radius: 20px;
 }
 
+.right-cart-hedline p {
+    margin: 10px 10px 0px;
+}
+
 table {
     width: 100%;
     height: 100px;
 }
 
-th,
 td,
 a {
     padding: 10px 10px 10px 10px;
@@ -202,7 +204,6 @@ a {
     color: #000;
 }
 
-th:hover,
 td:hover {
     border-radius: 20px;
     background-color: #e5e5e5;
@@ -232,4 +233,53 @@ textarea {
     height: 100px;
     padding: 5px;
     resize: none;
+}
+
+.btn-type {
+    display: flex;
+    left: 0;
+    top: 0;
+}
+
+.btn-type p {
+    width: auto;
+    margin: 10px 5px 10px;
+    border: 2px solid rgb(141, 141, 141);
+    border-radius: 100px;
+    box-shadow: 0 6px 12px rgba(30, 10, 58, .04);
+    background-color: #e5e5e5;
+    padding: 5px 10px 5px;
+}
+
+body {
+    background-color: #f0dee7;
+}
+
+.cart-style {
+    background-color: white;
+    margin-bottom: 5%;
+    /* border: 1px solid black; */
+    border-radius: 1px;
+}
+
+.color {
+    color: blue;
+    font-weight: bolder;
+    font-size: 20px;
+}
+
+.right {
+    display: flex;
+    margin: 10px 0px 15px;
+}
+
+.table th {
+    padding: 8px;
+    text-align: left;
+    color: gray;
+}
+
+.table th:hover {
+    background-color: transparent;
+    color: #000;
 }
