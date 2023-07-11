@@ -211,12 +211,13 @@ td:hover {
 }
 
 .headline {
-    font-size: 20px;
     font-weight: bold;
     margin-bottom: 10px;
 }
-
-.headline i {
+.headline a{
+    font-size: 18px;
+}
+.headline  i {
     cursor: pointer;
 }
 
