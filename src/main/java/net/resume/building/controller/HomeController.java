@@ -12,8 +12,20 @@ public class HomeController {
 	public String homePage() {
 		return "index";
 	}
+
 	@GetMapping("/resume")
 	public String resumePage() {
 		return "resume";
 	}
+
+	@GetMapping("/login")
+	public String loginPage() {
+		return "login";
+	}
+
+	@GetMapping("/registra")
+	public String registraPage() {
+		return "registra";
+	}
+
 }

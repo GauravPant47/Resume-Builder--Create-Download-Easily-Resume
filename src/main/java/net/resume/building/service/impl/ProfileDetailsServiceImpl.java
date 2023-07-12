@@ -1,5 +1,7 @@
 package net.resume.building.service.impl;
 
+
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Optional;
 
@@ -16,8 +18,11 @@ public class ProfileDetailsServiceImpl implements ProfileDetailsService {
 	@Autowired
 	private ProfileDetailsRepository detailsRepository;
 
+	LinkedList<ProfileDetails> profiledetails = new LinkedList<>();
+
 	@Override
 	public ProfileDetails saveListItem(ProfileDetails details) {
+		profiledetails.addFirst(details);
 		return detailsRepository.save(details);
 	}
 

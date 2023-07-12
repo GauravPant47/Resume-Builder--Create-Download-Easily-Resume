@@ -7,7 +7,7 @@
     <link rel="stylesheet" th:href="@{/css/homeStyle.css}" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
-    <link rel="stylesheet" th:href="@{/css/registraStyle.css}" />
+    <link rel="stylesheet" th:href="@{/css/loginStyle.css}" />
 </head>
 
 <body>
@@ -33,42 +33,73 @@
             </ul>
         </div>
         <div class="navbar-right">
-            <a th:href="@{/home/login}">
+            <a th:href="@{/login}">
                 <button class="login-button">Login</button>
             </a>
         </div>
     </nav>
     <!-- navbar end -->
-    <div class="login-form">
-        <div class="login-container">
-            <h3>Register New Account</h3>
-            <form action="#" method="POST">
-                <div>
-                    <label for="fullName">Full Name:</label>
-                    <input id="fullName" type="text" placeholder="Full Name" />
-                </div>
-                <div>
-                    <label for="gender">Last Name:</label>
-                    <input id="gender" type="text" placeholder="Gender" />
-                </div>
-                <div>
-                    <label for="dob">Email:</label>
-                    <input id="dob" type="date" placeholder="Date Of Birth" />
-                </div>
-                <div>
-                    <label for="email">Email:</label>
-                    <input id="email" type="email" placeholder="Email" />
-                </div>
-                <div>
-                    <label for="password">Password</label>
-                    <input id="password" type="password" placeholder="Password" inputmode="numeric" minlength="8"
-                        maxlength="12" size="12" />
-                </div>
-                <input type="submit" value="Sign Up">
-            </form>
-        </div>
-    </div>
+    <!-- Login Form -->
+    <form th:action="@{'/submit'}" method="post" enctype="multipart/form-data">
+        <div>
+            <h2 style="margin:15px 0 15px">Profile Details</h2>
 
+            <label for="title">Name:</label>
+            <input id="new-post-title" type="name" th:field="*{profile.name}" placeholder="Name" />
+
+            <label for="college">Total Experience :</label>
+            <input id="new-post-companyname" type="text" th:field="*{profile.totalExperience}"
+                placeholder="Total Experience" />
+
+            <label for="location">Current Location :</label>
+            <input id="new-post-location" type="location" th:field="*{profile.currentLocation}"
+                placeholder="Current Location" />
+
+            <label for="course">Mobile Number :</label>
+            <textarea id="new-post-workingyear" type="numeric" th:field="*{profile.mobileNumber}"
+                placeholder="Mobile Number"></textarea>
+
+            <label for="course">Email Address :</label>
+            <input id="new-post-workingyear" type="email" th:field="*{profile.emailAddress}"
+                placeholder="Email Address" />
+
+            <label for="profileImage">Profile Image:</label>
+            <input type="file" id="profileImage" name="profileImage" required />
+        </div>
+        <!-- Employment -->
+        <div>
+            <h2 style="margin:15px 0 15px">Profile Details</h2>
+            
+            <label for="title">Employment Type :</label>
+            <input id="new-post-title" type="name" th:field="*{eployment.employmentType}" placeholder="Name" />
+
+            <label for="college">Total Experience :</label>
+            <input id="new-post-companyname" type="text" th:field="*{eployment.totalExperience}"
+                placeholder="Total Experience" />
+
+            <label for="location">Company Name :</label>
+            <input id="new-post-location" type="text" th:field="*{eployment.companyName}"
+                placeholder="Current Location" />
+
+            <label for="course">Designation :</label>
+            <input id="new-post-workingyear" type="text" th:field="*{eployment.designation}"
+                placeholder="Mobile Number" />
+
+            <label for="course">Joining Date :</label>
+            <input id="new-post-workingyear" type="date" th:field="*{eployment.joiningDate}"
+                placeholder="Email Address" />
+
+            <label for="course">Worked Till :</label>
+            <input id="new-post-workingyear" type="date" th:field="*{eployment.workedTill}"
+                placeholder="Email Address" />
+
+            <label for="course">Job Profile :</label>
+            <input id="new-post-workingyear" type="text" th:field="*{eployment.jobProfile}"
+                placeholder="Email Address" />
+        </div>
+        <button type="submit">Submit</button>
+    </form>
+    <!-- Login Form -->
     <!-- Footer -->
     <footer>
         <div class="footer-container">
