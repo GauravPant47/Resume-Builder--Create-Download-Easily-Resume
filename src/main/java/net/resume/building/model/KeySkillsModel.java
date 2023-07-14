@@ -13,6 +13,7 @@ public class KeySkillsModel {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+	private String skill;
 
 	public Long getId() {
 		return id;
@@ -29,7 +30,5 @@ public class KeySkillsModel {
 	public void setSkill(String skill) {
 		this.skill = skill;
 	}
-
-	private String skill;
 
 }

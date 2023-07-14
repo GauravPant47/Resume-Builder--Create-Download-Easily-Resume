@@ -14,8 +14,8 @@ public class ProjectModel {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
-	private String title;
-	private String workedTill;
+	private String proejectTitle;
+	private String workedTime;
 	private String workedFrom;
 	private String detailsOfroject;
 
@@ -27,20 +27,20 @@ public class ProjectModel {
 		this.id = id;
 	}
 
-	public String getTitle() {
-		return title;
+	public String getProejectTitle() {
+		return proejectTitle;
 	}
 
-	public void setTitle(String title) {
-		this.title = title;
+	public void setProejectTitle(String proejectTitle) {
+		this.proejectTitle = proejectTitle;
 	}
 
-	public String getWorkedTill() {
-		return workedTill;
+	public String getWorkedTime() {
+		return workedTime;
 	}
 
-	public void setWorkedTill(String workedTill) {
-		this.workedTill = workedTill;
+	public void setWorkedTime(String workedTime) {
+		this.workedTime = workedTime;
 	}
 
 	public String getWorkedFrom() {

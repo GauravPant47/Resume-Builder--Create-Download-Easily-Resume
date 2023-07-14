@@ -49,6 +49,7 @@
     <!-- Login Form -->
     <div class="container">
         <form th:action="@{/home/submit}" method="post" enctype="multipart/form-data">
+            <!-- profile -->
             <div class="container-form">
                 <h2 style="margin:15px 0 15px">Profile Details : </h2>
 
@@ -70,9 +71,6 @@
                 <label for="course">Email Address :</label>
                 <input id="new-post-workingyear" type="email" th:field="*{profile.emailAddress}"
                     placeholder="Email Address" />
-
-                <label for="profileImage">Profile Image :</label>
-                <input type="file" id="profileImage" name="profileImage" required />
             </div>
             <!-- Employment -->
             <div class="container-form">
@@ -105,6 +103,82 @@
                 <label for="course">Job Profile :</label>
                 <input id="new-post-workingyear" type="text" th:field="*{eployment.jobProfile}"
                     placeholder="Email Address" />
+            </div>
+            <!-- profileImage -->
+            <div class="container-form">
+                <h2 style="margin:15px 0 15px">Employment : </h2>
+
+                <label for="profileImage">Profile Image :</label>
+                <input type="file" th:id="image" name="image" accept="profileImage/*" required>
+
+            </div>
+            <!-- education -->
+            <div class="container-form">
+                <h2 style="margin:15px 0 15px">Education : </h2>
+
+                <label for="title">Education Title :</label>
+                <input id="new-post-title" type="text" th:field="*{education.title}" placeholder="Title" />
+
+                <label for="college">Collage :</label>
+                <input id="new-post-companyname" type="text" th:field="*{education.collage}" placeholder="Collage" />
+
+                <label for="location">Location :</label>
+                <input id="new-post-location" type="location" th:field="*{education.location}" placeholder="Location" />
+
+                <label for="course">Course :</label>
+                <input id="new-post-workingyear" type="text" th:field="*{education.course}" placeholder="Course" />
+
+                <label for="course">Description:</label>
+                <input id="new-post-workingyear" type="text" th:field="*{education.description}"
+                    placeholder="Description" />
+            </div>
+            <!-- itSkills -->
+            <div class="container-form">
+                <h2 style="margin:15px 0 15px">It Skills : </h2>
+
+                <label for="title">Skills :</label>
+                <input id="new-post-title" type="text" th:field="*{itSkills.skills}" placeholder="Skills" />
+
+                <label for="college">Version :</label>
+                <input id="new-post-companyname" type="version" th:field="*{itSkills.version}" placeholder="Version" />
+
+                <label for="location">Lastused :</label>
+                <input id="new-post-location" type="year" th:field="*{itSkills.lastused}" placeholder="Lastused" />
+
+                <label for="course">Experience :</label>
+                <input id="new-post-workingyear" type="text" th:field="*{itSkills.itexperience}"
+                    placeholder="Experience" />
+            </div>
+            <!-- resumeheadline -->
+            <div class="container-form">
+                <h2 style="margin:15px 0 15px">Resume Headline : </h2>
+                <input id="new-post-title" type="text" th:field="*{resumeheadline.headline}" placeholder="headline" />
+
+            </div>
+            <!-- project -->
+            <div class="container-form">
+                <h2 style="margin:15px 0 15px">Project : </h2>
+
+                <label for="title">Proeject Title :</label>
+                <input id="new-post-title" type="text" th:field="*{project.proejectTitle}"
+                    placeholder="Proeject Title" />
+
+                <label for="college">Worked Time :</label>
+                <input id="new-post-companyname" type="Date" th:field="*{project.workedTime}"
+                    placeholder="Worked Time" />
+
+                <label for="location">Worked From :</label>
+                <input id="new-post-location" type="year" th:field="*{project.workedFrom}" placeholder="Worked From" />
+
+                <label for="course">Details Of Project :</label>
+                <input id="new-post-workingyear" type="text" th:field="*{project.detailsOfroject}"
+                    placeholder="Details Of Project" />
+            </div>
+
+            <!-- keySkills -->
+            <div class="container-form">
+                <h2 style="margin:15px 0 15px">Key Skill : </h2>
+                <input id="new-post-title" type="skill" th:field="*{keySkills.skill}" placeholder="Proeject Title" />
 
                 <button type="submit">Submit</button>
             </div>
