@@ -1,25 +1,29 @@
-body {
+.container{
+    display: inline;
+    align-items: center;
+    justify-content: center;
     background-size: cover;
     background-position: center;
     font-family: Arial, sans-serif;
     margin: 0;
     color: white;
 }
-
 h1 {
     text-align: center;
 }
 
 form {
-    max-width: 400px;
-    margin: 0 auto;
-    background-color: rgba(0, 0, 0, 0.7);
-    padding: 20px;
-    border-radius: 8px;
+    display: inline;
+    align-items: center;
+    justify-content: center;
 }
 
-.form-group {
-    margin-bottom: 20px;
+.container-form{
+    max-width: 100vh;
+    margin: 20px auto 20px;
+    padding: 20px 40px 20px;
+    border-radius: 8px;
+    background-color: rgba(0, 0, 0, 0.7);
 }
 
 label {
@@ -27,9 +31,12 @@ label {
     font-weight: bold;
     margin-bottom: 5px;
 }
-
+input[type="name"],
 input[type="text"],
+input[type="location"],
 input[type="email"],
+input[type="date"],
+input[type="file"],
 textarea {
     width: 100%;
     padding: 10px;
@@ -37,20 +44,22 @@ textarea {
     border-radius: 4px;
     background-color: rgba(255, 255, 255, 0.8);
     color: #333;
+    margin: 10px 0px 10px;
 }
 
 button[type="submit"] {
-    background-color: #f44336;
+    background-color: #3F93E2;
     color: white;
-    padding: 10px 20px;
+    padding: 10px 120px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
     font-size: 16px;
+    margin: 10px 35vh 10px;
 }
 
 button[type="submit"]:hover {
-    background-color: #d32f2f;
+    background-color: #49BB99;
 }
 
 ::placeholder {
