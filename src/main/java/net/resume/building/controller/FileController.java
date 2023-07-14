@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import net.resume.building.model.EmploymentModel;
 import net.resume.building.model.ProfileDetails;
+import net.resume.building.model.ProfileImageModel;
 import net.resume.building.service.EmploymentService;
 import net.resume.building.service.ProfileDetailsService;
 
@@ -31,13 +32,16 @@ public class FileController {
 		model.addAttribute("profile", profile);
 		EmploymentModel employment = new EmploymentModel();
 		model.addAttribute("eployment", employment);
+		ProfileImageModel profileImage = new ProfileImageModel();
+		model.addAttribute("profileImage", profileImage);
+		
 
 		return "form";
 	}
 
 	@PostMapping("/submit")
 	public String submitForm(HttpServletRequest request, @ModelAttribute ProfileDetails profileDetails,
-			@ModelAttribute EmploymentModel employmentModel, Model model) {
+			@ModelAttribute EmploymentModel employmentModel,@ModelAttribute ProfileImageModel imageModel, Model model) {
 
 		// TODO: Profile Details
 		String name = request.getParameter("name");
@@ -55,6 +59,9 @@ public class FileController {
 		String workedTill = request.getParameter("workedTill");
 		String jobProfile = request.getParameter("jobProfile");
 
+		// TODO: Profile Image Model
+		
+		
 		// Create instances of Profile, Employment, and using the retrieved data
 
 		ProfileDetails profile = new ProfileDetails();
@@ -64,7 +71,6 @@ public class FileController {
 		profile.setMobileNumber(mobileNumber);
 		profile.setEmailAddress(emailAddress);
 		profile.setTotalExperience(totalExperience);
-		profile.setImage(profileDetails.getImage());
 
 		EmploymentModel eployment = new EmploymentModel();
 
