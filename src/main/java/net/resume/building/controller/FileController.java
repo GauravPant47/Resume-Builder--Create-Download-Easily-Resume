@@ -14,6 +14,7 @@ import net.resume.building.model.EmploymentModel;
 import net.resume.building.model.ProfileDetails;
 import net.resume.building.service.EmploymentService;
 import net.resume.building.service.ProfileDetailsService;
+
 @Controller
 @RequestMapping("/home")
 public class FileController {
@@ -35,7 +36,8 @@ public class FileController {
 	}
 
 	@PostMapping("/submit")
-	public String submitForm(HttpServletRequest request, @ModelAttribute("profile") ProfileDetails profileDetails) {
+	public String submitForm(HttpServletRequest request, @ModelAttribute ProfileDetails profileDetails,
+			@ModelAttribute EmploymentModel employmentModel, Model model) {
 
 		// TODO: Profile Details
 		String name = request.getParameter("name");
@@ -55,28 +57,32 @@ public class FileController {
 
 		// Create instances of Profile, Employment, and using the retrieved data
 
-		ProfileDetails details = new ProfileDetails();
+		ProfileDetails profile = new ProfileDetails();
 
-		details.setName(name);
-		details.setCurrentLocation(currentLocation);
-		details.setMobileNumber(mobileNumber);
-		details.setEmailAddress(emailAddress);
-		details.setTotalExperience(totalExperience);
-		details.setImage(profileDetails.getImage());
+		profile.setName(name);
+		profile.setCurrentLocation(currentLocation);
+		profile.setMobileNumber(mobileNumber);
+		profile.setEmailAddress(emailAddress);
+		profile.setTotalExperience(totalExperience);
+		profile.setImage(profileDetails.getImage());
 
-		EmploymentModel employmentModel = new EmploymentModel();
-		
-		employmentModel.setEmploymentType(employmentType);
-		employmentModel.setTotalExperience(experience);
-		employmentModel.setCompanyName(companyName);
-		employmentModel.setDesignation(designation);
-		employmentModel.setJoiningDate(joiningDate);
-		employmentModel.setWorkedTill(workedTill);
-		employmentModel.setJobProfile(jobProfile);
+		EmploymentModel eployment = new EmploymentModel();
+
+		eployment.setEmploymentType(employmentType);
+		eployment.setTotalExperience(experience);
+		eployment.setCompanyName(companyName);
+		eployment.setDesignation(designation);
+		eployment.setJoiningDate(joiningDate);
+		eployment.setWorkedTill(workedTill);
+		eployment.setJobProfile(jobProfile);
+
+		// TODO:
+		model.addAttribute("profile", profile);
+		model.addAttribute("eployment", eployment);
 
 		// TODO: Save Data to updating
 
-		detailsService.saveListItem(details);
+		detailsService.saveListItem(profileDetails);
 
 		employmentService.saveAllFile(employmentModel);
 
