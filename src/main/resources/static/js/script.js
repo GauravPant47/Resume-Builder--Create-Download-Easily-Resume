@@ -16,4 +16,26 @@ $(document).ready(function () {
         dots: true,
         arrows: true
     });
+    // TODO: Profile Drop Down Menu
+    var isHovered = false;
+
+    $(".profile-dropdown").click(function () {
+        $(this).find(".profile-content").toggle();
+    });
+
+    $(".profile-dropdown").hover(function () {
+        isHovered = true;
+        $(this).find(".profile-content").show();
+    }, function () {
+        isHovered = false;
+        $(this).find(".profile-content").hide();
+    });
+
+    $(document).click(function (event) {
+        var target = $(event.target);
+        if (!target.closest(".profile-dropdown").length && !isHovered && $(".profile-content").is(":visible")) {
+            $(".profile-content").hide();
+        }
+    });
+
 });
