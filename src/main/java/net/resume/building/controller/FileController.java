@@ -1,5 +1,7 @@
 package net.resume.building.controller;
 
+import java.io.IOException;
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,6 +11,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
 import net.resume.building.model.EducationModel;
 import net.resume.building.model.EmploymentModel;
@@ -86,57 +90,17 @@ public class FileController {
 
 	@PostMapping("/submit")
 	public String submitForm(HttpServletRequest request, @ModelAttribute ProfileDetails profileDetails,
-			@ModelAttribute EmploymentModel employmentModel, @ModelAttribute ProfileImageModel imageModel,
-			@ModelAttribute KeySkillsModel keySkillsModel, @ModelAttribute ITSkillsModel itSkillsModel,
-			@ModelAttribute ResumeHeadlineModel headlineModel, @ModelAttribute ProjectModel projectModel,
-			@ModelAttribute EducationModel educationModel, Model model) {
+			@ModelAttribute EmploymentModel employmentModel, @ModelAttribute KeySkillsModel keySkillsModel,
+			@ModelAttribute ITSkillsModel itSkillsModel, @ModelAttribute ResumeHeadlineModel headlineModel,
+			@ModelAttribute ProjectModel projectModel, @ModelAttribute EducationModel educationModel, Model model,
+			@RequestParam("profileimagemodel") MultipartFile imageFile) throws IOException {
 
-		// TODO: Profile Details
+		// TODO: Profile Details and using the retrieved data and Save Data to updating
 		String name = request.getParameter("name");
 		String totalExperience = request.getParameter("totalExperience");
 		String currentLocation = request.getParameter("currentLocation");
 		String mobileNumber = request.getParameter("mobileNumber");
 		String emailAddress = request.getParameter("emailAddress");
-
-		// TODO: Employment Model
-		String employmentType = request.getParameter("employmentType");
-		String experience = request.getParameter("totalExperience");
-		String companyName = request.getParameter("companyName");
-		String designation = request.getParameter("designation");
-		String joiningDate = request.getParameter("joiningDate");
-		String workedTill = request.getParameter("workedTill");
-		String jobProfile = request.getParameter("jobProfile");
-
-		// TODO: Profile Image Model
-		ProfileImageModel profileImage = new ProfileImageModel();
-		profileImage.setImage(imageModel.getImage());
-
-		// TODO: EducationModel
-		String title = request.getParameter("title");
-		String collage = request.getParameter("collage");
-		String location = request.getParameter("location");
-		String course = request.getParameter("course");
-		String description = request.getParameter("description");
-
-		// TODO: ITSkillsModel
-		String skills = request.getParameter("skills");
-		String version = request.getParameter("version");
-		String lastused = request.getParameter("lastused");
-		String itexperience = request.getParameter("experience");
-
-		// TODO: KeySkillsModel
-		String skill = request.getParameter("skill");
-
-		// TODO: ProjectModel
-		String proejectTitle = request.getParameter("proejectTitle");
-		String workedTime = request.getParameter("workedTime");
-		String workedFrom = request.getParameter("workedFrom");
-		String detailsOfroject = request.getParameter("detailsOfroject");
-
-		// TODO: ResumeHeadlineModel
-		String headline = request.getParameter("headline");
-
-		// TODO: Create instances of Profile, Employment, and using the retrieved data
 
 		ProfileDetails profile = new ProfileDetails();
 
@@ -146,67 +110,103 @@ public class FileController {
 		profile.setEmailAddress(emailAddress);
 		profile.setTotalExperience(totalExperience);
 
+		model.addAttribute("profile", profile);
+		detailsService.saveListItem(profileDetails);
+
+		// TODO: Employment Model and using the retrieved data and Save Data to updating
+		String employmentType = request.getParameter("employmentType");
+		String totalexperience = request.getParameter("totalExperience");
+		String companyName = request.getParameter("companyName");
+		String designation = request.getParameter("designation");
+		String joiningDate = request.getParameter("joiningDate");
+		String workedTill = request.getParameter("workedTill");
+		String jobProfile = request.getParameter("jobProfile");
+
 		EmploymentModel eployment = new EmploymentModel();
 
 		eployment.setEmploymentType(employmentType);
-		eployment.setTotalExperience(experience);
+		eployment.setTotalExperience(totalexperience);
 		eployment.setCompanyName(companyName);
 		eployment.setDesignation(designation);
 		eployment.setJoiningDate(joiningDate);
 		eployment.setWorkedTill(workedTill);
 		eployment.setJobProfile(jobProfile);
 
+		model.addAttribute("eployment", eployment);
+		employmentService.saveAllFile(employmentModel);
+
+		// TODO: Profile Image Model and using the retrieved data and Save Data to
+		// updating
+		ProfileImageModel profileImage = new ProfileImageModel();
+		profileImage.setImage(imageFile.getBytes());
+		profileImageService.saveDatabases(profileImage);
+
+		// TODO: EducationModel and using the retrieved data and Save Data to updating
+		String title = request.getParameter("title");
+		String collage = request.getParameter("collage");
+		String location = request.getParameter("location");
+		String course = request.getParameter("course");
+		String description = request.getParameter("description");
+
 		EducationModel education = new EducationModel();
+
 		education.setTitle(title);
 		education.setCollage(collage);
 		education.setLocation(location);
 		education.setCourse(course);
 		education.setDescription(description);
 
+		model.addAttribute("education", education);
+		educationService.saveAllFile(educationModel);
+
+		// TODO: ITSkillsModel and using the retrieved data and Save Data to updating
+		String skills = request.getParameter("skills");
+		String version = request.getParameter("version");
+		String lastused = request.getParameter("lastused");
+		String experience = request.getParameter("experience");
+
 		ITSkillsModel itSkills = new ITSkillsModel();
 		itSkills.setSkills(skills);
 		itSkills.setVersion(version);
 		itSkills.setLastused(lastused);
-		itSkills.setExperience(itexperience);
+		itSkills.setExperience(experience);
+
+		model.addAttribute("itSkills", itSkills);
+		itSkillsService.saveFile(itSkillsModel);
+
+		// TODO: KeySkillsModel and using the retrieved data and Save Data to updating
+		String skill = request.getParameter("skill");
 
 		KeySkillsModel keySkills = new KeySkillsModel();
 		keySkills.setSkill(skill);
+		model.addAttribute("keySkills", keySkills);
+
+		keySkillService.saveAllFile(keySkillsModel);
+
+		// TODO: ProjectModel and using the retrieved data and Save Data to updating
+		String proejectTitle = request.getParameter("proejectTitle");
+		String workedTime = request.getParameter("workedTime");
+		String workedFrom = request.getParameter("workedFrom");
+		String detailsOfroject = request.getParameter("detailsOfroject");
 
 		ProjectModel project = new ProjectModel();
 		project.setProejectTitle(proejectTitle);
 		project.setWorkedTime(workedTime);
 		project.setWorkedFrom(workedFrom);
 		project.setDetailsOfroject(detailsOfroject);
-
-		ResumeHeadlineModel resumeheadline = new ResumeHeadlineModel();
-		resumeheadline.setHeadline(headline);
-		// TODO:
-		model.addAttribute("profile", profile);
-		model.addAttribute("eployment", eployment);
-		model.addAttribute("profileImage", profileImage);
-		model.addAttribute("education", education);
-		model.addAttribute("itSkills", itSkills);
-		model.addAttribute("resumeheadline", resumeheadline);
 		model.addAttribute("project", project);
-		model.addAttribute("keySkills", keySkills);
-
-		// TODO: Save Data to updating
-
-		profileImageService.saveDatabases(imageModel);
-
-		detailsService.saveListItem(profileDetails);
-
-		employmentService.saveAllFile(employmentModel);
-
-		resumeHedlineService.saveAllFiles(headlineModel);
 
 		projectService.saveFile(projectModel);
 
-		educationService.saveAllFile(educationModel);
+		// TODO: ResumeHeadlineModel and using the retrieved data and Save Data to
+		// updating
 
-		itSkillsService.saveFile(itSkillsModel);
+		String headline = request.getParameter("headline");
+		ResumeHeadlineModel resumeheadline = new ResumeHeadlineModel();
+		resumeheadline.setHeadline(headline);
+		model.addAttribute("resumeheadline", resumeheadline);
 
-		keySkillService.saveAllFile(keySkillsModel);
+		resumeHedlineService.saveAllFiles(headlineModel);
 
 		return "redirect:/home/form";
 	}
