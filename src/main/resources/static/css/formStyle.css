@@ -37,6 +37,9 @@ input[type="location"],
 input[type="email"],
 input[type="date"],
 input[type="file"],
+input[type="skill"],
+input[type="year"],
+input[type="version"],
 textarea {
     width: 100%;
     padding: 10px;

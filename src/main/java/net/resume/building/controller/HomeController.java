@@ -23,9 +23,4 @@ public class HomeController {
 		return "login";
 	}
 
-	@GetMapping("/registra")
-	public String registraPage() {
-		return "registra";
-	}
-
 }

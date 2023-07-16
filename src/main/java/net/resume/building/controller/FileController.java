@@ -96,6 +96,7 @@ public class FileController {
 			@RequestParam("profileimagemodel") MultipartFile imageFile) throws IOException {
 
 		// TODO: Profile Details and using the retrieved data and Save Data to updating
+
 		String name = request.getParameter("name");
 		String totalExperience = request.getParameter("totalExperience");
 		String currentLocation = request.getParameter("currentLocation");
@@ -166,6 +167,7 @@ public class FileController {
 		String experience = request.getParameter("experience");
 
 		ITSkillsModel itSkills = new ITSkillsModel();
+		
 		itSkills.setSkills(skills);
 		itSkills.setVersion(version);
 		itSkills.setLastused(lastused);
@@ -179,8 +181,8 @@ public class FileController {
 
 		KeySkillsModel keySkills = new KeySkillsModel();
 		keySkills.setSkill(skill);
-		model.addAttribute("keySkills", keySkills);
 
+		model.addAttribute("keySkills", keySkills);
 		keySkillService.saveAllFile(keySkillsModel);
 
 		// TODO: ProjectModel and using the retrieved data and Save Data to updating
@@ -202,10 +204,11 @@ public class FileController {
 		// updating
 
 		String headline = request.getParameter("headline");
+
 		ResumeHeadlineModel resumeheadline = new ResumeHeadlineModel();
 		resumeheadline.setHeadline(headline);
-		model.addAttribute("resumeheadline", resumeheadline);
 
+		model.addAttribute("resumeheadline", resumeheadline);
 		resumeHedlineService.saveAllFiles(headlineModel);
 
 		return "redirect:/home/form";
