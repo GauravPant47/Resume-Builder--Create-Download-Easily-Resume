@@ -116,7 +116,7 @@ $(document).ready(function () {
         e.preventDefault();
         cartProject.removeClass("visible");
     });
-    // Project
+    // IT Skill
     const addITSkillBtn = $("#addITSkillBtn");
     const cartITSkill = $("#cartITSkill");
     const closeITSkill = $("#closeITSkill");
