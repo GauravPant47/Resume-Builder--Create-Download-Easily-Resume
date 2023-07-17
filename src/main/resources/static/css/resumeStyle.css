@@ -74,7 +74,7 @@
 }
 
 .hover-icon i:hover {
-    color: #fff;
+    color: blue;
 }
 
 .container-right {
@@ -206,7 +206,6 @@ a {
 td:hover {
     border-radius: 20px;
     background-color: #e5e5e5;
-    color: blue;
 }
 
 .headline {
@@ -220,6 +219,12 @@ td:hover {
     justify-content: space-between;
 }
 
+/* 
+*
+*
+*
+*
+* */
 
 /* Hover Buttton */
 #cart {
@@ -251,7 +256,6 @@ td:hover {
     font-size: 20px;
 }
 
-
 #cart.hidden {
     display: none;
 }
@@ -265,6 +269,269 @@ td:hover {
     margin-top: 20px;
 }
 
+/* Hover Buttton */
+#cartProfile {
+    position: absolute;
+    top: 50%;
+    left: 25%;
+    width: 100vh;
+    /* height: 90vh; */
+    background-color: white;
+    border: 1px solid #ccc;
+    margin-top: 50px;
+    padding: 80px;
+    display: none;
+    border-radius: 20px;
+    border: 1px solid black;
+}
+
+#cartProfile h2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#addProfileBtn {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: blue;
+    font-size: 20px;
+}
+
+#cartProfile.hidden {
+    display: none;
+}
+
+#cartProfile.visible {
+    display: block;
+    background-color: blair;
+}
+
+#closeProfile {
+    margin-top: 20px;
+}
+
+/* Hover Buttton */
+#cartEducation {
+    position: absolute;
+    top: 50%;
+    left: 25%;
+    width: 100vh;
+    /* height: 90vh; */
+    background-color: white;
+    border: 1px solid #ccc;
+    margin-top: 50px;
+    padding: 80px;
+    display: none;
+    border-radius: 20px;
+    border: 1px solid black;
+}
+
+#cartEducation h2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#addEducationBtn {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: blue;
+    font-size: 20px;
+}
+
+#cartEducation.hidden {
+    display: none;
+}
+
+#cartEducation.visible {
+    display: block;
+    background-color: blair;
+}
+
+#closecart {
+    margin-top: 20px;
+}
+
+/* Hover Buttton */
+#cartExperience {
+    position: absolute;
+    top: 50%;
+    left: 25%;
+    width: 100vh;
+    /* height: 90vh; */
+    background-color: white;
+    border: 1px solid #ccc;
+    margin-top: 50px;
+    padding: 80px;
+    display: none;
+    border-radius: 20px;
+    border: 1px solid black;
+}
+
+#cartExperience h2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#addExperienceBtn {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: blue;
+    font-size: 20px;
+}
+
+#cartExperience.hidden {
+    display: none;
+}
+
+#cartExperience.visible {
+    display: block;
+    background-color: blair;
+}
+
+#closeExperience {
+    margin-top: 20px;
+}
+
+/* Hover Buttton */
+#cartskills {
+    position: absolute;
+    top: 50%;
+    left: 25%;
+    width: 100vh;
+    /* height: 90vh; */
+    background-color: white;
+    border: 1px solid #ccc;
+    margin-top: 50px;
+    padding: 80px;
+    display: none;
+    border-radius: 20px;
+    border: 1px solid black;
+}
+
+#cartskills h2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#addskillsBtn {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: blue;
+    font-size: 20px;
+}
+
+#cartskills.hidden {
+    display: none;
+}
+
+#cartskills.visible {
+    display: block;
+    background-color: blair;
+}
+
+#closeskills {
+    margin-top: 20px;
+}
+
+/* Hover Buttton */
+#cartITSkill {
+    position: absolute;
+    top: 50%;
+    left: 25%;
+    width: 100vh;
+    /* height: 90vh; */
+    background-color: white;
+    border: 1px solid #ccc;
+    margin-top: 50px;
+    padding: 80px;
+    display: none;
+    border-radius: 20px;
+    border: 1px solid black;
+}
+
+#cartITSkill h2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#addITSkillBtn {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: blue;
+    font-size: 20px;
+}
+
+#cartITSkill.hidden {
+    display: none;
+}
+
+#cartITSkill.visible {
+    display: block;
+    background-color: blair;
+}
+
+#closeITSkill {
+    margin-top: 20px;
+}
+
+/* Hover Buttton */
+#cartProject {
+    position: absolute;
+    top: 50%;
+    left: 25%;
+    width: 100vh;
+    /* height: 90vh; */
+    background-color: white;
+    border: 1px solid #ccc;
+    margin-top: 50px;
+    padding: 80px;
+    display: none;
+    border-radius: 20px;
+    border: 1px solid black;
+}
+
+#cartProject h2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#addProjectBtn {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: blue;
+    font-size: 20px;
+}
+
+#cartProject.hidden {
+    display: none;
+}
+
+#cartProject.visible {
+    display: block;
+    background-color: blair;
+}
+
+#closeProject {
+    margin-top: 20px;
+}
+
+/* 
+*
+*
+ *
+ */
 .form-group {
     display: flex;
     align-items: center;
@@ -284,7 +551,8 @@ td:hover {
     border: 1px solid black;
     border-radius: 50px;
 }
-.form-group .btn{
+
+.form-group .btn {
     display: flex;
     align-items: center;
 }
@@ -353,13 +621,13 @@ body {
     margin: 10px 0px 15px;
 }
 
-.table th {
+.tableitem th {
     padding: 8px;
     text-align: left;
     color: gray;
 }
 
-.table th:hover {
+.tableitem th:hover {
     background-color: transparent;
     color: #000;
 }

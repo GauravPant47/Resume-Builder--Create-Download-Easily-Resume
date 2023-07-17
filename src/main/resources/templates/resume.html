@@ -61,20 +61,20 @@
                 <img src="https://private-user-images.githubusercontent.com/115808373/252128008-4873b285-8053-4d05-9860-a154c41706f2.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXkiOiJrZXkxIiwiZXhwIjoxNjg4ODgxNDgyLCJuYmYiOjE2ODg4ODExODIsInBhdGgiOiIvMTE1ODA4MzczLzI1MjEyODAwOC00ODczYjI4NS04MDUzLTRkMDUtOTg2MC1hMTU0YzQxNzA2ZjIucG5nP1gtQW16LUFsZ29yaXRobT1BV1M0LUhNQUMtU0hBMjU2JlgtQW16LUNyZWRlbnRpYWw9QUtJQUlXTkpZQVg0Q1NWRUg1M0ElMkYyMDIzMDcwOSUyRnVzLWVhc3QtMSUyRnMzJTJGYXdzNF9yZXF1ZXN0JlgtQW16LURhdGU9MjAyMzA3MDlUMDUzOTQyWiZYLUFtei1FeHBpcmVzPTMwMCZYLUFtei1TaWduYXR1cmU9ZDhmZjA0N2JjZmVhOWYxYzljOTNiYzdkYjFjZTQ2Nzg3YTEwNmE3MmZiNzFjYWJiNGVkMGI3MjA5MzhiZWE3NSZYLUFtei1TaWduZWRIZWFkZXJzPWhvc3QmYWN0b3JfaWQ9MCZrZXlfaWQ9MCZyZXBvX2lkPTAifQ.1J5K5tTzQo-6dJYNITrIeezwO1sOiOeffrU4MMTNoAI"
                     alt="">
                 <div class="hover-icon">
-                    <a href="#"><i class="fa fa-pencil">Profile Photo</i></a>
+                    <a href="#"><i class="fa fa-pencil"></i> Profile Photo</a>
                 </div>
             </div>
             <div class="container-right">
                 <!-- <a href="#"><i class="fa fa-pencil" aria-hidden="true"></i></a> -->
                 <div class="space">
                     <h5>Full Name</h5>
-                    <i id="addHeadlineBtn" class="fa fa-pencil" aria-hidden="true"></i>
+                    <i id="addProfileBtn" class="fa fa-pencil" aria-hidden="true"></i>
                     <!-- <a href="" id="addHeadlineBtn" style="color: blue;">Add Education</a> -->
                     <!--	<button id="addHeadlineBtn">Add Education</button>-->
-                    <div id="cart" class="hidden">
-                        <h2>Cart</h2>
+                    <div id="cartProfile" class="hidden">
+                        <!-- <h2>Cart</h2> -->
                         <form id="cartForm" action="" th:action="@{/home/submit}" method="post">
-                            <h2 style="margin:15px 0 15px">Profile Details : </h2>
+                            <h2 style="margin:15px 0 15px">Profile Details </h2>
                             <div class="form-group">
                                 <label for="title">Name :</label>
                                 <input type="name" th:field="*{profile.name}" placeholder="Name" />
@@ -99,8 +99,8 @@
                                 <input type="email" th:field="*{profile.emailAddress}" placeholder="Email Address" />
                             </div>
                             <div class="form-group">
-                                <button class="btn btn-c1" type="submit">ubmit</button>
-                                <button class="btn btn-c1" id="closeBtn">Close</button>
+                                <button class="btn btn-c1" type="submit">Submit</button>
+                                <button class="btn btn-c1" id="closeProfile">Close</button>
                             </div>
                         </form>
                     </div>
@@ -156,12 +156,17 @@
                                 <!-- <a href="" id="addHeadlineBtn" style="color: blue;">Add Education</a> -->
                                 <!-- <button id="addHeadlineBtn">Add Education</button> -->
                                 <div id="cart" class="hidden">
-                                    <h2>Cart</h2>
+                                    <!-- <h2>Cart</h2> -->
                                     <form id="cartForm" action="" th:action="@{/home/headline}" method="post">
-                                        <h2 style="margin:15px 0 15px">Resume headline : </h2>
+                                        <h2 style="margin:15px 0 15px">Resume headline </h2>
                                         <div class="form-group">
                                             <!-- <label for="title">Name :</label> -->
-                                            <input type="name" th:field="*{resumeheadline.headline}" placeholder="Name" />
+                                            <input type="name" th:field="*{resumeheadline.headline}"
+                                                placeholder="Name" />
+                                        </div>
+                                        <div class="form-group">
+                                            <button class="btn btn-c1" type="submit">Submit</button>
+                                            <button class="btn btn-c1" id="closeBtn">Close</button>
                                         </div>
                                     </form>
                                 </div>
@@ -174,43 +179,23 @@
                     <div class="right-cart-hedline">
                         <div class="headline" id="skills">
                             <div class="space">
-								<h3>Education</h3>
-                                <a href=""><i class="fa fa-pencil" aria-hidden="true"></i>
-                                </a>
+                                <h3>Key skills</h3>
+                                <i id="addskillsBtn" class="fa fa-pencil" aria-hidden="true"></i>
                                 <!-- <a href="" id="addHeadlineBtn" style="color: blue;">Add Education</a> -->
-                                <button id="addHeadlineBtn">Add Education</button>
-                                <div id="cart" class="hidden">
-                                    <h2>Cart</h2>
-                                    <form id="cartForm" action="" th:action="@{/home/education}" th:object="${education}" method="post">
-                                        <h2 style="margin:15px 0 15px">Profile Details : </h2>
+                                <!-- <button id="addEducationBtn">Add Education</button> -->
+                                <div id="cartskills" class="hidden">
+                                    <!-- <h2>Cart</h2> -->
+                                    <form id="cartForm" action="" th:action="@{/home/education}"
+                                        th:object="${education}" method="post">
+                                        <h2 style="margin:15px 0 15px">Key skills </h2>
 
                                         <div class="form-group">
-                                            <label for="title">Name :</label>
+                                            <!-- <label for="title">Name :</label> -->
                                             <input type="name" th:field="*{title}" placeholder="Name" />
                                         </div>
                                         <div class="form-group">
-                                            <label for="college">Total Experience :</label>
-                                            <input type="text" th:field="*{collage}"
-                                                placeholder="Total Experience" />
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="location">Current Location :</label>
-                                            <input type="location" th:field="*{location}"
-                                                placeholder="Current Location" />
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="course">Mobile Number :</label>
-                                            <input type="text" th:field="*{course}"
-                                                placeholder="Mobile Number"></input>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="course">Email Address :</label>
-                                            <input type="email" th:field="*{description}"
-                                                placeholder="Email Address" />
-                                        </div>
-                                        <div class="form-group">
-                                            <button class="btn btn-c1" type="submit">ubmit</button>
-                                            <button class="btn btn-c1" id="closeBtn">Close</button>
+                                            <button class="btn btn-c1" type="submit">Submit</button>
+                                            <button class="btn btn-c1" id="closeskills">Close</button>
                                         </div>
                                     </form>
                                 </div>
@@ -229,11 +214,11 @@
                                 <a href="">Education <i class="fa fa-pencil" aria-hidden="true"></i>
                                 </a>
                                 <!-- <a href="" id="addHeadlineBtn" style="color: blue;">Add Education</a> -->
-                                <button id="addHeadlineBtn">Add Education</button>
-                                <div id="cart" class="hidden">
-                                    <h2>Cart</h2>
+                                <button id="addEducationBtn">Add Education</button>
+                                <div id="cartEducation" class="hidden">
+                                    <!-- <h2>Cart</h2> -->
                                     <form id="cartForm" action="" th:action="@{/home/submit}" method="post">
-                                        <h2 style="margin:15px 0 15px">Profile Details : </h2>
+                                        <h2 style="margin:15px 0 15px">Education </h2>
 
                                         <div class="form-group">
                                             <label for="title">Name :</label>
@@ -260,8 +245,8 @@
                                                 placeholder="Email Address" />
                                         </div>
                                         <div class="form-group">
-                                            <button class="btn btn-c1" type="submit">ubmit</button>
-                                            <button class="btn btn-c1" id="closeBtn">Close</button>
+                                            <button class="btn btn-c1" type="submit">Submit</button>
+                                            <button class="btn btn-c1" id="closecart">Close</button>
                                         </div>
                                     </form>
                                 </div>
@@ -278,14 +263,14 @@
                     <div class="right-cart-hedline">
                         <div class="headline" id="employment">
                             <div class="space">
-                                <a href="">Education <i class="fa fa-pencil" aria-hidden="true"></i>
+                                <a href="">Experience <i class="fa fa-pencil" aria-hidden="true"></i>
                                 </a>
                                 <!-- <a href="" id="addHeadlineBtn" style="color: blue;">Add Education</a> -->
-                                <button id="addHeadlineBtn">Add Education</button>
-                                <div id="cart" class="hidden">
-                                    <h2>Cart</h2>
+                                <button id="addExperienceBtn">Add Experience</button>
+                                <div id="cartExperience" class="hidden">
+                                    <!-- <h2>Cart</h2> -->
                                     <form id="cartForm" action="" th:action="@{/home/submit}" method="post">
-                                        <h2 style="margin:15px 0 15px">Profile Details : </h2>
+                                        <h2 style="margin:15px 0 15px">Experience </h2>
 
                                         <div class="form-group">
                                             <label for="title">Name :</label>
@@ -312,8 +297,8 @@
                                                 placeholder="Email Address" />
                                         </div>
                                         <div class="form-group">
-                                            <button class="btn btn-c1" type="submit">ubmit</button>
-                                            <button class="btn btn-c1" id="closeBtn">Close</button>
+                                            <button class="btn btn-c1" type="submit">Submit</button>
+                                            <button class="btn btn-c1" id="closeExperience">Close</button>
                                         </div>
                                     </form>
                                 </div>
@@ -330,14 +315,14 @@
                     <div class="right-cart-hedline">
                         <div class="headline" id="project">
                             <div class="space">
-                                <a href="">Education <i class="fa fa-pencil" aria-hidden="true"></i>
+                                <a href="">Project <i class="fa fa-pencil" aria-hidden="true"></i>
                                 </a>
                                 <!-- <a href="" id="addHeadlineBtn" style="color: blue;">Add Education</a> -->
-                                <button id="addHeadlineBtn">Add Education</button>
-                                <div id="cart" class="hidden">
-                                    <h2>Cart</h2>
+                                <button id="addProjectBtn">Add Project</button>
+                                <div id="cartProject" class="hidden">
+                                    <!-- <h2>Cart</h2> -->
                                     <form id="cartForm" action="" th:action="@{/home/submit}" method="post">
-                                        <h2 style="margin:15px 0 15px">Profile Details : </h2>
+                                        <h2 style="margin:15px 0 15px">Project </h2>
 
                                         <div class="form-group">
                                             <label for="title">Name :</label>
@@ -364,8 +349,8 @@
                                                 placeholder="Email Address" />
                                         </div>
                                         <div class="form-group">
-                                            <button class="btn btn-c1" type="submit">ubmit</button>
-                                            <button class="btn btn-c1" id="closeBtn">Close</button>
+                                            <button class="btn btn-c1" type="submit">Submit</button>
+                                            <button class="btn btn-c1" id="closeProject">Close</button>
                                         </div>
                                     </form>
                                 </div>
@@ -381,15 +366,14 @@
                     <div class="right-cart-hedline">
                         <div class="headline" id="itskil">
                             <div class="space">
-                                <a href="">Education <i class="fa fa-pencil" aria-hidden="true"></i>
+                                <a href="">IT Skill <i class="fa fa-pencil" aria-hidden="true"></i>
                                 </a>
                                 <!-- <a href="" id="addHeadlineBtn" style="color: blue;">Add Education</a> -->
-                                <button id="addHeadlineBtn">Add Education</button>
-                                <div id="cart" class="hidden">
-                                    <h2>Cart</h2>
+                                <button id="addITSkillBtn">Add Skill</button>
+                                <div id="cartITSkill" class="hidden">
+                                    <!-- <h2>Cart</h2> -->
                                     <form id="cartForm" action="" th:action="@{/home/submit}" method="post">
-                                        <h2 style="margin:15px 0 15px">Profile Details : </h2>
-
+                                        <h2 style="margin:15px 0 15px">IT Skill </h2>
                                         <div class="form-group">
                                             <label for="title">Name :</label>
                                             <input type="name" th:field="*{profile.name}" placeholder="Name" />
@@ -415,14 +399,14 @@
                                                 placeholder="Email Address" />
                                         </div>
                                         <div class="form-group">
-                                            <button class="btn btn-c1" type="submit">ubmit</button>
-                                            <button class="btn btn-c1" id="closeBtn">Close</button>
+                                            <button class="btn btn-c1" type="submit">Submit</button>
+                                            <button class="btn btn-c1" id="closeITSkill">Close</button>
                                         </div>
                                     </form>
                                 </div>
                             </div>
                         </div>
-                        <div class="table">
+                        <div class="tableitem">
                             <table>
                                 <tr>
                                     <th>Skills</th>

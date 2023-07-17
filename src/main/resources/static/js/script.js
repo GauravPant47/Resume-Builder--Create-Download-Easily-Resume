@@ -37,7 +37,7 @@ $(document).ready(function () {
             $(".profile-content").hide();
         }
     });
-
+    // Headline 
     const addHeadlineBtn = $("#addHeadlineBtn");
     const cart = $("#cart");
     const closeBtn = $("#closeBtn");
@@ -49,6 +49,85 @@ $(document).ready(function () {
     closeBtn.on("click", function (e) {
         e.preventDefault();
         cart.removeClass("visible");
+    });
+
+    // Profile
+    const addProfileBtn = $("#addProfileBtn");
+    const cartProfile = $("#cartProfile");
+    const closeProfile = $("#closeProfile");
+
+    addProfileBtn.on("click", function () {
+        cartProfile.toggleClass("visible");
+    });
+
+    closeProfile.on("click", function (e) {
+        e.preventDefault();
+        cartProfile.removeClass("visible");
+    });
+    // Education
+    const addEducationBtn = $("#addEducationBtn");
+    const cartEducation = $("#cartEducation");
+    const closecart = $("#closecart");
+
+    addEducationBtn.on("click", function () {
+        cartEducation.toggleClass("visible");
+    });
+
+    closecart.on("click", function (e) {
+        e.preventDefault();
+        cartEducation.removeClass("visible");
+    });
+    // Experience
+    const addExperienceBtn = $("#addExperienceBtn");
+    const cartExperience = $("#cartExperience");
+    const closeExperience = $("#closeExperience");
+
+    addExperienceBtn.on("click", function () {
+        cartExperience.toggleClass("visible");
+    });
+
+    closeExperience.on("click", function (e) {
+        e.preventDefault();
+        cartExperience.removeClass("visible");
+    });
+    // Key skills
+    const addskillsBtn = $("#addskillsBtn");
+    const cartskills = $("#cartskills");
+    const closeskills = $("#closeskills");
+
+    addskillsBtn.on("click", function () {
+        cartskills.toggleClass("visible");
+    });
+
+    closeskills.on("click", function (e) {
+        e.preventDefault();
+        cartskills.removeClass("visible");
+    });
+    // Project
+    const addProjectBtn = $("#addProjectBtn");
+    const cartProject = $("#cartProject");
+    const closeProject = $("#closeProject");
+
+    addProjectBtn.on("click", function () {
+        cartProject.toggleClass("visible");
+    });
+
+    closeProject.on("click", function (e) {
+        e.preventDefault();
+        cartProject.removeClass("visible");
+    });
+    // Project
+    const addITSkillBtn = $("#addITSkillBtn");
+    const cartITSkill = $("#cartITSkill");
+    const closeITSkill = $("#closeITSkill");
+
+    addITSkillBtn.on("click", function () {
+        cartITSkill.toggleClass("visible");
+    });
+
+    closeITSkill.on("click", function (e) {
+        e.preventDefault();
+        cartITSkill.removeClass("visible");
     });
 
 });
