@@ -23,19 +23,32 @@ $(document).ready(function () {
         $(this).find(".profile-content").toggle();
     });
 
-    $(".profile-dropdown").hover(function () {
-        isHovered = true;
-        $(this).find(".profile-content").show();
-    }, function () {
-        isHovered = false;
-        $(this).find(".profile-content").hide();
-    });
+    // $(".profile-dropdown").hover(function () {
+    //     isHovered = true;
+    //     $(this).find(".profile-content").show();
+    // }, function () {
+    //     isHovered = false;
+    //     $(this).find(".profile-content").hide();
+    // });
 
     $(document).click(function (event) {
         var target = $(event.target);
         if (!target.closest(".profile-dropdown").length && !isHovered && $(".profile-content").is(":visible")) {
             $(".profile-content").hide();
         }
+    });
+
+    const addHeadlineBtn = $("#addHeadlineBtn");
+    const cart = $("#cart");
+    const closeBtn = $("#closeBtn");
+
+    addHeadlineBtn.on("click", function () {
+        cart.toggleClass("visible");
+    });
+
+    closeBtn.on("click", function (e) {
+        e.preventDefault();
+        cart.removeClass("visible");
     });
 
 });

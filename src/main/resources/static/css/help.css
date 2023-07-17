@@ -6,9 +6,12 @@
 }
 
 .btn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     border: none;
     color: #fff;
-    padding: 16px 35px;
+    padding: 10px 40px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -26,6 +29,6 @@
 }
 
 .btn-c1:hover {
-    background-color: #49BB99;
+    background-color: #3F93E2;
     color: #fff;
 }

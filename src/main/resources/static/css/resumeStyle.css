@@ -1,9 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 
-body {
-    background-color: rgb(240, 237, 237);
-}
-
 .container {
     display: inline;
     align-items: center;
@@ -11,19 +7,22 @@ body {
     font-family: 'Open Sans', sans-serif;
     height: auto;
     max-width: 500px;
+    background-color: rgb(240, 237, 237);
 }
+
 
 .container-user {
     display: flex;
-    margin: 35px 0px 0px 45px;
+    /* margin: 35px 0px 0px 45px; */
     height: 230px;
-    width: 155vh;
-    overflow: hidden;
+    width: auto;
+    margin-top: 50px;
+    overflow: visible;
     padding: 20px 20px 20px 30px;
     min-height: 264px;
     background: var(--N100);
     box-shadow: 0 6px 12px rgba(30, 10, 58, .04);
-    border-radius: 20px;
+    /* border-radius: 20px; */
     background-color: #fff;
 }
 
@@ -84,7 +83,7 @@ body {
     justify-content: space-around;
     position: relative;
     top: 0;
-    left: 25%;
+    /* left: 25%; */
 }
 
 .container-right h5 {
@@ -214,10 +213,90 @@ td:hover {
     font-weight: bold;
     margin-bottom: 10px;
 }
-.headline a{
+
+.headline .space {
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+}
+
+
+/* Hover Buttton */
+#cart {
+    position: absolute;
+    top: 50%;
+    left: 25%;
+    width: 100vh;
+    /* height: 90vh; */
+    background-color: white;
+    border: 1px solid #ccc;
+    margin-top: 50px;
+    padding: 80px;
+    display: none;
+    border-radius: 20px;
+    border: 1px solid black;
+}
+
+#cart h2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#addHeadlineBtn {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: blue;
+    font-size: 20px;
+}
+
+
+#cart.hidden {
+    display: none;
+}
+
+#cart.visible {
+    display: block;
+    background-color: blair;
+}
+
+#closeBtn {
+    margin-top: 20px;
+}
+
+.form-group {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: inline-block;
+    width: 250px;
+    font-size: 20px;
+}
+
+.form-group input {
+    width: 200px;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 50px;
+}
+.form-group .btn{
+    display: flex;
+    align-items: center;
+}
+
+
+/* Hover Buttton */
+
+.headline a {
     font-size: 18px;
 }
-.headline  i {
+
+.headline i {
     cursor: pointer;
 }
 

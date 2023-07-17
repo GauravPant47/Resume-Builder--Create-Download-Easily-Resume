@@ -59,7 +59,7 @@ public class FileController {
 	@Autowired
 	private KeySkillService keySkillService;
 
-	@GetMapping("/form")
+	@GetMapping("/resume")
 	public String showForm(Model model) {
 		ProfileDetails profile = new ProfileDetails();
 		model.addAttribute("profile", profile);
@@ -85,15 +85,11 @@ public class FileController {
 		ResumeHeadlineModel resumeheadline = new ResumeHeadlineModel();
 		model.addAttribute("resumeheadline", resumeheadline);
 
-		return "form";
+		return "resume";
 	}
 
-	@PostMapping("/submit")
-	public String submitForm(HttpServletRequest request, @ModelAttribute ProfileDetails profileDetails,
-			@ModelAttribute EmploymentModel employmentModel, @ModelAttribute KeySkillsModel keySkillsModel,
-			@ModelAttribute ITSkillsModel itSkillsModel, @ModelAttribute ResumeHeadlineModel headlineModel,
-			@ModelAttribute ProjectModel projectModel, @ModelAttribute EducationModel educationModel, Model model,
-			@RequestParam("profileimagemodel") MultipartFile imageFile) throws IOException {
+	@PostMapping("/profile")
+	public String submitForm(HttpServletRequest request, @ModelAttribute ProfileDetails profileDetails, Model model) {
 
 		// TODO: Profile Details and using the retrieved data and Save Data to updating
 
@@ -114,6 +110,11 @@ public class FileController {
 		model.addAttribute("profile", profile);
 		detailsService.saveListItem(profileDetails);
 
+		return "redirect:/home/form";
+	}
+
+	@PostMapping("/eployment")
+	public String submitForm(HttpServletRequest request, Model model, @ModelAttribute EmploymentModel employmentModel) {
 		// TODO: Employment Model and using the retrieved data and Save Data to updating
 		String employmentType = request.getParameter("employmentType");
 		String totalexperience = request.getParameter("totalExperience");
@@ -135,12 +136,11 @@ public class FileController {
 
 		model.addAttribute("eployment", eployment);
 		employmentService.saveAllFile(employmentModel);
+		return "redirect:/home/form";
+	}
 
-		// TODO: Profile Image Model and using the retrieved data and Save Data to
-		// updating
-		ProfileImageModel profileImage = new ProfileImageModel();
-		profileImage.setImage(imageFile.getBytes());
-		profileImageService.saveDatabases(profileImage);
+	@PostMapping("/education")
+	public String submitForm(HttpServletRequest request, Model model, @ModelAttribute EducationModel educationModel) {
 
 		// TODO: EducationModel and using the retrieved data and Save Data to updating
 		String title = request.getParameter("title");
@@ -159,31 +159,22 @@ public class FileController {
 
 		model.addAttribute("education", education);
 		educationService.saveAllFile(educationModel);
+		return "redirect:/home/form";
+	}
 
-		// TODO: ITSkillsModel and using the retrieved data and Save Data to updating
-		String skills = request.getParameter("skills");
-		String version = request.getParameter("version");
-		String lastused = request.getParameter("lastused");
-		String experience = request.getParameter("experience");
+	@PostMapping("/image")
+	public String submitForm(@RequestParam("profileimagemodel") MultipartFile imageFile) throws IOException {
 
-		ITSkillsModel itSkills = new ITSkillsModel();
-		
-		itSkills.setSkills(skills);
-		itSkills.setVersion(version);
-		itSkills.setLastused(lastused);
-		itSkills.setExperience(experience);
+		// TODO: Profile Image Model and using the retrieved data and Save Data to
+		// updating
+		ProfileImageModel profileImage = new ProfileImageModel();
+		profileImage.setImage(imageFile.getBytes());
+		profileImageService.saveDatabases(profileImage);
+		return "redirect:/home/form";
+	}
 
-		model.addAttribute("itSkills", itSkills);
-		itSkillsService.saveFile(itSkillsModel);
-
-		// TODO: KeySkillsModel and using the retrieved data and Save Data to updating
-		String skill = request.getParameter("skill");
-
-		KeySkillsModel keySkills = new KeySkillsModel();
-		keySkills.setSkill(skill);
-
-		model.addAttribute("keySkills", keySkills);
-		keySkillService.saveAllFile(keySkillsModel);
+	@PostMapping("/project")
+	public String submitForm(HttpServletRequest request, Model model, @ModelAttribute ProjectModel projectModel) {
 
 		// TODO: ProjectModel and using the retrieved data and Save Data to updating
 		String proejectTitle = request.getParameter("proejectTitle");
@@ -199,6 +190,12 @@ public class FileController {
 		model.addAttribute("project", project);
 
 		projectService.saveFile(projectModel);
+		return "redirect:/home/form";
+	}
+
+	@PostMapping("/headline")
+	public String submitForm(HttpServletRequest request, Model model,
+			@ModelAttribute ResumeHeadlineModel headlineModel) {
 
 		// TODO: ResumeHeadlineModel and using the retrieved data and Save Data to
 		// updating
@@ -210,6 +207,42 @@ public class FileController {
 
 		model.addAttribute("resumeheadline", resumeheadline);
 		resumeHedlineService.saveAllFiles(headlineModel);
+
+		return "redirect:/home/form";
+	}
+
+	@PostMapping("/itSkills")
+	public String submitForm(HttpServletRequest request, Model model, @ModelAttribute ITSkillsModel itSkillsModel) {
+
+		// TODO: ITSkillsModel and using the retrieved data and Save Data to updating
+		String skills = request.getParameter("skills");
+		String version = request.getParameter("version");
+		String lastused = request.getParameter("lastused");
+		String experience = request.getParameter("experience");
+
+		ITSkillsModel itSkills = new ITSkillsModel();
+
+		itSkills.setSkills(skills);
+		itSkills.setVersion(version);
+		itSkills.setLastused(lastused);
+		itSkills.setExperience(experience);
+
+		model.addAttribute("itSkills", itSkills);
+		itSkillsService.saveFile(itSkillsModel);
+
+		return "redirect:/home/form";
+	}
+
+	@PostMapping("/keySkills")
+	public String submitForm(HttpServletRequest request, Model model, @ModelAttribute KeySkillsModel keySkillsModel) {
+		// TODO: KeySkillsModel and using the retrieved data and Save Data to updating
+		String skill = request.getParameter("skill");
+
+		KeySkillsModel keySkills = new KeySkillsModel();
+		keySkills.setSkill(skill);
+
+		model.addAttribute("keySkills", keySkills);
+		keySkillService.saveAllFile(keySkillsModel);
 
 		return "redirect:/home/form";
 	}

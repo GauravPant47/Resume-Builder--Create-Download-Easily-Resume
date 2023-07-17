@@ -65,8 +65,46 @@
                 </div>
             </div>
             <div class="container-right">
-                <h5>Full Name</h5>
-                <a href="#"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+                <!-- <a href="#"><i class="fa fa-pencil" aria-hidden="true"></i></a> -->
+                <div class="space">
+                    <h5>Full Name</h5>
+                    <i id="addHeadlineBtn" class="fa fa-pencil" aria-hidden="true"></i>
+                    <!-- <a href="" id="addHeadlineBtn" style="color: blue;">Add Education</a> -->
+                    <!--	<button id="addHeadlineBtn">Add Education</button>-->
+                    <div id="cart" class="hidden">
+                        <h2>Cart</h2>
+                        <form id="cartForm" action="" th:action="@{/home/submit}" method="post">
+                            <h2 style="margin:15px 0 15px">Profile Details : </h2>
+                            <div class="form-group">
+                                <label for="title">Name :</label>
+                                <input type="name" th:field="*{profile.name}" placeholder="Name" />
+                            </div>
+                            <div class="form-group">
+                                <label for="college">Total Experience :</label>
+                                <input type="text" th:field="*{profile.totalExperience}"
+                                    placeholder="Total Experience" />
+                            </div>
+                            <div class="form-group">
+                                <label for="location">Current Location :</label>
+                                <input type="location" th:field="*{profile.currentLocation}"
+                                    placeholder="Current Location" />
+                            </div>
+                            <div class="form-group">
+                                <label for="course">Mobile Number :</label>
+                                <input type="text" th:field="*{profile.mobileNumber}"
+                                    placeholder="Mobile Number"></input>
+                            </div>
+                            <div class="form-group">
+                                <label for="course">Email Address :</label>
+                                <input type="email" th:field="*{profile.emailAddress}" placeholder="Email Address" />
+                            </div>
+                            <div class="form-group">
+                                <button class="btn btn-c1" type="submit">ubmit</button>
+                                <button class="btn btn-c1" id="closeBtn">Close</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
                 <hr>
                 <div class="user-details">
                     <div class="user-details-left">
@@ -112,8 +150,22 @@
                 <div class="right-cart">
                     <div class="right-cart-hedline">
                         <div class="headline" id="hedline">
-                            <a href="">Resume Headline <i class="fa fa-pencil" aria-hidden="true"></i>
-                            </a>
+                            <div class="space">
+                                <h3>Resume headline</h3>
+                                <i id="addHeadlineBtn" class="fa fa-pencil" aria-hidden="true"></i>
+                                <!-- <a href="" id="addHeadlineBtn" style="color: blue;">Add Education</a> -->
+                                <!-- <button id="addHeadlineBtn">Add Education</button> -->
+                                <div id="cart" class="hidden">
+                                    <h2>Cart</h2>
+                                    <form id="cartForm" action="" th:action="@{/home/headline}" method="post">
+                                        <h2 style="margin:15px 0 15px">Resume headline : </h2>
+                                        <div class="form-group">
+                                            <!-- <label for="title">Name :</label> -->
+                                            <input type="name" th:field="*{resumeheadline.headline}" placeholder="Name" />
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
                         </div>
                         <p>Secure a responsible career opportunity to fully utilize my training and skills, while making
                             a
@@ -121,8 +173,48 @@
                     </div>
                     <div class="right-cart-hedline">
                         <div class="headline" id="skills">
-                            <a href="">Key skills <i class="fa fa-pencil" aria-hidden="true"></i>
-                            </a>
+                            <div class="space">
+								<h3>Education</h3>
+                                <a href=""><i class="fa fa-pencil" aria-hidden="true"></i>
+                                </a>
+                                <!-- <a href="" id="addHeadlineBtn" style="color: blue;">Add Education</a> -->
+                                <button id="addHeadlineBtn">Add Education</button>
+                                <div id="cart" class="hidden">
+                                    <h2>Cart</h2>
+                                    <form id="cartForm" action="" th:action="@{/home/education}" th:object="${education}" method="post">
+                                        <h2 style="margin:15px 0 15px">Profile Details : </h2>
+
+                                        <div class="form-group">
+                                            <label for="title">Name :</label>
+                                            <input type="name" th:field="*{title}" placeholder="Name" />
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="college">Total Experience :</label>
+                                            <input type="text" th:field="*{collage}"
+                                                placeholder="Total Experience" />
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="location">Current Location :</label>
+                                            <input type="location" th:field="*{location}"
+                                                placeholder="Current Location" />
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="course">Mobile Number :</label>
+                                            <input type="text" th:field="*{course}"
+                                                placeholder="Mobile Number"></input>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="course">Email Address :</label>
+                                            <input type="email" th:field="*{description}"
+                                                placeholder="Email Address" />
+                                        </div>
+                                        <div class="form-group">
+                                            <button class="btn btn-c1" type="submit">ubmit</button>
+                                            <button class="btn btn-c1" id="closeBtn">Close</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
                         </div>
                         <div class="btn-type">
                             <p>Redis</p>
@@ -132,9 +224,48 @@
                         </div>
                     </div>
                     <div class="right-cart-hedline">
-                        <div class="headline" id="employment">
-                            <a href="">Education <i class="fa fa-pencil" aria-hidden="true"></i>
-                            </a>
+                        <div class="headline" id="education">
+                            <div class="space">
+                                <a href="">Education <i class="fa fa-pencil" aria-hidden="true"></i>
+                                </a>
+                                <!-- <a href="" id="addHeadlineBtn" style="color: blue;">Add Education</a> -->
+                                <button id="addHeadlineBtn">Add Education</button>
+                                <div id="cart" class="hidden">
+                                    <h2>Cart</h2>
+                                    <form id="cartForm" action="" th:action="@{/home/submit}" method="post">
+                                        <h2 style="margin:15px 0 15px">Profile Details : </h2>
+
+                                        <div class="form-group">
+                                            <label for="title">Name :</label>
+                                            <input type="name" th:field="*{profile.name}" placeholder="Name" />
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="college">Total Experience :</label>
+                                            <input type="text" th:field="*{profile.totalExperience}"
+                                                placeholder="Total Experience" />
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="location">Current Location :</label>
+                                            <input type="location" th:field="*{profile.currentLocation}"
+                                                placeholder="Current Location" />
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="course">Mobile Number :</label>
+                                            <input type="text" th:field="*{profile.mobileNumber}"
+                                                placeholder="Mobile Number"></input>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="course">Email Address :</label>
+                                            <input type="email" th:field="*{profile.emailAddress}"
+                                                placeholder="Email Address" />
+                                        </div>
+                                        <div class="form-group">
+                                            <button class="btn btn-c1" type="submit">ubmit</button>
+                                            <button class="btn btn-c1" id="closeBtn">Close</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
                         </div>
                         <div class="cart-style">
                             <a class="right color">Title</a>
@@ -145,9 +276,48 @@
                         </div>
                     </div>
                     <div class="right-cart-hedline">
-                        <div class="headline" id="education">
-                            <a href="">Employment <i class="fa fa-pencil" aria-hidden="true"></i>
-                            </a>
+                        <div class="headline" id="employment">
+                            <div class="space">
+                                <a href="">Education <i class="fa fa-pencil" aria-hidden="true"></i>
+                                </a>
+                                <!-- <a href="" id="addHeadlineBtn" style="color: blue;">Add Education</a> -->
+                                <button id="addHeadlineBtn">Add Education</button>
+                                <div id="cart" class="hidden">
+                                    <h2>Cart</h2>
+                                    <form id="cartForm" action="" th:action="@{/home/submit}" method="post">
+                                        <h2 style="margin:15px 0 15px">Profile Details : </h2>
+
+                                        <div class="form-group">
+                                            <label for="title">Name :</label>
+                                            <input type="name" th:field="*{profile.name}" placeholder="Name" />
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="college">Total Experience :</label>
+                                            <input type="text" th:field="*{profile.totalExperience}"
+                                                placeholder="Total Experience" />
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="location">Current Location :</label>
+                                            <input type="location" th:field="*{profile.currentLocation}"
+                                                placeholder="Current Location" />
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="course">Mobile Number :</label>
+                                            <input type="text" th:field="*{profile.mobileNumber}"
+                                                placeholder="Mobile Number"></input>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="course">Email Address :</label>
+                                            <input type="email" th:field="*{profile.emailAddress}"
+                                                placeholder="Email Address" />
+                                        </div>
+                                        <div class="form-group">
+                                            <button class="btn btn-c1" type="submit">ubmit</button>
+                                            <button class="btn btn-c1" id="closeBtn">Close</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
                         </div>
                         <div class="cart-style">
                             <a class="right color">Title</a>
@@ -159,8 +329,47 @@
                     </div>
                     <div class="right-cart-hedline">
                         <div class="headline" id="project">
-                            <a href="">Project <i class="fa fa-pencil" aria-hidden="true"></i>
-                            </a>
+                            <div class="space">
+                                <a href="">Education <i class="fa fa-pencil" aria-hidden="true"></i>
+                                </a>
+                                <!-- <a href="" id="addHeadlineBtn" style="color: blue;">Add Education</a> -->
+                                <button id="addHeadlineBtn">Add Education</button>
+                                <div id="cart" class="hidden">
+                                    <h2>Cart</h2>
+                                    <form id="cartForm" action="" th:action="@{/home/submit}" method="post">
+                                        <h2 style="margin:15px 0 15px">Profile Details : </h2>
+
+                                        <div class="form-group">
+                                            <label for="title">Name :</label>
+                                            <input type="name" th:field="*{profile.name}" placeholder="Name" />
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="college">Total Experience :</label>
+                                            <input type="text" th:field="*{profile.totalExperience}"
+                                                placeholder="Total Experience" />
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="location">Current Location :</label>
+                                            <input type="location" th:field="*{profile.currentLocation}"
+                                                placeholder="Current Location" />
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="course">Mobile Number :</label>
+                                            <input type="text" th:field="*{profile.mobileNumber}"
+                                                placeholder="Mobile Number"></input>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="course">Email Address :</label>
+                                            <input type="email" th:field="*{profile.emailAddress}"
+                                                placeholder="Email Address" />
+                                        </div>
+                                        <div class="form-group">
+                                            <button class="btn btn-c1" type="submit">ubmit</button>
+                                            <button class="btn btn-c1" id="closeBtn">Close</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
                         </div>
                         <div class="cart-style">
                             <a class="right color">Project title</a>
@@ -171,8 +380,47 @@
                     </div>
                     <div class="right-cart-hedline">
                         <div class="headline" id="itskil">
-                            <a href="">IT skills <i class="fa fa-pencil" aria-hidden="true"></i>
-                            </a>
+                            <div class="space">
+                                <a href="">Education <i class="fa fa-pencil" aria-hidden="true"></i>
+                                </a>
+                                <!-- <a href="" id="addHeadlineBtn" style="color: blue;">Add Education</a> -->
+                                <button id="addHeadlineBtn">Add Education</button>
+                                <div id="cart" class="hidden">
+                                    <h2>Cart</h2>
+                                    <form id="cartForm" action="" th:action="@{/home/submit}" method="post">
+                                        <h2 style="margin:15px 0 15px">Profile Details : </h2>
+
+                                        <div class="form-group">
+                                            <label for="title">Name :</label>
+                                            <input type="name" th:field="*{profile.name}" placeholder="Name" />
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="college">Total Experience :</label>
+                                            <input type="text" th:field="*{profile.totalExperience}"
+                                                placeholder="Total Experience" />
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="location">Current Location :</label>
+                                            <input type="location" th:field="*{profile.currentLocation}"
+                                                placeholder="Current Location" />
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="course">Mobile Number :</label>
+                                            <input type="text" th:field="*{profile.mobileNumber}"
+                                                placeholder="Mobile Number"></input>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="course">Email Address :</label>
+                                            <input type="email" th:field="*{profile.emailAddress}"
+                                                placeholder="Email Address" />
+                                        </div>
+                                        <div class="form-group">
+                                            <button class="btn btn-c1" type="submit">ubmit</button>
+                                            <button class="btn btn-c1" id="closeBtn">Close</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
                         </div>
                         <div class="table">
                             <table>
@@ -252,5 +500,9 @@
 
     <!-- Footer -->
 </body>
+<script th:src="@{/js/jquery-3.7.0.min.js}"></script>
+<script th:src="@{/js/script.js}"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
 
 </html>
