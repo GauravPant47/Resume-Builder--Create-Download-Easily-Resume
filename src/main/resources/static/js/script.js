@@ -23,14 +23,6 @@ $(document).ready(function () {
         $(this).find(".profile-content").toggle();
     });
 
-    // $(".profile-dropdown").hover(function () {
-    //     isHovered = true;
-    //     $(this).find(".profile-content").show();
-    // }, function () {
-    //     isHovered = false;
-    //     $(this).find(".profile-content").hide();
-    // });
-
     $(document).click(function (event) {
         var target = $(event.target);
         if (!target.closest(".profile-dropdown").length && !isHovered && $(".profile-content").is(":visible")) {
@@ -128,6 +120,19 @@ $(document).ready(function () {
     closeITSkill.on("click", function (e) {
         e.preventDefault();
         cartITSkill.removeClass("visible");
+    });
+    // Upload photo
+    const addPhotoBtn = $("#addPhotoBtn");
+    const cartPhoto = $("#cartPhoto");
+    const closePhoto = $("#closePhoto");
+
+    addPhotoBtn.on("click", function () {
+        cartPhoto.toggleClass("visible");
+    });
+
+    closePhoto.on("click", function (e) {
+        e.preventDefault();
+        cartPhoto.removeClass("visible");
     });
 
 });

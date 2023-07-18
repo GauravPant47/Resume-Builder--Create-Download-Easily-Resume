@@ -528,6 +528,49 @@ td:hover {
     margin-top: 20px;
 }
 
+/* Hover Buttton */
+#cartPhoto {
+    position: absolute;
+    top: 50%;
+    left: 25%;
+    width: 100vh;
+    /* height: 90vh; */
+    background-color: white;
+    border: 1px solid #ccc;
+    margin-top: 50px;
+    padding: 80px;
+    display: none;
+    border-radius: 20px;
+    border: 1px solid black;
+}
+
+#cartPhoto h2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#addPhotoBtn {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: blue;
+    font-size: 20px;
+}
+
+#cartPhoto.hidden {
+    display: none;
+}
+
+#cartPhoto.visible {
+    display: block;
+    background-color: blair;
+}
+
+#closePhoto {
+    margin-top: 20px;
+}
+
 /* 
 *
 *
