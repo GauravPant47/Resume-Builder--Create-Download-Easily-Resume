@@ -110,7 +110,7 @@ public class FileController {
 		model.addAttribute("profile", profile);
 		detailsService.saveListItem(profileDetails);
 
-		return "redirect:/home/form";
+		return "redirect:/home/resume";
 	}
 
 	@PostMapping("/eployment")
@@ -123,6 +123,7 @@ public class FileController {
 		String joiningDate = request.getParameter("joiningDate");
 		String workedTill = request.getParameter("workedTill");
 		String jobProfile = request.getParameter("jobProfile");
+		String companyLocation = request.getParameter("companyLocation");
 
 		EmploymentModel eployment = new EmploymentModel();
 
@@ -133,10 +134,11 @@ public class FileController {
 		eployment.setJoiningDate(joiningDate);
 		eployment.setWorkedTill(workedTill);
 		eployment.setJobProfile(jobProfile);
+		eployment.setCompanyLocation(companyLocation);
 
 		model.addAttribute("eployment", eployment);
 		employmentService.saveAllFile(employmentModel);
-		return "redirect:/home/form";
+		return "redirect:/home/resume";
 	}
 
 	@PostMapping("/education")
@@ -159,7 +161,7 @@ public class FileController {
 
 		model.addAttribute("education", education);
 		educationService.saveAllFile(educationModel);
-		return "redirect:/home/form";
+		return "redirect:/home/resume";
 	}
 
 	@PostMapping("/image")
@@ -170,7 +172,7 @@ public class FileController {
 		ProfileImageModel profileImage = new ProfileImageModel();
 		profileImage.setImage(imageFile.getBytes());
 		profileImageService.saveDatabases(profileImage);
-		return "redirect:/home/form";
+		return "redirect:/home/resume";
 	}
 
 	@PostMapping("/project")
@@ -187,10 +189,11 @@ public class FileController {
 		project.setWorkedTime(workedTime);
 		project.setWorkedFrom(workedFrom);
 		project.setDetailsOfroject(detailsOfroject);
+
 		model.addAttribute("project", project);
 
 		projectService.saveFile(projectModel);
-		return "redirect:/home/form";
+		return "redirect:/home/resume";
 	}
 
 	@PostMapping("/headline")
@@ -208,7 +211,7 @@ public class FileController {
 		model.addAttribute("resumeheadline", resumeheadline);
 		resumeHedlineService.saveAllFiles(headlineModel);
 
-		return "redirect:/home/form";
+		return "redirect:/home/resume";
 	}
 
 	@PostMapping("/itSkills")
@@ -230,7 +233,7 @@ public class FileController {
 		model.addAttribute("itSkills", itSkills);
 		itSkillsService.saveFile(itSkillsModel);
 
-		return "redirect:/home/form";
+		return "redirect:/home/resume";
 	}
 
 	@PostMapping("/keySkills")
@@ -244,6 +247,6 @@ public class FileController {
 		model.addAttribute("keySkills", keySkills);
 		keySkillService.saveAllFile(keySkillsModel);
 
-		return "redirect:/home/form";
+		return "redirect:/home/resume";
 	}
 }

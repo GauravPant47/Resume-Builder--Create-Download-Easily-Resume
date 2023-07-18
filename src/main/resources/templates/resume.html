@@ -64,39 +64,36 @@
                     <a href="#"><i class="fa fa-pencil"></i> Profile Photo</a>
                 </div>
             </div>
-            <div class="container-right">
+            <div class="container-right" th:each="profile : ${profile}">
                 <!-- <a href="#"><i class="fa fa-pencil" aria-hidden="true"></i></a> -->
                 <div class="space">
-                    <h5>Full Name</h5>
+                    <h5 th:text="${profile.name}">Full Name</h5>
                     <i id="addProfileBtn" class="fa fa-pencil" aria-hidden="true"></i>
                     <!-- <a href="" id="addHeadlineBtn" style="color: blue;">Add Education</a> -->
                     <!--	<button id="addHeadlineBtn">Add Education</button>-->
                     <div id="cartProfile" class="hidden">
                         <!-- <h2>Cart</h2> -->
-                        <form id="cartForm" action="" th:action="@{/home/submit}" method="post">
+                        <form id="cartForm" action="" th:action="@{/home/profile}" th:object="${profile}" method="post">
                             <h2 style="margin:15px 0 15px">Profile Details </h2>
                             <div class="form-group">
                                 <label for="title">Name :</label>
-                                <input type="name" th:field="*{profile.name}" placeholder="Name" />
+                                <input type="text" th:field="*{name}" placeholder="Name" />
                             </div>
                             <div class="form-group">
                                 <label for="college">Total Experience :</label>
-                                <input type="text" th:field="*{profile.totalExperience}"
-                                    placeholder="Total Experience" />
+                                <input type="text" th:field="*{totalExperience}" placeholder="Total Experience" />
                             </div>
                             <div class="form-group">
                                 <label for="location">Current Location :</label>
-                                <input type="location" th:field="*{profile.currentLocation}"
-                                    placeholder="Current Location" />
+                                <input type="text" th:field="*{currentLocation}" placeholder="Current Location" />
                             </div>
                             <div class="form-group">
                                 <label for="course">Mobile Number :</label>
-                                <input type="text" th:field="*{profile.mobileNumber}"
-                                    placeholder="Mobile Number"></input>
+                                <input type="number" th:field="*{mobileNumber}" placeholder="Mobile Number"></input>
                             </div>
                             <div class="form-group">
                                 <label for="course">Email Address :</label>
-                                <input type="email" th:field="*{profile.emailAddress}" placeholder="Email Address" />
+                                <input type="email" th:field="*{emailAddress}" placeholder="Email Address" />
                             </div>
                             <div class="form-group">
                                 <button class="btn btn-c1" type="submit">Submit</button>
@@ -108,13 +105,17 @@
                 <hr>
                 <div class="user-details">
                     <div class="user-details-left">
-                        <p><i class="fa fa-map-marker" aria-hidden="true"></i> Current Location</p>
-                        <p><i class="fa fa-briefcase" aria-hidden="true"></i> Total Experience</p>
+                        <p th:text="${profile.currentLocation}"><i class="fa fa-map-marker" aria-hidden="true"></i>
+                            Current Location</p>
+                        <p th:text="${profile.totalExperience}"><i class="fa fa-briefcase" aria-hidden="true"></i> Total
+                            Experience</p>
                     </div>
                     <hr>
                     <div class="user-details-right">
-                        <p><i class="fa fa-mobile" aria-hidden="true"></i> Mobile Number</p>
-                        <p><i class="fa fa-envelope" aria-hidden="true"></i> Email Address</p>
+                        <p th:text="${profile.mobileNumber}"><i class="fa fa-mobile" aria-hidden="true"></i> Mobile
+                            Number</p>
+                        <p th:text="${profile.emailAddress}"><i class="fa fa-envelope" aria-hidden="true"></i> Email
+                            Address</p>
                     </div>
                 </div>
             </div>
@@ -148,7 +149,7 @@
                     </table>
                 </div>
                 <div class="right-cart">
-                    <div class="right-cart-hedline">
+                    <div class="right-cart-hedline" th:each="resumeheadline : ${resumeheadline}">
                         <div class="headline" id="hedline">
                             <div class="space">
                                 <h3>Resume headline</h3>
@@ -157,12 +158,13 @@
                                 <!-- <button id="addHeadlineBtn">Add Education</button> -->
                                 <div id="cart" class="hidden">
                                     <!-- <h2>Cart</h2> -->
-                                    <form id="cartForm" action="" th:action="@{/home/headline}" method="post">
+                                    <form id="cartForm" action="" th:action="@{/home/headline}"
+                                        th:object="${resumeheadline}" method="post">
                                         <h2 style="margin:15px 0 15px">Resume headline </h2>
                                         <div class="form-group">
                                             <!-- <label for="title">Name :</label> -->
-                                            <input type="name" th:field="*{resumeheadline.headline}"
-                                                placeholder="Name" />
+                                            <textarea type="text" th:field="*{headline}"
+                                                placeholder="Enter resume headline"></textarea>
                                         </div>
                                         <div class="form-group">
                                             <button class="btn btn-c1" type="submit">Submit</button>
@@ -172,11 +174,12 @@
                                 </div>
                             </div>
                         </div>
-                        <p>Secure a responsible career opportunity to fully utilize my training and skills, while making
+                        <p th:text="${resumeheadline.headline}">Secure a responsible career opportunity to fully utilize
+                            my training and skills, while making
                             a
                             significant contribution to the success of the company.</p>
                     </div>
-                    <div class="right-cart-hedline">
+                    <div class="right-cart-hedline" th:each="keySkills : ${keySkills}">
                         <div class="headline" id="skills">
                             <div class="space">
                                 <h3>Key skills</h3>
@@ -185,13 +188,13 @@
                                 <!-- <button id="addEducationBtn">Add Education</button> -->
                                 <div id="cartskills" class="hidden">
                                     <!-- <h2>Cart</h2> -->
-                                    <form id="cartForm" action="" th:action="@{/home/education}"
-                                        th:object="${education}" method="post">
+                                    <form id="cartForm" action="" th:action="@{/home/keySkills}"
+                                        th:object="${keySkills}" method="post">
                                         <h2 style="margin:15px 0 15px">Key skills </h2>
 
                                         <div class="form-group">
                                             <!-- <label for="title">Name :</label> -->
-                                            <input type="name" th:field="*{title}" placeholder="Name" />
+                                            <input type="text" th:field="*{skill}" placeholder="Enter Skills" />
                                         </div>
                                         <div class="form-group">
                                             <button class="btn btn-c1" type="submit">Submit</button>
@@ -202,13 +205,10 @@
                             </div>
                         </div>
                         <div class="btn-type">
-                            <p>Redis</p>
-                            <p>MySQL</p>
-                            <p>Mogodb</p>
-                            <p>Java Script</p>
+                            <p th:text="${keySkills.skill}"></p>
                         </div>
                     </div>
-                    <div class="right-cart-hedline">
+                    <div class="right-cart-hedline" th:each="education : ${education}">
                         <div class="headline" id="education">
                             <div class="space">
                                 <a href="">Education <i class="fa fa-pencil" aria-hidden="true"></i>
@@ -217,32 +217,33 @@
                                 <button id="addEducationBtn">Add Education</button>
                                 <div id="cartEducation" class="hidden">
                                     <!-- <h2>Cart</h2> -->
-                                    <form id="cartForm" action="" th:action="@{/home/submit}" method="post">
+                                    <form id="cartForm" action="" th:action="@{/home/education}"
+                                        th:object="${education}" method="post">
                                         <h2 style="margin:15px 0 15px">Education </h2>
 
                                         <div class="form-group">
-                                            <label for="title">Name :</label>
-                                            <input type="name" th:field="*{profile.name}" placeholder="Name" />
+                                            <label for="title">Education Name :</label>
+                                            <input type="text" th:field="*{title}" placeholder="Education" />
                                         </div>
                                         <div class="form-group">
-                                            <label for="college">Total Experience :</label>
-                                            <input type="text" th:field="*{profile.totalExperience}"
-                                                placeholder="Total Experience" />
+                                            <label for="college">University/Institute :</label>
+                                            <input type="text" th:field="*{collage}"
+                                                placeholder="Enter your university and institute name" />
                                         </div>
                                         <div class="form-group">
-                                            <label for="location">Current Location :</label>
-                                            <input type="location" th:field="*{profile.currentLocation}"
-                                                placeholder="Current Location" />
+                                            <label for="location">Location :</label>
+                                            <input type="text" th:field="*{location}"
+                                                placeholder="Enter your collage location" />
                                         </div>
                                         <div class="form-group">
-                                            <label for="course">Mobile Number :</label>
-                                            <input type="text" th:field="*{profile.mobileNumber}"
-                                                placeholder="Mobile Number"></input>
+                                            <label for="course">Course :</label>
+                                            <input type="text" th:field="*{course}"
+                                                placeholder="Enter Your course name"></input>
                                         </div>
                                         <div class="form-group">
-                                            <label for="course">Email Address :</label>
-                                            <input type="email" th:field="*{profile.emailAddress}"
-                                                placeholder="Email Address" />
+                                            <label for="course">Description :</label>
+                                            <textarea type="text" th:field="*{description}"
+                                                placeholder="Enter description"></textarea>
                                         </div>
                                         <div class="form-group">
                                             <button class="btn btn-c1" type="submit">Submit</button>
@@ -253,14 +254,14 @@
                             </div>
                         </div>
                         <div class="cart-style">
-                            <a class="right color">Title</a>
-                            <p class="right">College</p>
-                            <p class="right">Location</p>
-                            <p class="right">Course</p>
-                            <p class="right">Description</p>
+                            <a class="right color" th:text="${education.title}">Title</a>
+                            <p class="right" th:text="${education.collage}">College</p>
+                            <p class="right" th:text="${education.location}">Location</p>
+                            <p class="right" th:text="${education.course}">Course</p>
+                            <p class="right" th:text="${education.description}">Description</p>
                         </div>
                     </div>
-                    <div class="right-cart-hedline">
+                    <div class="right-cart-hedline" th:each="eployment : ${eployment}">
                         <div class="headline" id="employment">
                             <div class="space">
                                 <a href="">Experience <i class="fa fa-pencil" aria-hidden="true"></i>
@@ -269,32 +270,70 @@
                                 <button id="addExperienceBtn">Add Experience</button>
                                 <div id="cartExperience" class="hidden">
                                     <!-- <h2>Cart</h2> -->
-                                    <form id="cartForm" action="" th:action="@{/home/submit}" method="post">
+                                    <form id="cartForm" action="" th:action="@{/home/eployment}"
+                                        th:object="${eployment}" method="post">
                                         <h2 style="margin:15px 0 15px">Experience </h2>
 
                                         <div class="form-group">
-                                            <label for="title">Name :</label>
-                                            <input type="name" th:field="*{profile.name}" placeholder="Name" />
+                                            <label for="title">Employment Type :</label>
+                                            <select name="type" id="type" th:field="*{employmentType}">
+                                                <option value="Select">Select</option>
+                                                <option value="Full-Name">Full-Name</option>
+                                                <option value="Intership">Intership</option>
+                                            </select>
                                         </div>
                                         <div class="form-group">
                                             <label for="college">Total Experience :</label>
-                                            <input type="text" th:field="*{profile.totalExperience}"
-                                                placeholder="Total Experience" />
+                                            <select id="year" th:field="*{totalExperience}">
+                                                <option value="select">Select</option>
+                                                <option value="0 Year">0 Year</option>
+                                                <option value="1 Year">1 Year</option>
+                                                <option value="2 Year">2 Year</option>
+                                                <option value="3 Year">3 Year</option>
+                                                <option value="4 Year">4 Year</option>
+                                                <option value="5 Year">5 Year</option>
+                                            </select>
+                                            <select id="month" th:field="*{totalExperience}">
+                                                <option value="Month">Month</option>
+                                                <option value="1 Month">1 Month</option>
+                                                <option value="2 Month">2 Month</option>
+                                                <option value="3 Month">3 Month</option>
+                                                <option value="4 Month">4 Month</option>
+                                                <option value="5 Month">5 Month</option>
+                                                <option value="6 Month">6 Month</option>
+                                                <option value="7 Month">7 Month</option>
+                                                <option value="8 Month">8 Month</option>
+                                                <option value="9 Month">9 Month</option>
+                                                <option value="10 Month">10 Month</option>
+                                                <option value="11 Month">11 Month</option>
+                                                <option value="12 Month">12 Month</option>
+                                            </select>
                                         </div>
                                         <div class="form-group">
-                                            <label for="location">Current Location :</label>
-                                            <input type="location" th:field="*{profile.currentLocation}"
-                                                placeholder="Current Location" />
+                                            <label for="location">Company Name :</label>
+                                            <input type="text" th:field="*{companyName}" placeholder="Company Name" />
                                         </div>
                                         <div class="form-group">
-                                            <label for="course">Mobile Number :</label>
-                                            <input type="text" th:field="*{profile.mobileNumber}"
-                                                placeholder="Mobile Number"></input>
+                                            <label for="location">Company Location :</label>
+                                            <input type="text" th:field="*{companyLocation}"
+                                                placeholder="Company Location" />
                                         </div>
                                         <div class="form-group">
-                                            <label for="course">Email Address :</label>
-                                            <input type="email" th:field="*{profile.emailAddress}"
-                                                placeholder="Email Address" />
+                                            <label for="course">Designation :</label>
+                                            <input type="text" th:field="*{designation}"
+                                                placeholder="ENter your designation"></input>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="course">Joining Date :</label>
+                                            <input type="date" th:field="*{joiningDate}" />
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="course">Worked Till :</label>
+                                            <input type="date" th:field="*{workedTill}" />
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="course">Job Profile :</label>
+                                            <input type="text" th:field="*{jobProfile}" placeholder="Email Address" />
                                         </div>
                                         <div class="form-group">
                                             <button class="btn btn-c1" type="submit">Submit</button>
@@ -305,14 +344,17 @@
                             </div>
                         </div>
                         <div class="cart-style">
-                            <a class="right color">Title</a>
-                            <p class="right">Company Name</p>
-                            <p class="right">Location</p>
-                            <p class="right">Working Year</p>
-                            <p class="right">Description</p>
+                            <a class="right color" th:text="${eployment.employmentType}">Title</a>
+                            <p class="right" th:text="${eployment.totalExperience}">Total Experience/p>
+                            <p class="right" th:text="${eployment.companyName}">Company Name</p>
+                            <p class="right" th:text="${eployment.companyLocation}">Location</p>
+                            <p class="right" th:text="${eployment.designation}">Working Year</p>
+                            <p class="right" th:text="${eployment.joiningDate}">Description</p>
+                            <p class="right" th:text="${eployment.workedTill}">Worked Till</p>
+                            <p class="right" th:text="${eployment.jobProfile}">Job Profile</p>
                         </div>
                     </div>
-                    <div class="right-cart-hedline">
+                    <div class="right-cart-hedline" th:each="project : ${project}">
                         <div class="headline" id="project">
                             <div class="space">
                                 <a href="">Project <i class="fa fa-pencil" aria-hidden="true"></i>
@@ -321,32 +363,108 @@
                                 <button id="addProjectBtn">Add Project</button>
                                 <div id="cartProject" class="hidden">
                                     <!-- <h2>Cart</h2> -->
-                                    <form id="cartForm" action="" th:action="@{/home/submit}" method="post">
+                                    <form id="cartForm" action="" th:action="@{/home/project}" th:object="${project}"
+                                        method="post">
                                         <h2 style="margin:15px 0 15px">Project </h2>
-
                                         <div class="form-group">
-                                            <label for="title">Name :</label>
-                                            <input type="name" th:field="*{profile.name}" placeholder="Name" />
+                                            <label for="title">Proeject Title :</label>
+                                            <input id="text" type="text" th:field="*{proejectTitle}"
+                                                placeholder="Proeject Title" />
                                         </div>
                                         <div class="form-group">
-                                            <label for="college">Total Experience :</label>
-                                            <input type="text" th:field="*{profile.totalExperience}"
-                                                placeholder="Total Experience" />
+                                            <label for="title">Worked Time :</label>
+                                            <select id="year" th:field="*{workedTime}">
+                                                <option value="select">Select</option>
+                                                <option value="2023">2023</option>
+                                                <option value="2022">2022</option>
+                                                <option value="2021">2021</option>
+                                                <option value="2020">2020</option>
+                                                <option value="2019">2019</option>
+                                                <option value="2018">2018</option>
+                                                <option value="2017">2017</option>
+                                                <option value="2016">2016</option>
+                                                <option value="2015">2015</option>
+                                                <option value="2014">2014</option>
+                                                <option value="2013">2013</option>
+                                                <option value="2012">2012</option>
+                                                <option value="2011">2011</option>
+                                                <option value="2010">2010</option>
+                                                <option value="2009">2009</option>
+                                                <option value="2008">2008</option>
+                                                <option value="2007">2007</option>
+                                                <option value="2006">2006</option>
+                                                <option value="2005">2005</option>
+                                                <option value="2004">2004</option>
+                                                <option value="2003">2003</option>
+                                                <option value="2002">2002</option>
+                                                <option value="2001">2001</option>
+                                                <option value="2000">2000</option>
+                                            </select>
+                                            <select id="month" th:field="*{workedTime}">
+                                                <option value="select month">Select Month</option>
+                                                <option value="January">January</option>
+                                                <option value="February">February</option>
+                                                <option value="March">March</option>
+                                                <option value="April">April</option>
+                                                <option value="May">May</option>
+                                                <option value="June">June</option>
+                                                <option value="July">July</option>
+                                                <option value="August">August</option>
+                                                <option value="September">September</option>
+                                                <option value="October">October</option>
+                                                <option value="November">November</option>
+                                                <option value="December">December</option>
+                                            </select>
                                         </div>
                                         <div class="form-group">
-                                            <label for="location">Current Location :</label>
-                                            <input type="location" th:field="*{profile.currentLocation}"
-                                                placeholder="Current Location" />
+                                            <label for="college">Wrked From:</label>
+                                            <select id="year" th:field="*{workedFrom}">
+                                                <option value="select">Select</option>
+                                                <option value="2023">2023</option>
+                                                <option value="2022">2022</option>
+                                                <option value="2021">2021</option>
+                                                <option value="2020">2020</option>
+                                                <option value="2019">2019</option>
+                                                <option value="2018">2018</option>
+                                                <option value="2017">2017</option>
+                                                <option value="2016">2016</option>
+                                                <option value="2015">2015</option>
+                                                <option value="2014">2014</option>
+                                                <option value="2013">2013</option>
+                                                <option value="2012">2012</option>
+                                                <option value="2011">2011</option>
+                                                <option value="2010">2010</option>
+                                                <option value="2009">2009</option>
+                                                <option value="2008">2008</option>
+                                                <option value="2007">2007</option>
+                                                <option value="2006">2006</option>
+                                                <option value="2005">2005</option>
+                                                <option value="2004">2004</option>
+                                                <option value="2003">2003</option>
+                                                <option value="2002">2002</option>
+                                                <option value="2001">2001</option>
+                                                <option value="2000">2000</option>
+                                            </select>
+                                            <select id="month" th:field="*{workedFrom}">
+                                                <option value="select month">Select Month</option>
+                                                <option value="January">January</option>
+                                                <option value="February">February</option>
+                                                <option value="March">March</option>
+                                                <option value="April">April</option>
+                                                <option value="May">May</option>
+                                                <option value="June">June</option>
+                                                <option value="July">July</option>
+                                                <option value="August">August</option>
+                                                <option value="September">September</option>
+                                                <option value="October">October</option>
+                                                <option value="November">November</option>
+                                                <option value="December">December</option>
+                                            </select>
                                         </div>
                                         <div class="form-group">
-                                            <label for="course">Mobile Number :</label>
-                                            <input type="text" th:field="*{profile.mobileNumber}"
-                                                placeholder="Mobile Number"></input>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="course">Email Address :</label>
-                                            <input type="email" th:field="*{profile.emailAddress}"
-                                                placeholder="Email Address" />
+                                            <label for="text">Details Of Project :</label>
+                                            <textarea type="text" th:field="*{detailsOfroject}"
+                                                placeholder="Enter your project details"></textarea>
                                         </div>
                                         <div class="form-group">
                                             <button class="btn btn-c1" type="submit">Submit</button>
@@ -357,13 +475,13 @@
                             </div>
                         </div>
                         <div class="cart-style">
-                            <a class="right color">Project title</a>
-                            <p class="right">Worked till</p>
-                            <p class="right">Worked from</p>
-                            <p class="right">Details of project</p>
+                            <a class="right color" th:text="${project.proejectTitle}">Project title</a>
+                            <p class="right" th:text="${project.workedTime}">Worked till</p>
+                            <p class="right" th:text="${project.workedFrom}">Worked from</p>
+                            <p class="right" th:text="${project.detailsOfroject}">Details of project</p>
                         </div>
                     </div>
-                    <div class="right-cart-hedline">
+                    <div class="right-cart-hedline" th:each="itSkills : ${itSkills}">
                         <div class="headline" id="itskil">
                             <div class="space">
                                 <a href="">IT Skill <i class="fa fa-pencil" aria-hidden="true"></i>
@@ -372,31 +490,78 @@
                                 <button id="addITSkillBtn">Add Skill</button>
                                 <div id="cartITSkill" class="hidden">
                                     <!-- <h2>Cart</h2> -->
-                                    <form id="cartForm" action="" th:action="@{/home/submit}" method="post">
+                                    <form id="cartForm" action="" th:action="@{/home/itSkills}" th:object="${itSkills}"
+                                        method="post">
                                         <h2 style="margin:15px 0 15px">IT Skill </h2>
                                         <div class="form-group">
-                                            <label for="title">Name :</label>
-                                            <input type="name" th:field="*{profile.name}" placeholder="Name" />
+                                            <label for="title">Skills :</label>
+                                            <input type="text" th:field="*{skills}" placeholder="Skills" />
                                         </div>
                                         <div class="form-group">
-                                            <label for="college">Total Experience :</label>
-                                            <input type="text" th:field="*{profile.totalExperience}"
-                                                placeholder="Total Experience" />
+                                            <label for="college">Version :</label>
+                                            <!-- <input type="text" th:field="*{version}" placeholder="Version" /> -->
+                                            <select name="years" id="date" th:field="*{version}">
+                                                <option value="select">Select</option>
+                                                <option value="2023">2023</option>
+                                                <option value="2022">2022</option>
+                                                <option value="2021">2021</option>
+                                                <option value="2020">2020</option>
+                                                <option value="2019">2019</option>
+                                                <option value="2018">2018</option>
+                                                <option value="2017">2017</option>
+                                                <option value="2016">2016</option>
+                                                <option value="2015">2015</option>
+                                                <option value="2014">2014</option>
+                                                <option value="2013">2013</option>
+                                                <option value="2012">2012</option>
+                                                <option value="2011">2011</option>
+                                                <option value="2010">2010</option>
+                                                <option value="2009">2009</option>
+                                                <option value="2008">2008</option>
+                                                <option value="2007">2007</option>
+                                                <option value="2006">2006</option>
+                                                <option value="2005">2005</option>
+                                                <option value="2004">2004</option>
+                                                <option value="2003">2003</option>
+                                                <option value="2002">2002</option>
+                                                <option value="2001">2001</option>
+                                                <option value="2000">2000</option>
+                                            </select>
                                         </div>
                                         <div class="form-group">
-                                            <label for="location">Current Location :</label>
-                                            <input type="location" th:field="*{profile.currentLocation}"
-                                                placeholder="Current Location" />
+                                            <label for="location">Last Used :</label>
+                                            <!-- <input type="text" th:field="*{lastused}"
+                                                placeholder="Last Used" /> -->
+                                            <select name="type" form="year" id="year" th:field="*{lastused}">
+                                                <option value="select">Select</option>
+                                                <option value="0 Year">0 Year</option>
+                                                <option value="1 Year">1 Year</option>
+                                                <option value="2 Year">2 Year</option>
+                                                <option value="3 Year">3 Year</option>
+                                                <option value="4 Year">4 Year</option>
+                                                <option value="5 Year">5 Year</option>
+                                            </select>
+                                            <select name="type" form="month" id="month" th:field="*{lastused}">
+                                                <option value="Month">Month</option>
+                                                <option value="0 Month">0 Month</option>
+                                                <option value="1 Month">1 Month</option>
+                                                <option value="2 Month">2 Month</option>
+                                                <option value="3 Month">3 Month</option>
+                                                <option value="4 Month">4 Month</option>
+                                                <option value="5 Month">5 Month</option>
+                                                <option value="6 Month">6 Month</option>
+                                                <option value="7 Month">7 Month</option>
+                                                <option value="8 Month">8 Month</option>
+                                                <option value="9 Month">9 Month</option>
+                                                <option value="10 Month">10 Month</option>
+                                                <option value="11 Month">11 Month</option>
+                                                <option value="12 Month">12 Month</option>
+                                            </select>
                                         </div>
                                         <div class="form-group">
-                                            <label for="course">Mobile Number :</label>
-                                            <input type="text" th:field="*{profile.mobileNumber}"
-                                                placeholder="Mobile Number"></input>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="course">Email Address :</label>
-                                            <input type="email" th:field="*{profile.emailAddress}"
-                                                placeholder="Email Address" />
+                                            <label for="course">Experience :</label>
+                                            <input type="text" th:field="*{experience}"
+                                                placeholder="Experience"></input>
                                         </div>
                                         <div class="form-group">
                                             <button class="btn btn-c1" type="submit">Submit</button>
@@ -415,28 +580,10 @@
                                     <th>Experience</th>
                                 </tr>
                                 <tr>
-                                    <td>HTML</td>
-                                    <td>5</td>
-                                    <td>2021</td>
-                                    <td>3 years</td>
-                                </tr>
-                                <tr>
-                                    <td>CSS</td>
-                                    <td>3</td>
-                                    <td>2022</td>
-                                    <td>2 years</td>
-                                </tr>
-                                <tr>
-                                    <td>JavaScript</td>
-                                    <td>ES6</td>
-                                    <td>2023</td>
-                                    <td>1 year</td>
-                                </tr>
-                                <tr>
-                                    <td>Python</td>
-                                    <td>3.9</td>
-                                    <td>2022</td>
-                                    <td>2 years</td>
+                                    <td th:text="${itSkills.skills}">HTML</td>
+                                    <td th:text="${itSkills.version}">5</td>
+                                    <td th:text="${itSkills.lastused}">2021</td>
+                                    <td th:text="${itSkills.experience}">3 years</td>
                                 </tr>
                             </table>
                         </div>

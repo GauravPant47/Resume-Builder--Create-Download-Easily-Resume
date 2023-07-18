@@ -20,6 +20,14 @@ public class EmploymentModel {
 	private String joiningDate;	
 	private String workedTill;	
 	private String jobProfile;
+	private String companyLocation;
+	
+	public String getCompanyLocation() {
+		return companyLocation;
+	}
+	public void setCompanyLocation(String companyLocation) {
+		this.companyLocation = companyLocation;
+	}
 	public Long getId() {
 		return id;
 	}
