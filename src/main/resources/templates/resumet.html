@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Create Professional Resume And Download Free</title>
+    <link rel="stylesheet" th:href="@{/css/homeStyle.css}" />
+    <link rel="stylesheet" th:href="@{/css/resumet.css}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <!-- Create a navbar -->
+    <nav class="navbar">
+        <div class="navbar-left">
+            <a th:href="@{/home}">
+                <img th:src="@{'/images/logo.jpg'}" alt="Logo">
+            </a>
+        </div>
+        <div class="navbar-center">
+            <ul class="navbar-menu">
+                <li><a th:href="@{/home}">Home</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">Tools
+                        <i class="fa fa-sort-desc" aria-hidden="true"></i>
+                    </a>
+                    <div class="dropdown-content">
+                        <a th:href="@{/home/resume}">Resume</a>
+                        <a href="#">C.V</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="profile-dropdown">
+            <div class="dropbtn">
+                <img th:src="@{'/images/network.png'}" alt="">
+            </div>
+            <div class="profile-content">
+                <a th:href="@{/home}">Home</a>
+                <a th:href="@{/home/form}">Form</a>
+                <a th:href="@{/home/registra}">Sign Up</a>
+                <a th:href="@{/home/login}">Log in</a>
+            </div>
+        </div>
+    </nav>
+    <!-- navbar end -->
+
+    <!-- resumeF Form -->
+    <div class="button">
+        <a href="">Download</a>
+    </div>
+    <div class="container">
+
+        <!-- left side div contaner -->
+        <div class="left_Side">
+            <div class="profileText">
+                <div class="imgBx">
+                    <img src="https://private-user-images.githubusercontent.com/115808373/252128008-4873b285-8053-4d05-9860-a154c41706f2.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTEiLCJleHAiOjE2ODk3ODM2OTQsIm5iZiI6MTY4OTc4MzM5NCwicGF0aCI6Ii8xMTU4MDgzNzMvMjUyMTI4MDA4LTQ4NzNiMjg1LTgwNTMtNGQwNS05ODYwLWExNTRjNDE3MDZmMi5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBSVdOSllBWDRDU1ZFSDUzQSUyRjIwMjMwNzE5JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDIzMDcxOVQxNjE2MzRaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1mY2YyYzQxZGI1NDZkNGUyYjdlN2UxZDVjZGRmODFjOTY1NTMwYmY4ODRkYWQ1N2Q1YTZjZTM3ZjY5MmQ2YTBkJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZhY3Rvcl9pZD0wJmtleV9pZD0wJnJlcG9faWQ9MCJ9.znwVyJlIwXs7Uzdw24Kyz6Qt52E4s-3CpuUEPWl1p-g"
+                        alt="">
+                </div>
+                <h2>Gaurav pant <br><span>Web Developer</span></h2>
+            </div>
+            <div class="contactInfo">
+                <h3 class="title">Contact Info</h3>
+                <ul>
+                    <li>
+                        <span class="icon"><i class="fa fa-phone" aria-hidden="true"></i></span>
+                        <span class="text">+91 955 0554 608</span>
+                    </li>
+                    <li>
+                        <span class="icon"><i class="fa fa-envelope-o" aria-hidden="true"></i></span>
+                        <span class="text">gauravpant@gmail.com</span>
+                    </li>
+                    <li>
+                        <span class="icon"><i class="fa fa-globe" aria-hidden="true"></i></span>
+                        <span class="text">www.mywebsite.com</span>
+                    </li>
+                    <li>
+                        <span class="icon"><i class="fa fa-linkedin" aria-hidden="true"></i></span>
+                        <span class="text">www.linkedin.com/me</span>
+                    </li>
+                    <li>
+                        <span class="icon"><i class="fa fa-map-marker" aria-hidden="true"></i></span>
+                        <span class="text">Patna, Bihar, India</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="contactInfo education">
+                <h3 class="title">Education</h3>
+                <ul>
+                    <li>
+                        <h5>2010 - 2013</h5>
+                        <h4>Master Degree in Computer Science</h4>
+                        <h4>University Name</h4>
+                    </li>
+                    <li>
+                        <h5>2007 - 2010</h5>
+                        <h4>Bachelor Degree in Computer Science</h4>
+                        <h4>University Name</h4>
+                    </li>
+                    <li>
+                        <h5>1997 - 2007</h5>
+                        <h4>Matriculation</h4>
+                        <h4>University Name</h4>
+                    </li>
+                </ul>
+            </div>
+            <div class="contactInfo language">
+                <h3 class="title">LANGUAGES</h3>
+                <ul>
+                    <li>
+                        <span class="text">English</span>
+                        <span class="percent">
+                            <div style="width: 90%;"></div>
+                        </span>
+                    </li>
+                    <li>
+                        <span class="text">Hindi</span>
+                        <span class="percent">
+                            <div style="width: 85%;"></div>
+                        </span>
+                    </li>
+                    <li>
+                        <span class="text">Spanish</span>
+                        <span class="percent">
+                            <div style="width:48%;"></div>
+                        </span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- right side div contaner -->
+        <div class="right_Side">
+            <div class="about">
+                <h2 class="title2">Profile</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, temporibus eum? Sit voluptatibus
+                    possimus doloremque unde! Magni quas suscipit delectus dolorem culpa qui impedit nam distinctio
+                    autem! Pariatur doloribus, exercitationem ratione assumenda sequi corporis id nam repellat ullam
+                    rerum in nisi consectetur blanditiis neque! Excepturi, quas deserunt, eum laboriosam ducimus ad modi
+                    in officiis consectetur dolorum quidem sit. Voluptatibus eos itaque sapiente placeat voluptatum
+                    blanditiis rem at aliquid aspernatur laboriosam. Facilis soluta ullam similique architecto quam,
+                    itaque accusantium sequi magnam facere corrupti eveniet ratione distinctio possimus fugiat eos.
+                    Accusantium optio reprehenderit animi aspernatur ducimus error cumque eos reiciendis modi soluta.
+                </p>
+            </div>
+            <div class="about">
+                <h2 class="title2">Experience</h2>
+                <div class="box">
+                    <div class="year_company">
+                        <h5>2019 - Present</h5>
+                        <h5>Company Name</h5>
+                    </div>
+                    <div class="text">
+                        <h4>Senior UX Designer</h4>
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odit molestias sunt asperiores
+                            quisquam, quod voluptate?</p>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="year_company">
+                        <h5>2019 - Present</h5>
+                        <h5>Company Name</h5>
+                    </div>
+                    <div class="text">
+                        <h4>UX/UI Designer</h4>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Enim ad commodi mollitia nihil ex
+                            voluptas.</p>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="year_company">
+                        <h5>2017 - 2019</h5>
+                        <h5>Company Name</h5>
+                    </div>
+                    <div class="text">
+                        <h4>Junior UX Designer</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas quaerat atque est? Ducimus,
+                            sequi ipsa?</p>
+                    </div>
+                </div>
+            </div>
+            <div class="about skills">
+                <h2 class="title2">Professional Skills</h2>
+                <div class="box">
+                    <h4>Html</h4>
+                    <div class="percent">
+                        <div style="width: 95%;"></div>
+                    </div>
+                </div>
+                <div class="box">
+                    <h4>CSS</h4>
+                    <div class="percent">
+                        <div style="width: 85%;"></div>
+                    </div>
+                </div>
+                <div class="box">
+                    <h4>JavaScript</h4>
+                    <div class="percent">
+                        <div style="width: 90%;"></div>
+                    </div>
+                </div>
+                <div class="box">
+                    <h4>Java</h4>
+                    <div class="percent">
+                        <div style="width: 80%;"></div>
+                    </div>
+                </div>
+                <div class="box">
+                    <h4>Spring Boot</h4>
+                    <div class="percent">
+                        <div style="width: 70%;"></div>
+                    </div>
+                </div>
+                <div class="box">
+                    <h4>Mysql Database</h4>
+                    <div class="percent">
+                        <div style="width: 85%;"></div>
+                    </div>
+                </div>
+                <div class="box">
+                    <h4>Mongo db</h4>
+                    <div class="percent">
+                        <div style="width: 40%;"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="about interest">
+                <h2 class="title2">Interest</h2>
+                <ul>
+                    <li><i class="fa fa-gamepad" aria-hidden="true"></i> Gaming</li>
+                    <li><i class="fa fa-pagelines" aria-hidden="true"></i> Palnting</li>
+                    <li><i class="fa fa-file-video-o" aria-hidden="true"></i> Watching Movie</li>
+                    <li><i class="fa fa-music" aria-hidden="true"></i> Lessing Song</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- resumeF Form -->
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="resources">
+                <h3>Resources</h3>
+                <ul>
+                    <li><a th:href="@{/home/resume}">Resume</a></li>
+                    <li><a href="cv.html">CV</a></li>
+                </ul>
+            </div>
+            <div class="support">
+                <h3>Support</h3>
+                <ul>
+                    <li><a href="contact.html">Contact us</a></li>
+                    <li><a href="terms.html">Terms of Use</a></li>
+                    <li><a href="privacy.html">Privacy</a></li>
+                </ul>
+            </div>
+            <div class="additional-links">
+                <h3>Social Media</h3>
+                <ul>
+                    <li><a href="https://www.linkedin.com"><i class="fa fa-linkedin-square" aria-hidden="true"
+                                style="color: blue;"></i>
+                        </a></li>
+                    <li><a href="https://www.instagram.com"><i class="fa fa-instagram" aria-hidden="true"
+                                style="color: #C13584;"></i>
+                        </a></li>
+                    <li><a href="https://www.facebook.com"><i class="fa fa-facebook-square" aria-hidden="true"
+                                style="color: blue;"></i>
+                        </a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Footer -->
+</body>
+<script th:src="@{/js/jquery-3.7.0.min.js}"></script>
+<script th:src="@{/js/script.js}"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+
+</html>

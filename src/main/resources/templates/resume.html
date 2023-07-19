@@ -57,14 +57,14 @@
     <!-- main Content -->
     <div class="container">
         <div class="container-user" id="user">
-            <div class="container-left" th:each="profileImage : ${profileImage}">
-
-                <img th:src="@{/home/image/{id}(id=${profileImage.id})}" alt="" />
+            <div class="container-left">
+                <div th:each="profileImage : ${profileImage}">
+                    <img th:src="@{/home/image/{id}(id=${profileImage.id})}" alt="" />
+                </div>
                 <div class="hover-icon">
                     <i id="addPhotoBtn" class="fa fa-pencil" aria-hidden="true"> Profile Photo</i>
                     <div id="cartPhoto" class="hidden">
-                        <form action="" th:action="@{/home/image}" th:enctype="@{multipart/form-data}"
-                            method="post">
+                        <form action="" th:action="@{/home/image}" th:enctype="@{multipart/form-data}" method="post">
                             <div class="form-group">
                                 <input type="file" th:id="image" name="image" accept="profileimagemodel/*" required>
                             </div>
@@ -101,7 +101,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="course">Mobile Number :</label>
-                                <input type="number" th:field="*{mobileNumber}" placeholder="Mobile Number"></input>
+                                <input type="text" th:field="*{mobileNumber}" placeholder="Mobile Number"></input>
                             </div>
                             <div class="form-group">
                                 <label for="course">Email Address :</label>
@@ -161,7 +161,7 @@
                     </table>
                 </div>
                 <div class="right-cart">
-                    <div class="right-cart-hedline" th:each="resumeheadline : ${resumeheadline}">
+                    <div class="right-cart-hedline">
                         <div class="headline" id="hedline">
                             <div class="space">
                                 <h3>Resume headline</h3>
@@ -186,12 +186,11 @@
                                 </div>
                             </div>
                         </div>
-                        <p th:text="${resumeheadline.headline}">Secure a responsible career opportunity to fully utilize
-                            my training and skills, while making
-                            a
-                            significant contribution to the success of the company.</p>
+                        <div th:each="resumeheadline : ${resumeheadline}">
+                            <p th:text="${resumeheadline.headline}">Update Your Headline.</p>
+                        </div>
                     </div>
-                    <div class="right-cart-hedline" th:each="keySkills : ${keySkills}">
+                    <div class="right-cart-hedline">
                         <div class="headline" id="skills">
                             <div class="space">
                                 <h3>Key skills</h3>
@@ -216,11 +215,11 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="btn-type">
-                            <p th:text="${keySkills.skill}"></p>
+                        <div class="btn-type" th:each="keySkills : ${keySkills}">
+                            <p th:text="${keySkills.skill}">Skill</p>
                         </div>
                     </div>
-                    <div class="right-cart-hedline" th:each="education : ${education}">
+                    <div class="right-cart-hedline">
                         <div class="headline" id="education">
                             <div class="space">
                                 <a href="">Education <i class="fa fa-pencil" aria-hidden="true"></i>
@@ -265,7 +264,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="cart-style">
+                        <div class="cart-style" th:each="education : ${education}">
                             <a class="right color" th:text="${education.title}">Title</a>
                             <p class="right" th:text="${education.collage}">College</p>
                             <p class="right" th:text="${education.location}">Location</p>
@@ -273,7 +272,7 @@
                             <p class="right" th:text="${education.description}">Description</p>
                         </div>
                     </div>
-                    <div class="right-cart-hedline" th:each="eployment : ${eployment}">
+                    <div class="right-cart-hedline">
                         <div class="headline" id="employment">
                             <div class="space">
                                 <a href="">Experience <i class="fa fa-pencil" aria-hidden="true"></i>
@@ -355,7 +354,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="cart-style">
+                        <div class="cart-style" th:each="eployment : ${eployment}">
                             <a class="right color" th:text="${eployment.employmentType}">Title</a>
                             <p class="right" th:text="${eployment.totalExperience}">Total Experience/p>
                             <p class="right" th:text="${eployment.companyName}">Company Name</p>
@@ -366,7 +365,7 @@
                             <p class="right" th:text="${eployment.jobProfile}">Job Profile</p>
                         </div>
                     </div>
-                    <div class="right-cart-hedline" th:each="project : ${project}">
+                    <div class="right-cart-hedline">
                         <div class="headline" id="project">
                             <div class="space">
                                 <a href="">Project <i class="fa fa-pencil" aria-hidden="true"></i>
@@ -486,14 +485,14 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="cart-style">
+                        <div class="cart-style" th:each="project : ${project}">
                             <a class="right color" th:text="${project.proejectTitle}">Project title</a>
                             <p class="right" th:text="${project.workedTime}">Worked till</p>
                             <p class="right" th:text="${project.workedFrom}">Worked from</p>
                             <p class="right" th:text="${project.detailsOfroject}">Details of project</p>
                         </div>
                     </div>
-                    <div class="right-cart-hedline" th:each="itSkills : ${itSkills}">
+                    <div class="right-cart-hedline">
                         <div class="headline" id="itskil">
                             <div class="space">
                                 <a href="">IT Skill <i class="fa fa-pencil" aria-hidden="true"></i>
@@ -583,7 +582,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="tableitem">
+                        <div class="tableitem" th:each="itSkills : ${itSkills}">
                             <table>
                                 <tr>
                                     <th>Skills</th>

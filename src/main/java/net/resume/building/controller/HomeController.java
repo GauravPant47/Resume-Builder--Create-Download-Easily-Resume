@@ -13,14 +13,28 @@ public class HomeController {
 		return "index";
 	}
 
-//	@GetMapping("/resume")
-//	public String resumePage() {
-//		return "resume";
-//	}
+	// @GetMapping("/resume")
+	// public String resumePage() {
+	// return "resume";
+	// }
 
 	@GetMapping("/login")
 	public String loginPage() {
 		return "login";
 	}
 
+	@GetMapping("/resumef")
+	public String resumePage() {
+		return "resumef";
+	}
+
+	@GetMapping("/resumes")
+	public String resumesPage() {
+		return "resumes";
+	}
+
+	@GetMapping("/resumet")
+	public String resumetPage() {
+		return "resumet";
+	}
 }
