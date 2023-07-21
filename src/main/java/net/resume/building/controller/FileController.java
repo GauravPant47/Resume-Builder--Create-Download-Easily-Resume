@@ -1,6 +1,7 @@
 package net.resume.building.controller;
 
 import java.io.IOException;
+import java.util.List;
 import java.util.Optional;
 
 import javax.servlet.http.HttpServletRequest;
@@ -65,37 +66,57 @@ public class FileController {
 	@Autowired
 	private KeySkillService keySkillService;
 
+	private ProfileImageModel previousImage;
+	private ProfileDetails previousProfileDetails;
+	private ResumeHeadlineModel previousHeadlineModel;
+
 	@GetMapping("/resume")
 	public String showForm(Model model) {
-		ProfileDetails profile = new ProfileDetails();
+
+		List<ProfileDetails> profile = detailsService.getAllFiles();
 		model.addAttribute("profile", profile);
+		if (previousProfileDetails != null) {
+			model.addAttribute("name", previousProfileDetails.getName());
+			model.addAttribute("totalExperience", previousProfileDetails.getTotalExperience());
+			model.addAttribute("currentLocation", previousProfileDetails.getCurrentLocation());
+			model.addAttribute("mobileNumber", previousProfileDetails.getMobileNumber());
+			model.addAttribute("emailAddress", previousProfileDetails.getEmailAddress());
+		}
 
-		EmploymentModel employment = new EmploymentModel();
-		model.addAttribute("eployment", employment);
+		List<EmploymentModel> employments = employmentService.getAllfile();
+		model.addAttribute("employments", employments);
 
-		ProfileImageModel profileImage = new ProfileImageModel();
-		model.addAttribute("profileImage", profileImage);
+//		List<ProfileImageModel> profileImage = profileImageService.getAllFile();
+//		model.addAttribute("profileImage", profileImage);
 
-		EducationModel education = new EducationModel();
-		model.addAttribute("education", education);
+		if (previousImage != null) {
+			model.addAttribute("image", previousImage.getImage());
+		}
 
-		ITSkillsModel itSkills = new ITSkillsModel();
+		List<EducationModel> educations = educationService.getfiles();
+		model.addAttribute("educations", educations);
+
+		List<ITSkillsModel> itSkills = itSkillsService.getFiles();
 		model.addAttribute("itSkills", itSkills);
 
-		KeySkillsModel keySkills = new KeySkillsModel();
+		List<KeySkillsModel> keySkills = keySkillService.getAllFiles();
 		model.addAttribute("keySkills", keySkills);
 
-		ProjectModel project = new ProjectModel();
-		model.addAttribute("project", project);
+		List<ProjectModel> projects = projectService.getFilesAll();
+		model.addAttribute("projects", projects);
 
-		ResumeHeadlineModel resumeheadline = new ResumeHeadlineModel();
-		model.addAttribute("resumeheadline", resumeheadline);
+//		List<ResumeHeadlineModel> resumeheadline = resumeHedlineService.getAllFile();
+//		model.addAttribute("resumeheadline", resumeheadline);
+
+		if (previousHeadlineModel != null) {
+			model.addAttribute("headline", previousHeadlineModel.getHeadline());
+		}
 
 		return "resume";
 	}
 
 	@PostMapping("/profile")
-	public String submitForm(HttpServletRequest request, @ModelAttribute ProfileDetails profileDetails, Model model) {
+	public String submitForm(HttpServletRequest request, Model model, @ModelAttribute ProfileDetails profileDetails) {
 
 		// TODO: Profile Details and using the retrieved data and Save Data to updating
 
@@ -113,75 +134,41 @@ public class FileController {
 		profile.setEmailAddress(emailAddress);
 		profile.setTotalExperience(totalExperience);
 
-		model.addAttribute("profile", profile);
-		detailsService.saveListItem(profileDetails);
+		previousProfileDetails = profile;
 
+//		model.addAttribute("profile", profile);
+		detailsService.saveListItem(previousProfileDetails);
 		return "redirect:/home/resume";
 	}
 
 	@PostMapping("/eployment")
-	public String submitForm(HttpServletRequest request, Model model, @ModelAttribute EmploymentModel employmentModel) {
+	public String submitForm(Model model, @ModelAttribute EmploymentModel employmentModel) {
 		// TODO: Employment Model and using the retrieved data and Save Data to updating
-		String employmentType = request.getParameter("employmentType");
-		String totalexperience = request.getParameter("totalExperience");
-		String companyName = request.getParameter("companyName");
-		String designation = request.getParameter("designation");
-		String joiningDate = request.getParameter("joiningDate");
-		String workedTill = request.getParameter("workedTill");
-		String jobProfile = request.getParameter("jobProfile");
-		String companyLocation = request.getParameter("companyLocation");
 
-		EmploymentModel eployment = new EmploymentModel();
-
-		eployment.setEmploymentType(employmentType);
-		eployment.setTotalExperience(totalexperience);
-		eployment.setCompanyName(companyName);
-		eployment.setDesignation(designation);
-		eployment.setJoiningDate(joiningDate);
-		eployment.setWorkedTill(workedTill);
-		eployment.setJobProfile(jobProfile);
-		eployment.setCompanyLocation(companyLocation);
-
-		model.addAttribute("eployment", eployment);
 		employmentService.saveAllFile(employmentModel);
 		return "redirect:/home/resume";
 	}
 
 	@PostMapping("/education")
-	public String submitForm(HttpServletRequest request, Model model, @ModelAttribute EducationModel educationModel) {
+	public String submitForm(Model model, @ModelAttribute EducationModel educationModel) {
 
 		// TODO: EducationModel and using the retrieved data and Save Data to updating
-		String title = request.getParameter("title");
-		String collage = request.getParameter("collage");
-		String location = request.getParameter("location");
-		String course = request.getParameter("course");
-		String description = request.getParameter("description");
 
-		EducationModel education = new EducationModel();
-
-		education.setTitle(title);
-		education.setCollage(collage);
-		education.setLocation(location);
-		education.setCourse(course);
-		education.setDescription(description);
-
-		model.addAttribute("education", education);
 		educationService.saveAllFile(educationModel);
 		return "redirect:/home/resume";
 	}
 	// This here we can upload a image and show
 
 	@PostMapping("/image")
-	public String submitForm(@RequestParam("profileimagemodel") MultipartFile imageFile, Model model)
-			throws IOException {
+	public String submitForm(@RequestParam("image") MultipartFile imageFile, Model model) throws IOException {
 
 		// TODO: Profile Image Model and using the retrieved data and Save Data to
 		// updating
 		ProfileImageModel profileImage = new ProfileImageModel();
 		profileImage.setImage(imageFile.getBytes());
 
-		model.addAttribute("profileImage", profileImage);
-		profileImageService.saveDatabases(profileImage);
+		previousImage = profileImage;
+		profileImageService.saveDatabases(previousImage);
 
 		return "redirect:/home/resume";
 	}
@@ -201,21 +188,7 @@ public class FileController {
 	}
 
 	@PostMapping("/project")
-	public String submitForm(HttpServletRequest request, Model model, @ModelAttribute ProjectModel projectModel) {
-
-		// TODO: ProjectModel and using the retrieved data and Save Data to updating
-		String proejectTitle = request.getParameter("proejectTitle");
-		String workedTime = request.getParameter("workedTime");
-		String workedFrom = request.getParameter("workedFrom");
-		String detailsOfroject = request.getParameter("detailsOfroject");
-
-		ProjectModel project = new ProjectModel();
-		project.setProejectTitle(proejectTitle);
-		project.setWorkedTime(workedTime);
-		project.setWorkedFrom(workedFrom);
-		project.setDetailsOfroject(detailsOfroject);
-
-		model.addAttribute("project", project);
+	public String submitForm(Model model, @ModelAttribute ProjectModel projectModel) {
 
 		projectService.saveFile(projectModel);
 		return "redirect:/home/resume";
@@ -233,44 +206,29 @@ public class FileController {
 		ResumeHeadlineModel resumeheadline = new ResumeHeadlineModel();
 		resumeheadline.setHeadline(headline);
 
-		model.addAttribute("resumeheadline", resumeheadline);
-		resumeHedlineService.saveAllFiles(headlineModel);
+		previousHeadlineModel = resumeheadline;
+		resumeHedlineService.saveAllFiles(previousHeadlineModel);
 
 		return "redirect:/home/resume";
 	}
 
 	@PostMapping("/itSkills")
-	public String submitForm(HttpServletRequest request, Model model, @ModelAttribute ITSkillsModel itSkillsModel) {
+	public String submitForm(Model model, @ModelAttribute ITSkillsModel itSkillsModel) {
 
-		// TODO: ITSkillsModel and using the retrieved data and Save Data to updating
-		String skills = request.getParameter("skills");
-		String version = request.getParameter("version");
-		String lastused = request.getParameter("lastused");
-		String experience = request.getParameter("experience");
-
-		ITSkillsModel itSkills = new ITSkillsModel();
-
-		itSkills.setSkills(skills);
-		itSkills.setVersion(version);
-		itSkills.setLastused(lastused);
-		itSkills.setExperience(experience);
-
-		model.addAttribute("itSkills", itSkills);
 		itSkillsService.saveFile(itSkillsModel);
 
 		return "redirect:/home/resume";
 	}
 
 	@PostMapping("/keySkills")
-	public String submitForm(HttpServletRequest request, Model model, @ModelAttribute KeySkillsModel keySkillsModel) {
+	public String submitForm(HttpServletRequest request, Model model) {
 		// TODO: KeySkillsModel and using the retrieved data and Save Data to updating
 		String skill = request.getParameter("skill");
 
 		KeySkillsModel keySkills = new KeySkillsModel();
 		keySkills.setSkill(skill);
 
-		model.addAttribute("keySkills", keySkills);
-		keySkillService.saveAllFile(keySkillsModel);
+		keySkillService.saveAllFile(keySkills);
 
 		return "redirect:/home/resume";
 	}

@@ -316,7 +316,7 @@ td:hover {
 /* Hover Buttton */
 #cartEducation {
     position: absolute;
-    top: 50%;
+    top: 100%;
     left: 25%;
     width: 100vh;
     /* height: 90vh; */
@@ -359,7 +359,7 @@ td:hover {
 /* Hover Buttton */
 #cartExperience {
     position: absolute;
-    top: 50%;
+    top: 160%;
     left: 25%;
     width: 100vh;
     /* height: 90vh; */
@@ -445,7 +445,7 @@ td:hover {
 /* Hover Buttton */
 #cartITSkill {
     position: absolute;
-    top: 50%;
+    top: 270%;
     left: 25%;
     width: 100vh;
     /* height: 90vh; */
@@ -488,7 +488,7 @@ td:hover {
 /* Hover Buttton */
 #cartProject {
     position: absolute;
-    top: 50%;
+    top: 210%;
     left: 25%;
     width: 100vh;
     /* height: 90vh; */
@@ -577,10 +577,16 @@ td:hover {
  *
  */
 .form-group {
-    display: flex;
+    display: inline-flex;
     align-items: center;
     justify-content: space-around;
     margin-bottom: 20px;
+}
+
+.form-group-btn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .form-group label {
@@ -626,7 +632,9 @@ select[id="type"] {
 }
 
 select[id="year"],
-select[id="month"] {
+select[id="month"],
+select[id="software"],
+select[id="versions"] {
     width: 150px;
     height: 30px;
     border-radius: 10px;
@@ -678,7 +686,8 @@ textarea {
 }
 
 .btn-type {
-    display: flex;
+    display: inline-block;
+    /* overflow: hidden; */
     left: 0;
     top: 0;
 }
@@ -715,13 +724,22 @@ body {
     margin: 10px 0px 15px;
 }
 
-.tableitem th {
+.cart-style span {
+    margin: 0 10px 0px;
+    color: gray;
+}
+
+/* .tableitem tr {
+    padding: 8px;
+    text-align: left;
+    color: gray;
+} */
+.table-style tr {
     padding: 8px;
     text-align: left;
     color: gray;
 }
-
-.tableitem th:hover {
+.table-style tr td{
+    text-align: left;
     background-color: transparent;
-    color: #000;
 }
