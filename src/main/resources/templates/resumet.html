@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 
 <head>
     <meta charset="UTF-8">
@@ -23,7 +23,7 @@
             <ul class="navbar-menu">
                 <li><a th:href="@{/home}">Home</a></li>
                 <li class="dropdown">
-                    <a href="#" class="dropbtn">Tools
+                    <a href="#" class="dropbtns">Tools
                         <i class="fa fa-sort-desc" aria-hidden="true"></i>
                     </a>
                     <div class="dropdown-content">
@@ -38,10 +38,21 @@
                 <img th:src="@{'/images/network.png'}" alt="">
             </div>
             <div class="profile-content">
-                <a th:href="@{/home}">Home</a>
-                <a th:href="@{/home/form}">Form</a>
-                <a th:href="@{/home/registra}">Sign Up</a>
-                <a th:href="@{/home/login}">Log in</a>
+                <div class="profile-content">
+                    <div sec:authorize="isAuthenticated()">
+                        <form th:action="@{/logout}" method="POST">
+                            <div>
+                                <label>Hi, <span sec:authentication="name">Username</span></label>
+                            </div>
+                            <button type="submit">Logout</button>
+                        </form>
+                    </div>
+                    <a th:href="@{/home}">Home</a>
+                    <div sec:authorize="!isAuthenticated()">
+                        <a th:href="@{/registra}">Sign Up</a>
+                        <a th:href="@{/login}">Log in</a>
+                    </div>
+                </div>
             </div>
         </div>
     </nav>

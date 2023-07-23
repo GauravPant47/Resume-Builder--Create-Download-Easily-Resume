@@ -30,12 +30,12 @@
             <ul class="navbar-menu">
                 <li><a th:href="@{/home}">Home</a></li>
                 <li class="dropdown">
-                    <a href="#" class="dropbtn">Tools
+                    <a href="#" class="dropbtns">Tools
                         <i class="fa fa-sort-desc" aria-hidden="true"></i>
                     </a>
                     <div class="dropdown-content">
-                        <a th:href="@{/home/resume}">Resume</a>
-                        <a href="#">C.V</a>
+                        <a th:href="@{/home/resume}">Online Resume</a>
+                        <a href="#">Resumes</a>
                     </div>
                 </li>
             </ul>
@@ -45,10 +45,19 @@
                 <img th:src="@{'/images/network.png'}" alt="">
             </div>
             <div class="profile-content">
+                <div sec:authorize="isAuthenticated()">
+                    <form th:action="@{/logout}" method="POST">
+                        <div>
+                            <label>Hi, <span sec:authentication="name">Username</span></label>
+                        </div>
+                        <button type="submit">Logout</button>
+                    </form>
+                </div>
                 <a th:href="@{/home}">Home</a>
-                <a th:href="@{/home/form}">Form</a>
-                <a th:href="@{/home/registra}">Sign Up</a>
-                <a th:href="@{/home/login}">Log in</a>
+                <div sec:authorize="!isAuthenticated()">
+                    <a th:href="@{/registra}">Sign Up</a>
+                    <a th:href="@{/login}">Log in</a>
+                </div>
             </div>
         </div>
     </nav>
@@ -110,9 +119,9 @@
                         </div>
                     </form>
                 </div>
+                <i id="addProfileBtn" class="fa fa-pencil" aria-hidden="true"></i>
                 <div th:each="profile : ${profile}">
-                    <h5>Full Name</h5>
-                    <i id="addProfileBtn" class="fa fa-pencil" aria-hidden="true"></i>
+                    <h5 th:text="${profile.name}">Full Name</h5>
                     <hr>
                     <div class="user-details">
                         <div class="user-details-left">
@@ -293,7 +302,7 @@
                                         <div class="form-group">
                                             <label for="totalExperience">Total Experience :</label>
                                             <select id="year" name="totalExperience">
-                                                <option value="select">Select</option>
+                                                <option value="Select">Select</option>
                                                 <option value="0 Year ">0 Year</option>
                                                 <option value="1 Year ">1 Year</option>
                                                 <option value="2 Year ">2 Year</option>
@@ -302,19 +311,20 @@
                                                 <option value="5 Year ">5 Year</option>
                                             </select>
                                             <select id="month" name="totalExperience">
-                                                <option value="Month">Month</option>
-                                                <option value="1 Month">1 Month</option>
-                                                <option value="2 Month">2 Month</option>
-                                                <option value="3 Month">3 Month</option>
-                                                <option value="4 Month">4 Month</option>
-                                                <option value="5 Month">5 Month</option>
-                                                <option value="6 Month">6 Month</option>
-                                                <option value="7 Month">7 Month</option>
-                                                <option value="8 Month">8 Month</option>
-                                                <option value="9 Month">9 Month</option>
-                                                <option value="10 Month">10 Month</option>
-                                                <option value="11 Month">11 Month</option>
-                                                <option value="12 Month">12 Month</option>
+                                                <option value="Select">Select</option>
+                                                <option value=" Present">Present</option>
+                                                <option value=" 1 Month">1 Month</option>
+                                                <option value=" 2 Month">2 Month</option>
+                                                <option value=" 3 Month">3 Month</option>
+                                                <option value=" 4 Month">4 Month</option>
+                                                <option value=" 5 Month">5 Month</option>
+                                                <option value=" 6 Month">6 Month</option>
+                                                <option value=" 7 Month">7 Month</option>
+                                                <option value=" 8 Month">8 Month</option>
+                                                <option value=" 9 Month">9 Month</option>
+                                                <option value=" 10 Month">10 Month</option>
+                                                <option value=" 11 Month">11 Month</option>
+                                                <option value=" 12 Month">12 Month</option>
                                             </select>
                                         </div>
                                         <div class="form-group">
@@ -381,7 +391,7 @@
                                         <div class="form-group">
                                             <label for="workedTime">Worked Time :</label>
                                             <select id="year" name="workedTime">
-                                                <option value="select">Select</option>
+                                                <option value="Select">Select</option>
                                                 <option value="2023 ">2023</option>
                                                 <option value="2022 ">2022</option>
                                                 <option value="2021 ">2021</option>
@@ -408,7 +418,7 @@
                                                 <option value="2000 ">2000</option>
                                             </select>
                                             <select id="month" name="workedTime">
-                                                <option value="select month">Select Month</option>
+                                                <option value="Select">Select</option>
                                                 <option value=" January">January</option>
                                                 <option value=" February">February</option>
                                                 <option value=" March">March</option>
@@ -507,19 +517,19 @@
                                             <label for="version">Version :</label>
                                             <select id="software" name="version">
                                                 <option value="none">Select</option>
-                                                <option value="java">Java</option>
-                                                <option value="javascript">JavaScript</option>
-                                                <option value="mysql">MySQL</option>
-                                                <option value="html">HTML</option>
-                                                <option value="php">PHP</option>
-                                                <option value="python">Python</option>
+                                                <option value="java ">Java</option>
+                                                <option value="javascript ">JavaScript</option>
+                                                <option value="mysql ">MySQL</option>
+                                                <option value="html ">HTML</option>
+                                                <option value="php ">PHP</option>
+                                                <option value="python ">Python</option>
                                             </select>
                                             <select id="versions" name="version"></select>
                                         </div>
                                         <div class="form-group">
                                             <label for="experience">Experience :</label>
                                             <select name="experience" id="year">
-                                                <option value="select">Select</option>
+                                                <option value="none">Select</option>
                                                 <option value="0 Year ">0 Year</option>
                                                 <option value="1 Year ">1 Year</option>
                                                 <option value="2 Year ">2 Year</option>
@@ -528,20 +538,20 @@
                                                 <option value="5 Year ">5 Year</option>
                                             </select>
                                             <select name="experience" id="month">
-                                                <option value="select">Month</option>
-                                                <option value="0 Month">0 Month</option>
-                                                <option value="1 Month">1 Month</option>
-                                                <option value="2 Month">2 Month</option>
-                                                <option value="3 Month">3 Month</option>
-                                                <option value="4 Month">4 Month</option>
-                                                <option value="5 Month">5 Month</option>
-                                                <option value="6 Month">6 Month</option>
-                                                <option value="7 Month">7 Month</option>
-                                                <option value="8 Month">8 Month</option>
-                                                <option value="9 Month">9 Month</option>
-                                                <option value="10 Month">10 Month</option>
-                                                <option value="11 Month">11 Month</option>
-                                                <option value="12 Month">12 Month</option>
+                                                <option value="none">Select</option>
+                                                <option value=" 0 Month">0 Month</option>
+                                                <option value=" 1 Month">1 Month</option>
+                                                <option value=" 2 Month">2 Month</option>
+                                                <option value=" 3 Month">3 Month</option>
+                                                <option value=" 4 Month">4 Month</option>
+                                                <option value=" 5 Month">5 Month</option>
+                                                <option value=" 6 Month">6 Month</option>
+                                                <option value=" 7 Month">7 Month</option>
+                                                <option value=" 8 Month">8 Month</option>
+                                                <option value=" 9 Month">9 Month</option>
+                                                <option value=" 10 Month">10 Month</option>
+                                                <option value=" 11 Month">11 Month</option>
+                                                <option value=" 12 Month">12 Month</option>
                                             </select>
                                         </div>
                                         <div class="form-group-btn">

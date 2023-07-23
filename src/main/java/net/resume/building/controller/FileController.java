@@ -67,27 +67,21 @@ public class FileController {
 	private KeySkillService keySkillService;
 
 	private ProfileImageModel previousImage;
-	private ProfileDetails previousProfileDetails;
 	private ResumeHeadlineModel previousHeadlineModel;
 
 	@GetMapping("/resume")
 	public String showForm(Model model) {
 
 		List<ProfileDetails> profile = detailsService.getAllFiles();
-		model.addAttribute("profile", profile);
-		if (previousProfileDetails != null) {
-			model.addAttribute("name", previousProfileDetails.getName());
-			model.addAttribute("totalExperience", previousProfileDetails.getTotalExperience());
-			model.addAttribute("currentLocation", previousProfileDetails.getCurrentLocation());
-			model.addAttribute("mobileNumber", previousProfileDetails.getMobileNumber());
-			model.addAttribute("emailAddress", previousProfileDetails.getEmailAddress());
+		if (profile != null) {
+			model.addAttribute("profile", profile);
 		}
 
 		List<EmploymentModel> employments = employmentService.getAllfile();
 		model.addAttribute("employments", employments);
 
-//		List<ProfileImageModel> profileImage = profileImageService.getAllFile();
-//		model.addAttribute("profileImage", profileImage);
+		// List<ProfileImageModel> profileImage = profileImageService.getAllFile();
+		// model.addAttribute("profileImage", profileImage);
 
 		if (previousImage != null) {
 			model.addAttribute("image", previousImage.getImage());
@@ -105,39 +99,30 @@ public class FileController {
 		List<ProjectModel> projects = projectService.getFilesAll();
 		model.addAttribute("projects", projects);
 
-//		List<ResumeHeadlineModel> resumeheadline = resumeHedlineService.getAllFile();
-//		model.addAttribute("resumeheadline", resumeheadline);
+		// List<ResumeHeadlineModel> resumeheadline = resumeHedlineService.getAllFile();
+		// model.addAttribute("resumeheadline", resumeheadline);
 
 		if (previousHeadlineModel != null) {
-			model.addAttribute("headline", previousHeadlineModel.getHeadline());
+			model.addAttribute("headlines", previousHeadlineModel.getHeadline());
 		}
 
 		return "resume";
 	}
 
 	@PostMapping("/profile")
-	public String submitForm(HttpServletRequest request, Model model, @ModelAttribute ProfileDetails profileDetails) {
-
-		// TODO: Profile Details and using the retrieved data and Save Data to updating
-
-		String name = request.getParameter("name");
-		String totalExperience = request.getParameter("totalExperience");
-		String currentLocation = request.getParameter("currentLocation");
-		String mobileNumber = request.getParameter("mobileNumber");
-		String emailAddress = request.getParameter("emailAddress");
+	public String submitForm(@RequestParam("name") String name, @RequestParam("totalExperience") String totalExperience,
+			@RequestParam("currentLocation") String currentLocation, @RequestParam("mobileNumber") String mobileNumber,
+			@RequestParam("emailAddress") String emailAddress) {
 
 		ProfileDetails profile = new ProfileDetails();
+		profile.getName();
+		profile.getEmailAddress();
+		profile.getCurrentLocation();
+		profile.getMobileNumber();
+		profile.getTotalExperience();
 
-		profile.setName(name);
-		profile.setCurrentLocation(currentLocation);
-		profile.setMobileNumber(mobileNumber);
-		profile.setEmailAddress(emailAddress);
-		profile.setTotalExperience(totalExperience);
-
-		previousProfileDetails = profile;
-
-//		model.addAttribute("profile", profile);
-		detailsService.saveListItem(previousProfileDetails);
+		// model.addAttribute("profile", profile);
+		detailsService.saveListItem(profile);
 		return "redirect:/home/resume";
 	}
 

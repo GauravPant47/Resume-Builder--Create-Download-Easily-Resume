@@ -1,274 +1,268 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 
 <head>
-    <meta charset="UTF-8">
-    <title>Create Professional Resume And Download Free</title>
-    <link rel="stylesheet" th:href="@{/css/homeStyle.css}" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
-    <link rel="stylesheet" th:href="@{/css/homeContentStyle.css}">
-    <link rel="stylesheet" th:href="@{/css/help.css}">
-    <link rel="stylesheet" type="text/css"
-        href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" />
-    <link rel="stylesheet" type="text/css"
-        href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" />
+	<meta charset="UTF-8">
+	<title>Create Professional Resume And Download Free</title>
+	<link rel="stylesheet" th:href="@{/css/homeStyle.css}" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+	<link rel="stylesheet" th:href="@{/css/homeContentStyle.css}">
+	<link rel="stylesheet" th:href="@{/css/help.css}">
+	<link rel="stylesheet" type="text/css"
+		href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" />
+	<link rel="stylesheet" type="text/css"
+		href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" />
 </head>
 
 <body>
-    <!-- Create a navbar -->
-    <nav class="navbar">
-        <div class="navbar-left">
-            <a th:href="@{/home}">
-                <img th:src="@{'/images/logo.jpg'}" alt="Logo">
-            </a>
-        </div>
-        <div class="navbar-center">
-            <ul class="navbar-menu">
-                <li><a th:href="@{/home}">Home</a></li>
-                <li class="dropdown">
-                    <a href="#" class="dropbtn">Tools
-                        <i class="fa fa-sort-desc" aria-hidden="true"></i>
-                    </a>
-                    <div class="dropdown-content">
-                        <a th:href="@{/home/resume}">Resume</a>
-                        <a href="#">C.V</a>
-                    </div>
-                </li>
-            </ul>
-        </div>
-        <div class="profile-dropdown">
-            <div class="dropbtn">
-                <img th:src="@{'/images/network.png'}" alt="">
-            </div>
-            <div class="profile-content">
-                <a th:href="@{/home}">Home</a>
-                <a th:href="@{/home/form}">Form</a>
-                <a th:href="@{/home/registra}">Sign Up</a>
-                <a th:href="@{/home/login}">Log in</a>
-            </div>
-        </div>
-    </nav>
-    <!-- navbar end -->
-    <div class="container">
-        <div class="container-para">
-            <h1>Creating a Professional Resume</h1>
-            <p>Fill in the blanks, choose a template, and download your resume instantly.</p>
-        </div>
-        <div class="center">
-            <a href="">
-                <button class="btn btn-c1" type="submit">Create resume</button>
-            </a>
-        </div>
-        <div class="slider">
-            <div class="slick-imag">
-                <a href=""><img
-                        src="https://private-user-images.githubusercontent.com/115808373/251163401-4537ecbe-9df1-4cd6-932e-8508b996ff14.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXkiOiJrZXkxIiwiZXhwIjoxNjg4NTYzNzAzLCJuYmYiOjE2ODg1NjM0MDMsInBhdGgiOiIvMTE1ODA4MzczLzI1MTE2MzQwMS00NTM3ZWNiZS05ZGYxLTRjZDYtOTMyZS04NTA4Yjk5NmZmMTQucG5nP1gtQW16LUFsZ29yaXRobT1BV1M0LUhNQUMtU0hBMjU2JlgtQW16LUNyZWRlbnRpYWw9QUtJQUlXTkpZQVg0Q1NWRUg1M0ElMkYyMDIzMDcwNSUyRnVzLWVhc3QtMSUyRnMzJTJGYXdzNF9yZXF1ZXN0JlgtQW16LURhdGU9MjAyMzA3MDVUMTMyMzIzWiZYLUFtei1FeHBpcmVzPTMwMCZYLUFtei1TaWduYXR1cmU9MWIwNzZjMTVjN2FkYzcxYzRlMDQ0ODljNzI1YjIyNjZkNGFhNjhjMjZlM2MxZDMxM2YzMzYwM2I1Zjk0Y2Y1YSZYLUFtei1TaWduZWRIZWFkZXJzPWhvc3QmYWN0b3JfaWQ9MCZrZXlfaWQ9MCZyZXBvX2lkPTAifQ.5LyQr3kPHWUGi2o638sQf9i95lxoqCLCgHVgop7SIbA"
-                        alt="Image 1"></a>
-                <a href=""><img
-                        src="https://github-production-user-asset-6210df.s3.amazonaws.com/115808373/251152788-bdbcc282-0e40-48b4-b721-e4344e35da1e.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20230705%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230705T132122Z&X-Amz-Expires=300&X-Amz-Signature=87ff5abe34f9e31bdcd79cb15c768844818ecf9ef9e2a0dc7d2f6c802d56667d&X-Amz-SignedHeaders=host&actor_id=115808373&key_id=0&repo_id=662577955"
-                        alt="Image 2"></a>
-                <a href=""><img
-                        src="https://github-production-user-asset-6210df.s3.amazonaws.com/115808373/251152838-a899b288-d561-4ef5-834b-f2d07c9f2dae.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20230705%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230705T132347Z&X-Amz-Expires=300&X-Amz-Signature=b2b1dbe010ddac1125799e95e7b3cc2c66f06a0b71b057b56466b7c63a148718&X-Amz-SignedHeaders=host&actor_id=115808373&key_id=0&repo_id=662577955"
-                        alt="Image 3"></a>
-                <a href=""><img
-                        src="https://github-production-user-asset-6210df.s3.amazonaws.com/115808373/251152871-dadffab1-3083-477f-ae7e-96f2a91de7fd.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20230705%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230705T132413Z&X-Amz-Expires=300&X-Amz-Signature=28ea13973e52accb348111d36010dcb14ecfe1b3c1b1ab1ee9a91b141cdfa40c&X-Amz-SignedHeaders=host&actor_id=115808373&key_id=0&repo_id=662577955"
-                        alt="Image 4"></a>
-                <a href=""><img
-                        src="https://github-production-user-asset-6210df.s3.amazonaws.com/115808373/251152964-6ab53f3e-b35a-436d-ac02-f3b8a50fa91d.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20230705%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230705T132449Z&X-Amz-Expires=300&X-Amz-Signature=2d3c5f186c7711124891fea53f7169781bd8679fb3d58d0503fa22c2737d45cb&X-Amz-SignedHeaders=host&actor_id=115808373&key_id=0&repo_id=662577955"
-                        alt="Image 6"></a>
-            </div>
-            <div class="slick-imag">
-                <a href=""><img
-                        src="https://github-production-user-asset-6210df.s3.amazonaws.com/115808373/251152914-7ac9b54a-c946-43b8-9aa7-01fa5e74dc00.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20230705%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230705T132434Z&X-Amz-Expires=300&X-Amz-Signature=7772dab8cc617ce5afdbcbe986ab75684f251fbe6771a725fa1b81c197102c34&X-Amz-SignedHeaders=host&actor_id=115808373&key_id=0&repo_id=662577955"
-                        alt="Image 5"></a>
-                <a href=""><img
-                        src="https://github-production-user-asset-6210df.s3.amazonaws.com/115808373/251152964-6ab53f3e-b35a-436d-ac02-f3b8a50fa91d.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20230705%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230705T132449Z&X-Amz-Expires=300&X-Amz-Signature=2d3c5f186c7711124891fea53f7169781bd8679fb3d58d0503fa22c2737d45cb&X-Amz-SignedHeaders=host&actor_id=115808373&key_id=0&repo_id=662577955"
-                        alt="Image 6"></a>
-                <a href=""><img
-                        src="https://github-production-user-asset-6210df.s3.amazonaws.com/115808373/251152996-3c40c552-469e-42e4-9734-8839fd8bd3a3.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20230705%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230705T132507Z&X-Amz-Expires=300&X-Amz-Signature=cf03a14ddab676a52b782fca0c461e45786e860b065e385eefd52e909c51e8fc&X-Amz-SignedHeaders=host&actor_id=115808373&key_id=0&repo_id=662577955"
-                        alt="Image 7"></a>
-                <a href=""><img
-                        src="https://github-production-user-asset-6210df.s3.amazonaws.com/115808373/251153028-3b100f57-92d4-4dc1-8eb6-340d12679985.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20230705%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230705T132525Z&X-Amz-Expires=300&X-Amz-Signature=85111128956e834ce416975f2bf18d891c91fdfeb4361999949e25a145ec8025&X-Amz-SignedHeaders=host&actor_id=115808373&key_id=0&repo_id=662577955"
-                        alt="Image 8"></a>
-                <a href=""><img
-                        src="https://github-production-user-asset-6210df.s3.amazonaws.com/115808373/251153133-1d716684-312e-4dad-845c-905d1d9165a7.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20230705%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230705T132618Z&X-Amz-Expires=300&X-Amz-Signature=9cdd0bf8c01004e8cdedbb8786d3d56492f5a032fc33b4453b25dde38efb72eb&X-Amz-SignedHeaders=host&actor_id=115808373&key_id=0&repo_id=662577955"
-                        alt="Image 11"></a>
-            </div>
-            <div class="slick-imag">
-                <a href=""><img
-                        src="https://github-production-user-asset-6210df.s3.amazonaws.com/115808373/251153060-9b0cd6a3-e776-4382-8541-07725e528a4c.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20230705%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230705T132549Z&X-Amz-Expires=300&X-Amz-Signature=419329bf1ab9ce286f2034dbcc008a131ee313f3b62dca86638389f14659d7d7&X-Amz-SignedHeaders=host&actor_id=115808373&key_id=0&repo_id=662577955"
-                        alt="Image 9"></a>
-                <a href=""><img
-                        src="https://github-production-user-asset-6210df.s3.amazonaws.com/115808373/251153094-0019db22-f722-4970-9419-6d165e48f69e.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20230705%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230705T132603Z&X-Amz-Expires=300&X-Amz-Signature=e4576a202a6405616c50d7e858f49833c546d4355402855136deca518f2f467e&X-Amz-SignedHeaders=host&actor_id=115808373&key_id=0&repo_id=662577955"
-                        alt="Image 10"></a>
-                <a href=""><img
-                        src="https://github-production-user-asset-6210df.s3.amazonaws.com/115808373/251153133-1d716684-312e-4dad-845c-905d1d9165a7.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20230705%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230705T132618Z&X-Amz-Expires=300&X-Amz-Signature=9cdd0bf8c01004e8cdedbb8786d3d56492f5a032fc33b4453b25dde38efb72eb&X-Amz-SignedHeaders=host&actor_id=115808373&key_id=0&repo_id=662577955"
-                        alt="Image 11"></a>
-                <a href=""><img
-                        src="https://private-user-images.githubusercontent.com/115808373/251153178-64d33b05-bc79-4c8c-94ac-1bebdd4bb42e.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXkiOiJrZXkxIiwiZXhwIjoxNjg4NTYzNzAzLCJuYmYiOjE2ODg1NjM0MDMsInBhdGgiOiIvMTE1ODA4MzczLzI1MTE1MzE3OC02NGQzM2IwNS1iYzc5LTRjOGMtOTRhYy0xYmViZGQ0YmI0MmUucG5nP1gtQW16LUFsZ29yaXRobT1BV1M0LUhNQUMtU0hBMjU2JlgtQW16LUNyZWRlbnRpYWw9QUtJQUlXTkpZQVg0Q1NWRUg1M0ElMkYyMDIzMDcwNSUyRnVzLWVhc3QtMSUyRnMzJTJGYXdzNF9yZXF1ZXN0JlgtQW16LURhdGU9MjAyMzA3MDVUMTMyMzIzWiZYLUFtei1FeHBpcmVzPTMwMCZYLUFtei1TaWduYXR1cmU9NjczYjNiMjA4ZDM5ZGE0Yzg2YWM1ZDU3OWQzMGVkMzM4ZGViZTU3MzU1ZmQ1NzM1MDkxNDNhMjE4MjA5N2Y3OCZYLUFtei1TaWduZWRIZWFkZXJzPWhvc3QmYWN0b3JfaWQ9MCZrZXlfaWQ9MCZyZXBvX2lkPTAifQ.9Px9AQsN2kQDuyjpic-ZfHAZ7dYcZ8I34XnhEmHJbH8"
-                        alt="Image 12"></a>
-                <a href=""><img
-                        src="https://github-production-user-asset-6210df.s3.amazonaws.com/115808373/251152996-3c40c552-469e-42e4-9734-8839fd8bd3a3.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20230705%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230705T132507Z&X-Amz-Expires=300&X-Amz-Signature=cf03a14ddab676a52b782fca0c461e45786e860b065e385eefd52e909c51e8fc&X-Amz-SignedHeaders=host&actor_id=115808373&key_id=0&repo_id=662577955"
-                        alt="Image 7"></a>
-            </div>
-        </div>
+	<!-- Create a navbar -->
+	<nav class="navbar">
+		<div class="navbar-left">
+			<a th:href="@{/home}"> <img th:src="@{'/images/logo.jpg'}" alt="Logo">
+			</a>
+		</div>
+		<div class="navbar-center">
+			<ul class="navbar-menu">
+				<li><a th:href="@{/home}">Home</a></li>
+				<li class="dropdown"><a href="#" class="dropbtns">Tools <i class="fa fa-sort-desc"
+							aria-hidden="true"></i>
+					</a>
+					<div class="dropdown-content">
+						<a th:href="@{/home/resume}">Online Resume</a> <a href="#">C.V</a>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<div class="profile-dropdown">
+			<div class="dropbtn">
+				<img th:src="@{'/images/network.png'}" alt="">
+			</div>
+			<div class="profile-content">
+				<div sec:authorize="isAuthenticated()">
+					<form th:action="@{/logout}" method="POST">
+						<div>
+							<label>Hi, <span sec:authentication="name"> Username</span></label>
+						</div>
+						<button type="submit">Logout</button>
+					</form>
+				</div>
+				<a th:href="@{/home}">Home</a>
+				<div sec:authorize="!isAuthenticated()">
+					<a th:href="@{/registra}">Sign Up</a> 
+					<a th:href="@{/login}">Log in</a>
+				</div>
+			</div>
+		</div>
 
-        <div class="container-uses">
-            <p>How to make it work</p>
-        </div>
-        <div class="container-body">
-            <div class="container-tab">
-                <p>How to Create an Effective Resume?</p>
-                <div class="tab">
-                    <input type="radio" name="acc" id="acc1">
-                    <label for="acc1">
-                        <h2>01</h2>
-                        <h3>What is a resume?</h3>
-                    </label>
-                    <div class="content">
-                        <br>
-                        <p>
-                            A resume, also known as a curriculum vitae (CV) in some regions, is a document that provides
-                            a summary of a person's education, work experience, skills, achievements, and
-                            qualifications. It is typically used when applying for jobs and serves as a marketing tool
-                            to showcase an individual's background and suitability for a specific position.
-                        </p>
-                    </div>
-                </div>
-                <div class="tab">
-                    <input type="radio" name="acc" id="acc2">
-                    <label for="acc2">
-                        <h2>02</h2>
-                        <h3>Why is a good resume important? </h3>
-                    </label>
-                    <div class="content">
-                        <br>
-                        <p>
-                            A good resume is important because it serves as your first impression when applying for a
-                            job. In a simple way, it's like a snapshot of your skills, qualifications, and experiences
-                            that can convince employers to consider you as a potential candidate. It highlights your
-                            relevant achievements and demonstrates why you are the right fit for the position. A
-                            well-crafted resume can increase your chances of getting noticed by employers, securing job
-                            interviews, and ultimately landing your desired job.
-                        </p>
-                    </div>
-                </div>
-                <div class="tab">
-                    <input type="radio" name="acc" id="acc3">
-                    <label for="acc3">
-                        <h2>03</h2>
-                        <h3>How can i make a change to my application?</h3>
-                    </label>
-                    <div class="content">
-                        <br>
-                        <p>
-                            A good resume is important because it serves as your personal marketing tool when applying
-                            for a job. It is typically the first impression that potential employers have of you, and it
-                            can significantly impact your chances of getting an interview. Here's a simple example to
-                            illustrate the importance of a good resume:
-                        </P>
-                        <p>
-                            Imagine you are an employer with a limited amount of time to review numerous resumes for a
-                            single job opening. You receive two resumes that are quite similar in terms of
-                            qualifications and experience, but one is well-organized, visually appealing, and
-                            effectively highlights the applicant's relevant skills and achievements. The other resume,
-                            however, is cluttered, poorly formatted, and lacks clear structure.
-                        </P>
-                        <p>
-                            Given the time constraints, which resume do you think the employer will be more inclined to
-                            spend time reading and consider for an interview? The well-presented resume is likely to
-                            grab the employer's attention and make a positive impression, increasing the chances of the
-                            applicant being invited for an interview.
-                        </P>
-                        <p>
-                            This example highlights how a good resume can help you stand out from other candidates and
-                            make a strong initial impression on potential employers. It showcases your qualifications,
-                            skills, and accomplishments in a clear and concise manner, making it easier for employers to
-                            assess your suitability for the job. Ultimately, a well-crafted resume increases your
-                            chances of advancing to the next stage of the hiring process and ultimately landing the job
-                            you desire.
-                        </P>
-                    </div>
-                </div>
-                <div class="tab">
-                    <input type="radio" name="acc" id="acc4">
-                    <label for="acc4">
-                        <h2>04</h2>
-                        <h3>How to format and structure a resume?</h3>
-                    </label>
-                    <div class="content">
-                        <br>
-                        <ul>
-                            <li>
-                                The format and structure of a professional resume is important. The content is what gets
-                                you the job, but an aesthetically pleasing resume shows that you took the time to get it
-                                right, and that you have the basic computer skills to make it look good. Here are some
-                                formatting tips when it comes to writing a resume:
-                            </li>
-                        </ul>
-                        <ul>
-                            <li>
-                                * Content should be left-aligned
-                            </li>
-                        </ul>
-                        <ul>
-                            <li>* Margins should be at one inch</li>
-                        </ul>
-                        <ul>
-                            <li>* Use an easy-to-read, professional font.</li>
-                        </ul>
-                        <ul>
-                            <li>* Clearly divide each section</li>
-                        </ul>
-                        <ul>
-                            <li>* Use clear headers for every section</li>
-                        </ul>
-                        <ul>
-                            <li>* Use bullet points whenever possible for conciseness</li>
-                        </ul>
-                        <ul>
-                            <li>* Try to keep your resume to one page</li>
-                        </ul>
-                        <p>There are many professional fonts you can use, including Cambria, Times New Roman, Calibri,
-                            Georgia, Arial, Lato and Didot. Your name and header sections should be larger, but keep the
-                            basic font size between 10 and 12 points for normal text. Headers and section titles should
-                            be between 14-16 points. </p>
-                        <p>Between text, use 1.0 or 1.15 line spacing, and adjust that to double lines after any
-                            subheadings. You can increase or decrease if your resume is too full or too empty.</p>
-                    </div>
-                </div>
-                <div class="tab">
-                    <input type="radio" name="acc" id="acc5">
-                    <label for="acc5">
-                        <h2>05</h2>
-                        <h3>What types of resumes are there?</h3>
-                    </label>
-                    <div class="content">
-                        <br>
-                        <h2>1. Chronological Resume:</h2>
-                        <p>Petition to change your name by filling out a name change form, an order to show cause for
-                            legally changing your name, and a decree to legally change your name. Take these forms to
-                            the court clerk and file them along with your state's required filing
-                            fees.
-                        </p>
-                        <h2>2. Combination Resume:</h2>
-                        <p>As the name suggests, a combination resume combines elements of both the chronological and
-                            functional formats. It highlights both your work history and skills. It begins with a skills
-                            summary or qualifications section followed by a chronological listing of your work
-                            experience.</p>
-                        <h2>3. Targeted Resume:</h2>
-                        <p>A targeted resume is tailored to a specific job or industry. It highlights the skills and
-                            experiences that are most relevant to the position you are applying for. You customize your
-                            resume for each application to match the requirements of the job posting.</p>
-                        <h2>4. Online/Electronic Resume</h2>
-                        <p>With the rise of digital platforms, online resumes are becoming more popular. These resumes
-                            are specifically designed for online applications and may include hyperlinks to your
-                            portfolio, LinkedIn profile, or other relevant websites. They can be easily shared and
-                            accessed online.</p>
-                    </div>
-                </div>
-                <!-- <div class="tab">
+	</nav>
+	<!-- navbar end -->
+	<div class="container">
+		<div class="container-para">
+			<h1>Creating a Professional Resume</h1>
+			<p>Fill in the blanks, choose a template, and download your
+				resume instantly.</p>
+		</div>
+		<div class="center">
+			<a th:href="@{/home/resume}">
+				<button class="btn btn-c1" type="submit">Create resume</button>
+			</a>
+		</div>
+		<div class="slider">
+			<div class="slick-imag">
+				<a href=""><img
+						src="https://private-user-images.githubusercontent.com/115808373/251163401-4537ecbe-9df1-4cd6-932e-8508b996ff14.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXkiOiJrZXkxIiwiZXhwIjoxNjg4NTYzNzAzLCJuYmYiOjE2ODg1NjM0MDMsInBhdGgiOiIvMTE1ODA4MzczLzI1MTE2MzQwMS00NTM3ZWNiZS05ZGYxLTRjZDYtOTMyZS04NTA4Yjk5NmZmMTQucG5nP1gtQW16LUFsZ29yaXRobT1BV1M0LUhNQUMtU0hBMjU2JlgtQW16LUNyZWRlbnRpYWw9QUtJQUlXTkpZQVg0Q1NWRUg1M0ElMkYyMDIzMDcwNSUyRnVzLWVhc3QtMSUyRnMzJTJGYXdzNF9yZXF1ZXN0JlgtQW16LURhdGU9MjAyMzA3MDVUMTMyMzIzWiZYLUFtei1FeHBpcmVzPTMwMCZYLUFtei1TaWduYXR1cmU9MWIwNzZjMTVjN2FkYzcxYzRlMDQ0ODljNzI1YjIyNjZkNGFhNjhjMjZlM2MxZDMxM2YzMzYwM2I1Zjk0Y2Y1YSZYLUFtei1TaWduZWRIZWFkZXJzPWhvc3QmYWN0b3JfaWQ9MCZrZXlfaWQ9MCZyZXBvX2lkPTAifQ.5LyQr3kPHWUGi2o638sQf9i95lxoqCLCgHVgop7SIbA"
+						alt="Image 1"></a> <a href=""><img
+						src="https://github-production-user-asset-6210df.s3.amazonaws.com/115808373/251152788-bdbcc282-0e40-48b4-b721-e4344e35da1e.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20230705%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230705T132122Z&X-Amz-Expires=300&X-Amz-Signature=87ff5abe34f9e31bdcd79cb15c768844818ecf9ef9e2a0dc7d2f6c802d56667d&X-Amz-SignedHeaders=host&actor_id=115808373&key_id=0&repo_id=662577955"
+						alt="Image 2"></a> <a href=""><img
+						src="https://github-production-user-asset-6210df.s3.amazonaws.com/115808373/251152838-a899b288-d561-4ef5-834b-f2d07c9f2dae.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20230705%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230705T132347Z&X-Amz-Expires=300&X-Amz-Signature=b2b1dbe010ddac1125799e95e7b3cc2c66f06a0b71b057b56466b7c63a148718&X-Amz-SignedHeaders=host&actor_id=115808373&key_id=0&repo_id=662577955"
+						alt="Image 3"></a> <a href=""><img
+						src="https://github-production-user-asset-6210df.s3.amazonaws.com/115808373/251152871-dadffab1-3083-477f-ae7e-96f2a91de7fd.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20230705%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230705T132413Z&X-Amz-Expires=300&X-Amz-Signature=28ea13973e52accb348111d36010dcb14ecfe1b3c1b1ab1ee9a91b141cdfa40c&X-Amz-SignedHeaders=host&actor_id=115808373&key_id=0&repo_id=662577955"
+						alt="Image 4"></a> <a href=""><img
+						src="https://github-production-user-asset-6210df.s3.amazonaws.com/115808373/251152964-6ab53f3e-b35a-436d-ac02-f3b8a50fa91d.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20230705%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230705T132449Z&X-Amz-Expires=300&X-Amz-Signature=2d3c5f186c7711124891fea53f7169781bd8679fb3d58d0503fa22c2737d45cb&X-Amz-SignedHeaders=host&actor_id=115808373&key_id=0&repo_id=662577955"
+						alt="Image 6"></a>
+			</div>
+			<div class="slick-imag">
+				<a href=""><img
+						src="https://github-production-user-asset-6210df.s3.amazonaws.com/115808373/251152914-7ac9b54a-c946-43b8-9aa7-01fa5e74dc00.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20230705%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230705T132434Z&X-Amz-Expires=300&X-Amz-Signature=7772dab8cc617ce5afdbcbe986ab75684f251fbe6771a725fa1b81c197102c34&X-Amz-SignedHeaders=host&actor_id=115808373&key_id=0&repo_id=662577955"
+						alt="Image 5"></a> <a href=""><img
+						src="https://github-production-user-asset-6210df.s3.amazonaws.com/115808373/251152964-6ab53f3e-b35a-436d-ac02-f3b8a50fa91d.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20230705%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230705T132449Z&X-Amz-Expires=300&X-Amz-Signature=2d3c5f186c7711124891fea53f7169781bd8679fb3d58d0503fa22c2737d45cb&X-Amz-SignedHeaders=host&actor_id=115808373&key_id=0&repo_id=662577955"
+						alt="Image 6"></a> <a href=""><img
+						src="https://github-production-user-asset-6210df.s3.amazonaws.com/115808373/251152996-3c40c552-469e-42e4-9734-8839fd8bd3a3.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20230705%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230705T132507Z&X-Amz-Expires=300&X-Amz-Signature=cf03a14ddab676a52b782fca0c461e45786e860b065e385eefd52e909c51e8fc&X-Amz-SignedHeaders=host&actor_id=115808373&key_id=0&repo_id=662577955"
+						alt="Image 7"></a> <a href=""><img
+						src="https://github-production-user-asset-6210df.s3.amazonaws.com/115808373/251153028-3b100f57-92d4-4dc1-8eb6-340d12679985.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20230705%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230705T132525Z&X-Amz-Expires=300&X-Amz-Signature=85111128956e834ce416975f2bf18d891c91fdfeb4361999949e25a145ec8025&X-Amz-SignedHeaders=host&actor_id=115808373&key_id=0&repo_id=662577955"
+						alt="Image 8"></a> <a href=""><img
+						src="https://github-production-user-asset-6210df.s3.amazonaws.com/115808373/251153133-1d716684-312e-4dad-845c-905d1d9165a7.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20230705%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230705T132618Z&X-Amz-Expires=300&X-Amz-Signature=9cdd0bf8c01004e8cdedbb8786d3d56492f5a032fc33b4453b25dde38efb72eb&X-Amz-SignedHeaders=host&actor_id=115808373&key_id=0&repo_id=662577955"
+						alt="Image 11"></a>
+			</div>
+			<div class="slick-imag">
+				<a href=""><img
+						src="https://github-production-user-asset-6210df.s3.amazonaws.com/115808373/251153060-9b0cd6a3-e776-4382-8541-07725e528a4c.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20230705%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230705T132549Z&X-Amz-Expires=300&X-Amz-Signature=419329bf1ab9ce286f2034dbcc008a131ee313f3b62dca86638389f14659d7d7&X-Amz-SignedHeaders=host&actor_id=115808373&key_id=0&repo_id=662577955"
+						alt="Image 9"></a> <a href=""><img
+						src="https://github-production-user-asset-6210df.s3.amazonaws.com/115808373/251153094-0019db22-f722-4970-9419-6d165e48f69e.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20230705%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230705T132603Z&X-Amz-Expires=300&X-Amz-Signature=e4576a202a6405616c50d7e858f49833c546d4355402855136deca518f2f467e&X-Amz-SignedHeaders=host&actor_id=115808373&key_id=0&repo_id=662577955"
+						alt="Image 10"></a> <a href=""><img
+						src="https://github-production-user-asset-6210df.s3.amazonaws.com/115808373/251153133-1d716684-312e-4dad-845c-905d1d9165a7.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20230705%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230705T132618Z&X-Amz-Expires=300&X-Amz-Signature=9cdd0bf8c01004e8cdedbb8786d3d56492f5a032fc33b4453b25dde38efb72eb&X-Amz-SignedHeaders=host&actor_id=115808373&key_id=0&repo_id=662577955"
+						alt="Image 11"></a> <a href=""><img
+						src="https://private-user-images.githubusercontent.com/115808373/251153178-64d33b05-bc79-4c8c-94ac-1bebdd4bb42e.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXkiOiJrZXkxIiwiZXhwIjoxNjg4NTYzNzAzLCJuYmYiOjE2ODg1NjM0MDMsInBhdGgiOiIvMTE1ODA4MzczLzI1MTE1MzE3OC02NGQzM2IwNS1iYzc5LTRjOGMtOTRhYy0xYmViZGQ0YmI0MmUucG5nP1gtQW16LUFsZ29yaXRobT1BV1M0LUhNQUMtU0hBMjU2JlgtQW16LUNyZWRlbnRpYWw9QUtJQUlXTkpZQVg0Q1NWRUg1M0ElMkYyMDIzMDcwNSUyRnVzLWVhc3QtMSUyRnMzJTJGYXdzNF9yZXF1ZXN0JlgtQW16LURhdGU9MjAyMzA3MDVUMTMyMzIzWiZYLUFtei1FeHBpcmVzPTMwMCZYLUFtei1TaWduYXR1cmU9NjczYjNiMjA4ZDM5ZGE0Yzg2YWM1ZDU3OWQzMGVkMzM4ZGViZTU3MzU1ZmQ1NzM1MDkxNDNhMjE4MjA5N2Y3OCZYLUFtei1TaWduZWRIZWFkZXJzPWhvc3QmYWN0b3JfaWQ9MCZrZXlfaWQ9MCZyZXBvX2lkPTAifQ.9Px9AQsN2kQDuyjpic-ZfHAZ7dYcZ8I34XnhEmHJbH8"
+						alt="Image 12"></a> <a href=""><img
+						src="https://github-production-user-asset-6210df.s3.amazonaws.com/115808373/251152996-3c40c552-469e-42e4-9734-8839fd8bd3a3.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20230705%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230705T132507Z&X-Amz-Expires=300&X-Amz-Signature=cf03a14ddab676a52b782fca0c461e45786e860b065e385eefd52e909c51e8fc&X-Amz-SignedHeaders=host&actor_id=115808373&key_id=0&repo_id=662577955"
+						alt="Image 7"></a>
+			</div>
+		</div>
+
+		<div class="container-uses">
+			<p>How to make it work</p>
+		</div>
+		<div class="container-body">
+			<div class="container-tab">
+				<p>How to Create an Effective Resume?</p>
+				<div class="tab">
+					<input type="radio" name="acc" id="acc1"> <label for="acc1">
+						<h2>01</h2>
+						<h3>What is a resume?</h3>
+					</label>
+					<div class="content">
+						<br>
+						<p>A resume, also known as a curriculum vitae (CV) in some
+							regions, is a document that provides a summary of a person's
+							education, work experience, skills, achievements, and
+							qualifications. It is typically used when applying for jobs and
+							serves as a marketing tool to showcase an individual's background
+							and suitability for a specific position.</p>
+					</div>
+				</div>
+				<div class="tab">
+					<input type="radio" name="acc" id="acc2"> <label for="acc2">
+						<h2>02</h2>
+						<h3>Why is a good resume important?</h3>
+					</label>
+					<div class="content">
+						<br>
+						<p>A good resume is important because it serves as your first
+							impression when applying for a job. In a simple way, it's like a
+							snapshot of your skills, qualifications, and experiences that can
+							convince employers to consider you as a potential candidate. It
+							highlights your relevant achievements and demonstrates why you
+							are the right fit for the position. A well-crafted resume can
+							increase your chances of getting noticed by employers, securing
+							job interviews, and ultimately landing your desired job.</p>
+					</div>
+				</div>
+				<div class="tab">
+					<input type="radio" name="acc" id="acc3"> <label for="acc3">
+						<h2>03</h2>
+						<h3>How can i make a change to my application?</h3>
+					</label>
+					<div class="content">
+						<br>
+						<p>A good resume is important because it serves as your
+							personal marketing tool when applying for a job. It is typically
+							the first impression that potential employers have of you, and it
+							can significantly impact your chances of getting an interview.
+							Here's a simple example to illustrate the importance of a good
+							resume:</P>
+						<p>Imagine you are an employer with a limited amount of time
+							to review numerous resumes for a single job opening. You receive
+							two resumes that are quite similar in terms of qualifications and
+							experience, but one is well-organized, visually appealing, and
+							effectively highlights the applicant's relevant skills and
+							achievements. The other resume, however, is cluttered, poorly
+							formatted, and lacks clear structure.</P>
+						<p>Given the time constraints, which resume do you think the
+							employer will be more inclined to spend time reading and consider
+							for an interview? The well-presented resume is likely to grab the
+							employer's attention and make a positive impression, increasing
+							the chances of the applicant being invited for an interview.</P>
+						<p>This example highlights how a good resume can help you
+							stand out from other candidates and make a strong initial
+							impression on potential employers. It showcases your
+							qualifications, skills, and accomplishments in a clear and
+							concise manner, making it easier for employers to assess your
+							suitability for the job. Ultimately, a well-crafted resume
+							increases your chances of advancing to the next stage of the
+							hiring process and ultimately landing the job you desire.</P>
+					</div>
+				</div>
+				<div class="tab">
+					<input type="radio" name="acc" id="acc4"> <label for="acc4">
+						<h2>04</h2>
+						<h3>How to format and structure a resume?</h3>
+					</label>
+					<div class="content">
+						<br>
+						<ul>
+							<li>The format and structure of a professional resume is
+								important. The content is what gets you the job, but an
+								aesthetically pleasing resume shows that you took the time to
+								get it right, and that you have the basic computer skills to
+								make it look good. Here are some formatting tips when it comes
+								to writing a resume:</li>
+						</ul>
+						<ul>
+							<li>* Content should be left-aligned</li>
+						</ul>
+						<ul>
+							<li>* Margins should be at one inch</li>
+						</ul>
+						<ul>
+							<li>* Use an easy-to-read, professional font.</li>
+						</ul>
+						<ul>
+							<li>* Clearly divide each section</li>
+						</ul>
+						<ul>
+							<li>* Use clear headers for every section</li>
+						</ul>
+						<ul>
+							<li>* Use bullet points whenever possible for conciseness</li>
+						</ul>
+						<ul>
+							<li>* Try to keep your resume to one page</li>
+						</ul>
+						<p>There are many professional fonts you can use, including
+							Cambria, Times New Roman, Calibri, Georgia, Arial, Lato and
+							Didot. Your name and header sections should be larger, but keep
+							the basic font size between 10 and 12 points for normal text.
+							Headers and section titles should be between 14-16 points.</p>
+						<p>Between text, use 1.0 or 1.15 line spacing, and adjust that
+							to double lines after any subheadings. You can increase or
+							decrease if your resume is too full or too empty.</p>
+					</div>
+				</div>
+				<div class="tab">
+					<input type="radio" name="acc" id="acc5"> <label for="acc5">
+						<h2>05</h2>
+						<h3>What types of resumes are there?</h3>
+					</label>
+					<div class="content">
+						<br>
+						<h2>1. Chronological Resume:</h2>
+						<p>Petition to change your name by filling out a name change
+							form, an order to show cause for legally changing your name, and
+							a decree to legally change your name. Take these forms to the
+							court clerk and file them along with your state's required filing
+							fees.</p>
+						<h2>2. Combination Resume:</h2>
+						<p>As the name suggests, a combination resume combines
+							elements of both the chronological and functional formats. It
+							highlights both your work history and skills. It begins with a
+							skills summary or qualifications section followed by a
+							chronological listing of your work experience.</p>
+						<h2>3. Targeted Resume:</h2>
+						<p>A targeted resume is tailored to a specific job or
+							industry. It highlights the skills and experiences that are most
+							relevant to the position you are applying for. You customize your
+							resume for each application to match the requirements of the job
+							posting.</p>
+						<h2>4. Online/Electronic Resume</h2>
+						<p>With the rise of digital platforms, online resumes are
+							becoming more popular. These resumes are specifically designed
+							for online applications and may include hyperlinks to your
+							portfolio, LinkedIn profile, or other relevant websites. They can
+							be easily shared and accessed online.</p>
+					</div>
+				</div>
+				<!-- <div class="tab">
                     <input type="radio" name="acc" id="acc6">
                     <label for="acc6">
                         <h2>06</h2>
@@ -283,46 +277,43 @@
                         </p>
                     </div>
                 </div> -->
-            </div>
-        </div>
-    </div>
-    </div>
-    <!-- Footer -->
-    <footer>
-        <div class="footer-container">
-            <div class="resources">
-                <h3>Resources</h3>
-                <ul>
-                    <li><a th:href="@{/home/resume}">Resume</a></li>
-                    <li><a href="cv.html">CV</a></li>
-                </ul>
-            </div>
-            <div class="support">
-                <h3>Support</h3>
-                <ul>
-                    <li><a href="contact.html">Contact us</a></li>
-                    <li><a href="terms.html">Terms of Use</a></li>
-                    <li><a href="privacy.html">Privacy</a></li>
-                </ul>
-            </div>
-            <div class="additional-links">
-                <h3>Social Media</h3>
-                <ul>
-                    <li><a href="https://www.linkedin.com"><i class="fa fa-linkedin-square" aria-hidden="true"
-                                style="color: blue;"></i>
-                        </a></li>
-                    <li><a href="https://www.instagram.com"><i class="fa fa-instagram" aria-hidden="true"
-                                style="color: #C13584;"></i>
-                        </a></li>
-                    <li><a href="https://www.facebook.com"><i class="fa fa-facebook-square" aria-hidden="true"
-                                style="color: blue;"></i>
-                        </a></li>
-                </ul>
-            </div>
-        </div>
-    </footer>
+			</div>
+		</div>
+	</div>
+	</div>
+	<!-- Footer -->
+	<footer>
+		<div class="footer-container">
+			<div class="resources">
+				<h3>Resources</h3>
+				<ul>
+					<li><a th:href="@{/home/resume}">Resume</a></li>
+					<li><a href="cv.html">CV</a></li>
+				</ul>
+			</div>
+			<div class="support">
+				<h3>Support</h3>
+				<ul>
+					<li><a href="contact.html">Contact us</a></li>
+					<li><a href="terms.html">Terms of Use</a></li>
+					<li><a href="privacy.html">Privacy</a></li>
+				</ul>
+			</div>
+			<div class="additional-links">
+				<h3>Social Media</h3>
+				<ul>
+					<li><a href="https://www.linkedin.com"><i class="fa fa-linkedin-square" aria-hidden="true"
+								style="color: blue;"></i> </a></li>
+					<li><a href="https://www.instagram.com"><i class="fa fa-instagram" aria-hidden="true"
+								style="color: #C13584;"></i> </a></li>
+					<li><a href="https://www.facebook.com"><i class="fa fa-facebook-square" aria-hidden="true"
+								style="color: blue;"></i> </a></li>
+				</ul>
+			</div>
+		</div>
+	</footer>
 
-    <!-- Footer -->
+	<!-- Footer -->
 </body>
 <script th:src="@{/js/jquery-3.7.0.min.js}"></script>
 <script th:src="@{/js/script.js}"></script>

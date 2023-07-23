@@ -12,4 +12,6 @@ public interface ProfileDetailsService {
 	List<ProfileDetails> getAllFiles();
 	
 	Optional<ProfileDetails> getAllFileByID(Long id);
+	
+	void deleteByID(Long id);
 }

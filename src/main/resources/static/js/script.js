@@ -8,6 +8,20 @@ $(document).ready(function () {
     setInterval(toggleText, 3000);
     toggleText();
 
+    // Dropdown text
+    $('.dropbtns').click(function(e) {
+        e.stopPropagation();
+        $(this).siblings('.dropdown-content').toggle();
+    });
+
+    // Close the dropdown when clicking outside of it
+    $(document).click(function(event) {
+        var target = $(event.target);
+        if (!target.closest('.dropdown').length) {
+            $('.dropdown-content').hide();
+        }
+    });
+
 
     //TODO: here we can create a Slick slider
     $('.container .slider').slick({
@@ -29,6 +43,7 @@ $(document).ready(function () {
             $(".profile-content").hide();
         }
     });
+
     // Headline 
     const addHeadlineBtn = $("#addHeadlineBtn");
     const cart = $("#cart");
