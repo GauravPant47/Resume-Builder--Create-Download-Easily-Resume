@@ -17,43 +17,43 @@ import lombok.RequiredArgsConstructor;
 @EnableMethodSecurity(prePostEnabled = true, securedEnabled = true)
 @RequiredArgsConstructor
 public class WebSecurityConfig {
-    @Bean
-    public static PasswordEncoder passwordEncoder() {
-        return new BCryptPasswordEncoder();
-    }
+	@Bean
+	public static PasswordEncoder passwordEncoder() {
+		return new BCryptPasswordEncoder();
+	}
 
-    private static final String[] WHITELST = {
-            "/registra",
-            "/css/**",
-            "/js/**",
-            "/images/**",
-            "/home"
-    };
-
+	private static final String[] WHITELST = {
+			"/registra",
+			"/js/**",
+			"/images/**",
+			"/css/**",
+			"/.slider/**",
+			"/home"
+	};
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
     	http
-		.authorizeRequests()
-		.antMatchers(WHITELST).permitAll()
-		.antMatchers(HttpMethod.GET, "/home").permitAll()
-		.anyRequest().authenticated();
+			.authorizeRequests()
+			.antMatchers(WHITELST).permitAll()
+			.antMatchers(HttpMethod.GET, "/home").permitAll()
+			.anyRequest().authenticated();
 
-http
-		.formLogin()
-		.loginPage("/login")
-		.loginProcessingUrl("/login")
-		.usernameParameter("email")
-		.passwordParameter("password")
-		.defaultSuccessUrl("/index", true)
-		.failureUrl("/login?error")
-		.permitAll()
-		.and()
-		.logout()
-		.logoutUrl("/logout")
-		.logoutSuccessUrl("/login?logout")
-		.and()
-		.httpBasic();
+    	http
+    		.formLogin()
+    		.loginPage("/login")
+    		.loginProcessingUrl("/login")
+    		.usernameParameter("email")
+    		.passwordParameter("password")
+    		.defaultSuccessUrl("/home", true)
+    		.failureUrl("/login?error")
+			.permitAll()
+			.and()
+			.logout()
+			.logoutUrl("/logout")
+			.logoutSuccessUrl("/login?logout")
+			.and()
+			.httpBasic();
 
-return http.build();
+    	return http.build();
     }
 }

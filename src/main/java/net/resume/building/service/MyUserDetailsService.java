@@ -1,4 +1,4 @@
-package net.resume.building.service.impl;
+package net.resume.building.service;
 
 import java.util.List;
 import java.util.Optional;
@@ -13,10 +13,9 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Component;
 
 import net.resume.building.model.Account;
-import net.resume.building.service.AccountService;
 
 @Component("userDetailsService")
-public class MyUserDetailsServiceimpl implements UserDetailsService {
+public class MyUserDetailsService implements UserDetailsService {
 	@Autowired
 	private AccountService accountService;
 
@@ -34,3 +33,4 @@ public class MyUserDetailsServiceimpl implements UserDetailsService {
 				grantedAuthorities); // (2)
 	}
 }
+

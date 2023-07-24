@@ -44,7 +44,8 @@ body {
     margin-bottom: 20px;
 }
 
-.login-container input[type="submit"] {
+.login-container input[type="submit"],
+button[type="submit"] {
     background-color: #1C51EF;
     color: white;
     padding: 10px 15px;
@@ -57,7 +58,8 @@ body {
     border-radius: 50px;
 }
 
-.login-container input[type="submit"]:hover {
+.login-container input[type="submit"]:hover,
+button[type="submit"]:hover {
     color: #000;
     background-color: #ffffff;
 }

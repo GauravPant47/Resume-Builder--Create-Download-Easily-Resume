@@ -41,13 +41,17 @@
 				<div sec:authorize="isAuthenticated()">
 					<form th:action="@{/logout}" method="POST">
 						<div>
-							<label>Hi, <span sec:authentication="name">Username</span></label>
+							<label>Welcome,<br> <span sec:authentication="name"> Username</span></label>
 						</div>
+						<hr>
 						<button type="submit">Logout</button>
 					</form>
+					<a th:href="@{/home}">Home</a>
+					<a th:href="@{/home/resume}">Online Resume</a>
+					<a th:href="@{/home}">Resume</a>
 				</div>
-				<a th:href="@{/home}">Home</a>
 				<div sec:authorize="!isAuthenticated()">
+					<a th:href="@{/home}">Home</a>
 					<a th:href="@{/registra}">Sign Up</a>
 					<a th:href="@{/login}">Log in</a>
 				</div>

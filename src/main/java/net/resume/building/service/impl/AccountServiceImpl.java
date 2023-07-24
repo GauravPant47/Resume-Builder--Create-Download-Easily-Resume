@@ -15,31 +15,32 @@ import net.resume.building.repositorty.AuthorityRepository;
 import net.resume.building.service.AccountService;
 
 @Service
-public class AccountServiceImpl implements AccountService{
+public class AccountServiceImpl implements AccountService {
 
-    @Autowired
-    private PasswordEncoder passwordEncoder;
+	@Autowired
+	private PasswordEncoder passwordEncoder;
 
-    @Autowired
-    private AccountRepository accountRepository;
+	@Autowired
+	private AccountRepository accountRepository;
 
-    @Autowired
-    private AuthorityRepository authorityRepository;
+	@Autowired
+	private AuthorityRepository authorityRepository;
 
-    public Account save(Account account) {
-        if (account.getId() == null) {
-            if (account.getAuthorities().isEmpty()) {
-                Set<Authority> authorities = new HashSet<>();
-                authorityRepository.findById("ROLE_USER").ifPresent(authorities::add);
-                account.setAuthorities(authorities);
-            }
-        }
+	public Account save(Account account) {
+		account.getEmail();
+		if (account.getId() == null) {
+			if (account.getAuthorities().isEmpty()) {
+				Set<Authority> authorities = new HashSet<>();
+				authorityRepository.findById("ROLE_USER").ifPresent(authorities::add);
+				account.setAuthorities(authorities);
+			}
+		}
 
-        account.setPassword(passwordEncoder.encode(account.getPassword()));
-        return accountRepository.save(account);
-    }
+		account.setPassword(passwordEncoder.encode(account.getPassword()));
+		return accountRepository.save(account);
+	}
 
-    public Optional<Account> findOneByEmail(String email) {
-        return accountRepository.findOneByEmailIgnoreCase(email);
-    }
+	public Optional<Account> findOneByEmail(String email) {
+		return accountRepository.findOneByEmailIgnoreCase(email);
+	}
 }

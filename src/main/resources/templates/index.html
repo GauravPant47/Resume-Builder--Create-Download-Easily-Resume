@@ -42,16 +42,20 @@
 				<div sec:authorize="isAuthenticated()">
 					<form th:action="@{/logout}" method="POST">
 						<div>
-							<label>Hi, <span sec:authentication="name"> Username</span></label>
+							<label>Welcome,<br> <span sec:authentication="name"> Username</span></label>
 						</div>
 						<button type="submit">Logout</button>
 					</form>
+					<a th:href="@{/home}">Home</a>
+					<a th:href="@{/home/resume}">Online Resume</a>
+					<a th:href="@{/home}">Resume</a>
 				</div>
-				<a th:href="@{/home}">Home</a>
 				<div sec:authorize="!isAuthenticated()">
-					<a th:href="@{/registra}">Sign Up</a> 
+					<a th:href="@{/home}">Home</a>
+					<a th:href="@{/registra}">Sign Up</a>
 					<a th:href="@{/login}">Log in</a>
 				</div>
+
 			</div>
 		</div>
 
@@ -70,43 +74,25 @@
 		</div>
 		<div class="slider">
 			<div class="slick-imag">
-				<a href=""><img
-						src="https://private-user-images.githubusercontent.com/115808373/251163401-4537ecbe-9df1-4cd6-932e-8508b996ff14.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXkiOiJrZXkxIiwiZXhwIjoxNjg4NTYzNzAzLCJuYmYiOjE2ODg1NjM0MDMsInBhdGgiOiIvMTE1ODA4MzczLzI1MTE2MzQwMS00NTM3ZWNiZS05ZGYxLTRjZDYtOTMyZS04NTA4Yjk5NmZmMTQucG5nP1gtQW16LUFsZ29yaXRobT1BV1M0LUhNQUMtU0hBMjU2JlgtQW16LUNyZWRlbnRpYWw9QUtJQUlXTkpZQVg0Q1NWRUg1M0ElMkYyMDIzMDcwNSUyRnVzLWVhc3QtMSUyRnMzJTJGYXdzNF9yZXF1ZXN0JlgtQW16LURhdGU9MjAyMzA3MDVUMTMyMzIzWiZYLUFtei1FeHBpcmVzPTMwMCZYLUFtei1TaWduYXR1cmU9MWIwNzZjMTVjN2FkYzcxYzRlMDQ0ODljNzI1YjIyNjZkNGFhNjhjMjZlM2MxZDMxM2YzMzYwM2I1Zjk0Y2Y1YSZYLUFtei1TaWduZWRIZWFkZXJzPWhvc3QmYWN0b3JfaWQ9MCZrZXlfaWQ9MCZyZXBvX2lkPTAifQ.5LyQr3kPHWUGi2o638sQf9i95lxoqCLCgHVgop7SIbA"
-						alt="Image 1"></a> <a href=""><img
-						src="https://github-production-user-asset-6210df.s3.amazonaws.com/115808373/251152788-bdbcc282-0e40-48b4-b721-e4344e35da1e.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20230705%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230705T132122Z&X-Amz-Expires=300&X-Amz-Signature=87ff5abe34f9e31bdcd79cb15c768844818ecf9ef9e2a0dc7d2f6c802d56667d&X-Amz-SignedHeaders=host&actor_id=115808373&key_id=0&repo_id=662577955"
-						alt="Image 2"></a> <a href=""><img
-						src="https://github-production-user-asset-6210df.s3.amazonaws.com/115808373/251152838-a899b288-d561-4ef5-834b-f2d07c9f2dae.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20230705%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230705T132347Z&X-Amz-Expires=300&X-Amz-Signature=b2b1dbe010ddac1125799e95e7b3cc2c66f06a0b71b057b56466b7c63a148718&X-Amz-SignedHeaders=host&actor_id=115808373&key_id=0&repo_id=662577955"
-						alt="Image 3"></a> <a href=""><img
-						src="https://github-production-user-asset-6210df.s3.amazonaws.com/115808373/251152871-dadffab1-3083-477f-ae7e-96f2a91de7fd.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20230705%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230705T132413Z&X-Amz-Expires=300&X-Amz-Signature=28ea13973e52accb348111d36010dcb14ecfe1b3c1b1ab1ee9a91b141cdfa40c&X-Amz-SignedHeaders=host&actor_id=115808373&key_id=0&repo_id=662577955"
-						alt="Image 4"></a> <a href=""><img
-						src="https://github-production-user-asset-6210df.s3.amazonaws.com/115808373/251152964-6ab53f3e-b35a-436d-ac02-f3b8a50fa91d.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20230705%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230705T132449Z&X-Amz-Expires=300&X-Amz-Signature=2d3c5f186c7711124891fea53f7169781bd8679fb3d58d0503fa22c2737d45cb&X-Amz-SignedHeaders=host&actor_id=115808373&key_id=0&repo_id=662577955"
-						alt="Image 6"></a>
+				<a th:href="@{/home/resumef}"><img th:src="@{'/images/resume15.png'}" alt="Image 1"></a>
+				<a th:href="@{/home/resumet}"><img th:src="@{'/images/resume14.png'}" alt="Image 2"></a>
+				<a href=""><img th:src="@{'/images/resume13.png'}" alt="Image 3"></a>
+				<a href=""><img th:src="@{'/images/resume12.png'}" alt="Image 4"></a>
+				<a href=""><img th:src="@{'/images/resume11.png'}" alt="Image 6"></a>
 			</div>
 			<div class="slick-imag">
-				<a href=""><img
-						src="https://github-production-user-asset-6210df.s3.amazonaws.com/115808373/251152914-7ac9b54a-c946-43b8-9aa7-01fa5e74dc00.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20230705%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230705T132434Z&X-Amz-Expires=300&X-Amz-Signature=7772dab8cc617ce5afdbcbe986ab75684f251fbe6771a725fa1b81c197102c34&X-Amz-SignedHeaders=host&actor_id=115808373&key_id=0&repo_id=662577955"
-						alt="Image 5"></a> <a href=""><img
-						src="https://github-production-user-asset-6210df.s3.amazonaws.com/115808373/251152964-6ab53f3e-b35a-436d-ac02-f3b8a50fa91d.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20230705%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230705T132449Z&X-Amz-Expires=300&X-Amz-Signature=2d3c5f186c7711124891fea53f7169781bd8679fb3d58d0503fa22c2737d45cb&X-Amz-SignedHeaders=host&actor_id=115808373&key_id=0&repo_id=662577955"
-						alt="Image 6"></a> <a href=""><img
-						src="https://github-production-user-asset-6210df.s3.amazonaws.com/115808373/251152996-3c40c552-469e-42e4-9734-8839fd8bd3a3.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20230705%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230705T132507Z&X-Amz-Expires=300&X-Amz-Signature=cf03a14ddab676a52b782fca0c461e45786e860b065e385eefd52e909c51e8fc&X-Amz-SignedHeaders=host&actor_id=115808373&key_id=0&repo_id=662577955"
-						alt="Image 7"></a> <a href=""><img
-						src="https://github-production-user-asset-6210df.s3.amazonaws.com/115808373/251153028-3b100f57-92d4-4dc1-8eb6-340d12679985.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20230705%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230705T132525Z&X-Amz-Expires=300&X-Amz-Signature=85111128956e834ce416975f2bf18d891c91fdfeb4361999949e25a145ec8025&X-Amz-SignedHeaders=host&actor_id=115808373&key_id=0&repo_id=662577955"
-						alt="Image 8"></a> <a href=""><img
-						src="https://github-production-user-asset-6210df.s3.amazonaws.com/115808373/251153133-1d716684-312e-4dad-845c-905d1d9165a7.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20230705%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230705T132618Z&X-Amz-Expires=300&X-Amz-Signature=9cdd0bf8c01004e8cdedbb8786d3d56492f5a032fc33b4453b25dde38efb72eb&X-Amz-SignedHeaders=host&actor_id=115808373&key_id=0&repo_id=662577955"
-						alt="Image 11"></a>
+				<a href=""><img th:src="@{'/images/resume10.png'}" alt="Image 5"></a>
+				<a href=""><img th:src="@{'/images/resume9.png'}" alt="Image 6"></a>
+				<a href=""><img th:src="@{'/images/resume8.png'}" alt="Image 7"></a>
+				<a href=""><img th:src="@{'/images/resume7.png'}" alt="Image 8"></a>
+				<a href=""><img th:src="@{'/images/resume6.png'}" alt="Image 11"></a>
 			</div>
 			<div class="slick-imag">
-				<a href=""><img
-						src="https://github-production-user-asset-6210df.s3.amazonaws.com/115808373/251153060-9b0cd6a3-e776-4382-8541-07725e528a4c.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20230705%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230705T132549Z&X-Amz-Expires=300&X-Amz-Signature=419329bf1ab9ce286f2034dbcc008a131ee313f3b62dca86638389f14659d7d7&X-Amz-SignedHeaders=host&actor_id=115808373&key_id=0&repo_id=662577955"
-						alt="Image 9"></a> <a href=""><img
-						src="https://github-production-user-asset-6210df.s3.amazonaws.com/115808373/251153094-0019db22-f722-4970-9419-6d165e48f69e.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20230705%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230705T132603Z&X-Amz-Expires=300&X-Amz-Signature=e4576a202a6405616c50d7e858f49833c546d4355402855136deca518f2f467e&X-Amz-SignedHeaders=host&actor_id=115808373&key_id=0&repo_id=662577955"
-						alt="Image 10"></a> <a href=""><img
-						src="https://github-production-user-asset-6210df.s3.amazonaws.com/115808373/251153133-1d716684-312e-4dad-845c-905d1d9165a7.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20230705%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230705T132618Z&X-Amz-Expires=300&X-Amz-Signature=9cdd0bf8c01004e8cdedbb8786d3d56492f5a032fc33b4453b25dde38efb72eb&X-Amz-SignedHeaders=host&actor_id=115808373&key_id=0&repo_id=662577955"
-						alt="Image 11"></a> <a href=""><img
-						src="https://private-user-images.githubusercontent.com/115808373/251153178-64d33b05-bc79-4c8c-94ac-1bebdd4bb42e.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXkiOiJrZXkxIiwiZXhwIjoxNjg4NTYzNzAzLCJuYmYiOjE2ODg1NjM0MDMsInBhdGgiOiIvMTE1ODA4MzczLzI1MTE1MzE3OC02NGQzM2IwNS1iYzc5LTRjOGMtOTRhYy0xYmViZGQ0YmI0MmUucG5nP1gtQW16LUFsZ29yaXRobT1BV1M0LUhNQUMtU0hBMjU2JlgtQW16LUNyZWRlbnRpYWw9QUtJQUlXTkpZQVg0Q1NWRUg1M0ElMkYyMDIzMDcwNSUyRnVzLWVhc3QtMSUyRnMzJTJGYXdzNF9yZXF1ZXN0JlgtQW16LURhdGU9MjAyMzA3MDVUMTMyMzIzWiZYLUFtei1FeHBpcmVzPTMwMCZYLUFtei1TaWduYXR1cmU9NjczYjNiMjA4ZDM5ZGE0Yzg2YWM1ZDU3OWQzMGVkMzM4ZGViZTU3MzU1ZmQ1NzM1MDkxNDNhMjE4MjA5N2Y3OCZYLUFtei1TaWduZWRIZWFkZXJzPWhvc3QmYWN0b3JfaWQ9MCZrZXlfaWQ9MCZyZXBvX2lkPTAifQ.9Px9AQsN2kQDuyjpic-ZfHAZ7dYcZ8I34XnhEmHJbH8"
-						alt="Image 12"></a> <a href=""><img
-						src="https://github-production-user-asset-6210df.s3.amazonaws.com/115808373/251152996-3c40c552-469e-42e4-9734-8839fd8bd3a3.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20230705%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230705T132507Z&X-Amz-Expires=300&X-Amz-Signature=cf03a14ddab676a52b782fca0c461e45786e860b065e385eefd52e909c51e8fc&X-Amz-SignedHeaders=host&actor_id=115808373&key_id=0&repo_id=662577955"
-						alt="Image 7"></a>
+				<a href=""><img th:src="@{'/images/resume5.png'}" alt="Image 9"></a>
+				<a href=""><img th:src="@{'/images/resume4.png'}" alt="Image 10"></a>
+				<a href=""><img th:src="@{'/images/resume3.png'}" alt="Image 11"></a>
+				<a href=""><img th:src="@{'/images/resume2.png'}" alt="Image 12"></a>
+				<a href=""><img th:src="@{'/images/resume1.png'}" alt="Image 7"></a>
 			</div>
 		</div>
 

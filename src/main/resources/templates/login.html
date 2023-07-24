@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<html xmlns:th="http://www.thymeleaf.org">
 
 <head>
 	<meta charset="UTF-8">
@@ -45,8 +45,8 @@
 						<button type="submit">Logout</button>
 					</form>
 				</div>
-				<a th:href="@{/home}">Home</a>
 				<div sec:authorize="!isAuthenticated()">
+					<a th:href="@{/home}">Home</a>
 					<a th:href="@{/registra}">Sign Up</a>
 					<a th:href="@{/login}">Log in</a>
 				</div>
@@ -58,16 +58,16 @@
 	<div class="login-form">
 		<div class="login-container">
 			<h2>Login </h2>
-			<form th:action="@{/login}" method="POST">
+			<form action="#" th:action="@{/login}" method="POST">
 				<div>
 					<label for="email">Email</label>
-					<input id="email" type="email" name="email" placeholder="Email" />
+					<input id="email" type="text" name="email" placeholder="Email" />
 				</div>
 				<div>
 					<label for="password">Password</label>
-					<input id="password" type="password" placeholder="Password" minlength="8" maxlength="20" />
+					<input id="password" type="password" name="password" placeholder="Password" />
 				</div>
-				<input type="submit" value="Login">
+				<button type="submit">Login!</button>
 			</form>
 			<p>Don't have an account ? <a th:href="@{/registra}">Sign Up</a></p>
 		</div>

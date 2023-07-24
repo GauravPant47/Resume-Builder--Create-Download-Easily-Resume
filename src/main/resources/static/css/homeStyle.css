@@ -87,12 +87,30 @@
 /* Dropdown Content (Hidden by Default) */
 .profile-content {
     display: none;
-    right: 0;
+    right: -50px;
     position: absolute;
     background-color: #f9f9f9;
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
+    width: 30vh;
+    height: 30vh;
+    overflow: hidden;
+}
+.profile-content form{
+    display: grid;
+    font-size: 20px;
+    padding: 12px 0 0;
+}
+.profile-content form button{
+    background: transparent;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 10px;
+    border: none;
+}
+.profile-content form button:hover{
+    background-color: #f1f1f1
 }
 
 /* Links inside the dropdown */

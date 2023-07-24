@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<html xmlns:th="http://www.thymeleaf.org">
 
 <head>
 	<meta charset="UTF-8">
@@ -45,8 +45,8 @@
 						<button type="submit">Logout</button>
 					</form>
 				</div>
-				<a th:href="@{/home}">Home</a>
 				<div sec:authorize="!isAuthenticated()">
+					<a th:href="@{/home}">Home</a>
 					<a th:href="@{/registra}">Sign Up</a>
 					<a th:href="@{/login}">Log in</a>
 				</div>
@@ -57,29 +57,28 @@
 	<div class="login-form">
 		<div class="login-container">
 			<h3>Register New Account</h3>
-			<form action="#" th:action="@{/registra}" th:object="${account}" method="POST">
+			<form action="#" th:action="@{/register}" th:object="${account}" method="POST">
 				<div>
-					<label for="fullName">Full Name:</label>
+					<label for="fullName">Full Name</label>
 					<input id="fullName" type="text" th:field="*{fullName}" placeholder="Full Name" />
 				</div>
 				<div>
-					<label for="gender">Gender:</label>
+					<label for="gender">Gender</label>
 					<input id="gender" type="text" th:field="*{gender}" placeholder="Gender" />
 				</div>
 				<div>
-					<label for="dob">Date Of Birth:</label>
+					<label for="dob">Date Of Birth</label>
 					<input id="dob" type="date" th:field="*{dob}" placeholder="Date Of Birth" />
 				</div>
 				<div>
-					<label for="email">Email:</label>
-					<input id="email" type="email" th:field="*{email}" placeholder="Email" />
+					<label for="email">Email</label>
+					<input id="email" type="text" th:field="*{email}" placeholder="Email" />
 				</div>
 				<div>
 					<label for="password">Password</label>
-					<input id="password" type="password" th:field="*{password}" placeholder="Password" minlength="8"
-						maxlength="20" />
+					<input id="password" type="password" th:field="*{password}" placeholder="Password" maxlength="15" />
 				</div>
-				<input type="submit" value="Sign Up">
+				<button type="submit">Register!</button>
 			</form>
 		</div>
 	</div>
