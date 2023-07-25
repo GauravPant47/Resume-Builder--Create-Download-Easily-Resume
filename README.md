@@ -42,8 +42,62 @@ These instructions will get you a copy of the project up and running on your loc
 ### Prerequisites
 What things you need to install the software and how to install them.
 
+* To Install this software first we need to add this dependency 
 ```
-Give examples
+<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-thymeleaf</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.thymeleaf.extras</groupId>
+			<artifactId>thymeleaf-extras-springsecurity5</artifactId>
+		</dependency>
+	
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+			<scope>runtime</scope>
+			<optional>true</optional>
+		</dependency>
+		<dependency>
+			<groupId>com.mysql</groupId>
+			<artifactId>mysql-connector-j</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<optional>true</optional>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+
 ```
 
 ### Installing
@@ -51,14 +105,18 @@ A step by step series of examples that tell you how to get a development env run
 
 Say what the step will be
 
+![Screenshot 2023-07-25 183854](https://github.com/GauravPant47/Resume-Builder--Create-Download-Easily-Resume/assets/115808373/d5d31358-59ac-4dfd-82a8-f3e65d1327a4)
+
 ```
-Give the example
+* First Register Account
 ```
 
 And repeat
 
+![Screenshot 2023-07-25 183954](https://github.com/GauravPant47/Resume-Builder--Create-Download-Easily-Resume/assets/115808373/216efece-9c88-456e-aaeb-d6bd4404236b)
+
 ```
-until finished
+* Then Login with your Account with your Register Accont Id 
 ```
 
 End with an example of getting some data out of the system or using it for a little demo.
