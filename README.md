@@ -116,7 +116,7 @@ And repeat
 ![Screenshot 2023-07-25 183954](https://github.com/GauravPant47/Resume-Builder--Create-Download-Easily-Resume/assets/115808373/216efece-9c88-456e-aaeb-d6bd4404236b)
 
 ```
-* Then Login with your Account with your Register Accont Id 
+* Then Login into your Account with your Register Account Id 
 ```
 
 End with an example of getting some data out of the system or using it for a little demo.
@@ -125,21 +125,31 @@ End with an example of getting some data out of the system or using it for a lit
 Explain how to run the automated tests for this system.
 
 ### Break down into end to end tests
-Explain what these tests test and why
+![Screenshot 2023-07-26 171424](https://github.com/GauravPant47/Resume-Builder--Create-Download-Easily-Resume/assets/115808373/eefa2f16-98a8-406d-a1d2-f1fba74d8d6a)
 
 ```
-Give an example
+First, you need to click the create resume button
 ```
-
-### And coding style tests
-Explain what these tests test and why
+![Screenshot 2023-07-26 171629](https://github.com/GauravPant47/Resume-Builder--Create-Download-Easily-Resume/assets/115808373/bd45a0ea-62a9-46dc-bad3-147b3647f2ad)
 
 ```
-Give an example
+then update your resume easily to click pem and add ___ button
 ```
+![Screenshot 2023-07-26 171855](https://github.com/GauravPant47/Resume-Builder--Create-Download-Easily-Resume/assets/115808373/5250225c-5b98-4d7c-b924-4e800c00b8cd)
+```
+Then click the dropdown and click Resume
+```
+![Screenshot 2023-07-26 171949](https://github.com/GauravPant47/Resume-Builder--Create-Download-Easily-Resume/assets/115808373/9a40e893-9eaa-4cc9-aedd-567d0956ee02)
+![image](https://github.com/GauravPant47/Resume-Builder--Create-Download-Easily-Resume/assets/115808373/16bce387-b5eb-454d-8ceb-59ce9ed8b9b1)
+```
+Then you can choose any resume which you like, And Ckicl those resumes
+```
+![Screenshot 2023-07-26 172129](https://github.com/GauravPant47/Resume-Builder--Create-Download-Easily-Resume/assets/115808373/24db017e-4b23-4019-94fa-29ebed2d097b)
+![image](https://github.com/GauravPant47/Resume-Builder--Create-Download-Easily-Resume/assets/115808373/93945911-90b7-415c-a6ea-d5f7e6b293da)
 
-## 🎈 Usage <a name="usage"></a>
-Add notes about how to use the system.
+```
+Then you can directly download your resume from there which you have selected. Click on the download button and you will get your resume
+```
 
 ## 🚀 Deployment <a name = "deployment"></a>
 Add additional notes about how to deploy this on a live system.
