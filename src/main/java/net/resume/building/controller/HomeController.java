@@ -62,8 +62,8 @@ public class HomeController {
         List<ProjectModel> projects = projectService.getFilesAll();
         model.addAttribute("projects", projects);
 		
-        List<ProfileDetails> profile = detailsService.getAllFiles();
-        model.addAttribute("profile", profile);
+        List<ProfileDetails> profiles = detailsService.getAllFiles();
+        model.addAttribute("profiles", profiles);
 		
         List<EmploymentModel> employments = employmentService.getAllfile();
         model.addAttribute("employments", employments);
@@ -95,4 +95,10 @@ public class HomeController {
 	public String resumetPage() {
 		return "resumet";
 	}
+	
+	@GetMapping("/moreResumes")
+	public String allResumes() {
+		return "moreResumes";
+	}
+	
 }

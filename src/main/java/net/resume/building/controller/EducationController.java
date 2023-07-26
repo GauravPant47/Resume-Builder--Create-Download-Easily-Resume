@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import net.resume.building.model.EducationModel;
+import net.resume.building.model.ProfileDetails;
 import net.resume.building.service.EducationService;
 
 @Controller
@@ -22,21 +23,32 @@ public class EducationController {
     @Autowired
     private EducationService educationService;
 
-
-    @PostMapping("/education")
-    public String submitForm(HttpServletRequest request, @ModelAttribute EducationModel educationModel) {
-        String title = request.getParameter("title");
+    
+    @GetMapping("/resume/education")
+    public String createNewForm(HttpServletRequest request,Model model){
+    	String title = request.getParameter("title");
         String collage = request.getParameter("collage");
         String location = request.getParameter("location");
         String course = request.getParameter("course");
         String description = request.getParameter("description");
         // TODO: EducationModel and using the retrieved data and Save Data to updating
+    	EducationModel educations = new EducationModel();
+        
+    	educations.setTitle(title);
+    	educations.setCollage(collage);
+    	educations.setDescription(description);
+    	educations.setLocation(location);
+    	educations.setCourse(course);
 
-        educationModel.setTitle(title);
-        educationModel.setCollage(collage);
-        educationModel.setDescription(description);
-        educationModel.setLocation(location);
-        educationModel.setCourse(course);
+    	model.addAttribute("educations", educations);
+    	
+    	return "education_post";
+    }
+
+
+    @PostMapping("/resume/education")
+    public String submitForm(@ModelAttribute EducationModel educationModel) {
+        
 
         educationService.saveAllFile(educationModel);
         return "redirect:/home/resume";

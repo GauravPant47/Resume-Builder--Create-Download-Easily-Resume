@@ -90,46 +90,9 @@
                 </div>
             </div>
             <div class="container-right">
-                <!-- <a href="#"><i class="fa fa-pencil" aria-hidden="true"></i></a> -->
-                <!-- <a href="" id="addHeadlineBtn" style="color: blue;">Add Education</a> -->
-                <!--	<button id="addHeadlineBtn">Add Education</button>-->
-                <div id="cartProfile" class="hidden">
-                    <!-- <h2>Cart</h2> -->
-                    <form id="cartForm" th:action="@{/home/profile}" th:object="${profile}" method="post">
-                        <h2 style="margin:15px 0 15px">Profile Details </h2>
-                        <div class="form-group">
-                            <label for="name">Name :</label>
-                            <input type="text" name="name" th:field="*{name}" placeholder="Name" required />
-                        </div>
-                        <div class="form-group">
-                            <label for="totalExperience">Total Experience :</label>
-                            <input type="text" name="totalExperience" th:field="*{totalExperience}"
-                                placeholder="Total Experience" required />
-                        </div>
-                        <div class="form-group">
-                            <label for="currentLocation">Current Location :</label>
-                            <input type="text" name="currentLocation" th:field="*{currentLocation}"
-                                placeholder="Current Location" required />
-                        </div>
-                        <div class="form-group">
-                            <label for="mobileNumber">Mobile Number :</label>
-                            <input type="text" name="mobileNumber" th:field="*{mobileNumber}"
-                                placeholder="Mobile Number" required />
-                        </div>
-                        <div class="form-group">
-                            <label for="emailAddress">Email Address :</label>
-                            <input type="email" name="emailAddress" th:field="*{emailAddress}"
-                                placeholder="Email Address" required />
-                        </div>
-                        <div class="form-group-btn">
-                            <button class="btn btn-c1" type="submit">Submit</button>
-                            <button class="btn btn-c1" id="closeProfile">Close</button>
-                        </div>
-                    </form>
-                </div>
-                <i id="addProfileBtn" class="fa fa-pencil" aria-hidden="true"></i>
-                <div th:each="profile : ${profile}">
+                <div th:each="profile : ${profiles}">
                     <h5 th:text="${profile.name}">Full Name</h5>
+                    <a th:href="@{'/home/resume/profile'}"><i class="fa fa-pencil" aria-hidden="true"></i></a>
                     <hr>
                     <div class="user-details">
                         <div class="user-details-left">
@@ -141,7 +104,8 @@
                         </div>
                         <hr>
                         <div class="user-details-right">
-                            <p th:text="${profile.mobileNumber}"><i class=" fa fa-mobile" aria-hidden="true"></i> Mobile
+                            <p th:text="${profile.mobileNumber}"><i class=" fa fa-mobile" aria-hidden="true"></i>
+                                Mobile
                                 Number</p>
                             <p th:text="${profile.emailAddress}"><i class=" fa fa-envelope" aria-hidden="true"></i>
                                 Email
@@ -151,7 +115,6 @@
                 </div>
             </div>
         </div>
-
         <div>
             <div class="cart">
                 <div class="left-cart">
@@ -183,54 +146,23 @@
                     <div class="right-cart-hedline">
                         <div class="headline" id="hedline">
                             <div class="space">
-                                <h3>Resume headline</h3>
-                                <i id="addHeadlineBtn" class="fa fa-pencil" aria-hidden="true"></i>
-                                <!-- <a href="" id="addHeadlineBtn" style="color: blue;">Add Education</a> -->
-                                <!-- <button id="addHeadlineBtn">Add Education</button> -->
-                                <div id="cart" class="hidden">
-                                    <!-- <h2>Cart</h2> -->
-                                    <form id="cartForm" th:action="@{/home/headline}" th:object="${headline}"
-                                        method="post">
-                                        <!-- <h2 style="margin:15px 0 15px">Resume headline </h2> -->
-                                        <div class="form-group">
-                                            <label style="margin:15px 0 15px" for="headline">Resume headline :</label>
-                                            <textarea type="text" name="headline" th:field="*{headline}"
-                                                placeholder="Enter resume headline"></textarea>
-                                        </div>
-                                        <div class="form-group-btn">
-                                            <button class="btn btn-c1" type="submit">Submit</button>
-                                            <button class="btn btn-c1" id="closeBtn">Close</button>
-                                        </div>
-                                    </form>
-                                </div>
+                                <a href="">Resume headline <i class="fa fa-pencil" aria-hidden="true"></i>
+                                    <a th:href="@{'/home/resume/headline'}" style="color: blue;">Add Education</a>
+                                    <!-- <button id="addHeadlineBtn">Add Education</button> -->
                             </div>
                         </div>
-                        <div th:if="${headline}">
-                            <p th:text="${headline}">Update Your Headline.</p>
+                        <div th:each="resumeheadline : ${resumeheadline}">
+                            <p th:text="${resumeheadline.headline}">Update Your Headline.</p>
                         </div>
                     </div>
                     <div class="right-cart-hedline">
                         <div class="headline" id="skills">
                             <div class="space">
-                                <h3>Key skills</h3>
-                                <i id="addskillsBtn" class="fa fa-pencil" aria-hidden="true"></i>
-                                <!-- <a href="" id="addHeadlineBtn" style="color: blue;">Add Education</a> -->
-                                <!-- <button id="addEducationBtn">Add Education</button> -->
-                                <div id="cartskills" class="hidden">
-                                    <!-- <h2>Cart</h2> -->
-                                    <form id="cartForm" th:action="@{/home/keySkills}" th:object="${keySkills}"
-                                        method="post">
-                                        <h2 style="margin:15px 0 15px">Key skills </h2>
-                                        <div class="form-group">
-                                            <!-- <label style="margin:15px 0 15px" for="skill">Key skills :</label> -->
-                                            <input type="text" id="skill" name="skill" th:field="*{skill}" required>
-                                        </div>
-                                        <div class="form-group-btn">
-                                            <button class="btn btn-c1" type="submit">Submit</button>
-                                            <button class="btn btn-c1" id="closeskills">Close</button>
-                                        </div>
-                                    </form>
-                                </div>
+                                <a href="">Key skills <i class="fa fa-pencil" aria-hidden="true"></i>
+                                    <!-- <i id="addskillsBtn" class="fa fa-pencil"  aria-hidden="true"></i> -->
+                                    <a th:href="@{/home/resume/keySkills}" style="color: blue;">Add
+                                        Education</a>
+                                    <!-- <button id="addEducationBtn">Add Education</button> -->
                             </div>
                         </div>
                         <div class="btn-type" th:each="keySkill : ${keySkills}">
@@ -242,45 +174,9 @@
                             <div class="space">
                                 <a href="">Education <i class="fa fa-pencil" aria-hidden="true"></i>
                                 </a>
-                                <!-- <a href="" id="addHeadlineBtn" style="color: blue;">Add Education</a> -->
-                                <button id="addEducationBtn">Add Education</button>
-                                <div id="cartEducation" class="hidden">
-                                    <!-- <h2>Cart</h2> -->
-                                    <form id="cartForm" th:action="@{/home/education}" th:object="${education}"
-                                        method="post">
-                                        <h2 style="margin:15px 0 15px">Education </h2>
+                                <a th:href="@{'/home/resume/education'}" style="color: blue;">Add Education</a>
+                                <!-- <button id="addEducationBtn">Add Education</button> -->
 
-                                        <div class="form-group">
-                                            <label for="title">Education Name :</label>
-                                            <input type="text" name="title" th:field="*{title}" placeholder="Education"
-                                                required />
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="collage">University/Institute :</label>
-                                            <input type="text" name="collage" th:field="*{collage}"
-                                                placeholder="Enter your university and institute name" required />
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="location">Location :</label>
-                                            <input type="text" name="location" th:field="*{location}"
-                                                placeholder="Enter your collage location" required />
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="course">Course :</label>
-                                            <input type="text" name="course" th:field="*{course}"
-                                                placeholder="Enter Your course name" required />
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="description">Description :</label>
-                                            <textarea type="text" name="description" th:field="*{description}"
-                                                placeholder="Enter description"></textarea>
-                                        </div>
-                                        <div class="form-group-btn">
-                                            <button class="btn btn-c1" type="submit">Submit</button>
-                                            <button class="btn btn-c1" id="closecart">Close</button>
-                                        </div>
-                                    </form>
-                                </div>
                             </div>
                         </div>
                         <div class="cart-style" th:each="education : ${educations}">
@@ -296,84 +192,9 @@
                             <div class="space">
                                 <a href="">Experience <i class="fa fa-pencil" aria-hidden="true"></i>
                                 </a>
-                                <!-- <a href="" id="addHeadlineBtn" style="color: blue;">Add Education</a> -->
-                                <button id="addExperienceBtn">Add Experience</button>
-                                <div id="cartExperience" class="hidden">
-                                    <!-- <h2>Cart</h2> -->
-                                    <form id="cartForm" th:action="@{/home/eployment}" th:object="${eployment}"
-                                        method="post">
-                                        <h2 style="margin:15px 0 15px">Experience </h2>
+                                <a th:href="@{'/home/resume/eployment'}" style="color: blue;">Add Education</a>
+                                <!-- <button id="addExperienceBtn">Add Experience</button> -->
 
-                                        <div class="form-group">
-                                            <label for="employmentType">Employment Type :</label>
-                                            <select name="employmentType" id="type" th:field="*{employmentType}">
-                                                <option value="Select">Select</option>
-                                                <option value="Full-time">Full-time</option>
-                                                <option value="Intership">Intership</option>
-                                            </select>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="totalExperience">Total Experience :</label>
-                                            <select id="year" name="totalExperience" th:field="*{totalExperience}">
-                                                <option value="Select">Select</option>
-                                                <option value="0 Year ">0 Year</option>
-                                                <option value="1 Year ">1 Year</option>
-                                                <option value="2 Year ">2 Year</option>
-                                                <option value="3 Year ">3 Year</option>
-                                                <option value="4 Year ">4 Year</option>
-                                                <option value="5 Year ">5 Year</option>
-                                            </select>
-                                            <select id="month" name="totalExperience" th:field="*{totalExperience}">
-                                                <option value="Select">Select</option>
-                                                <option value=" Present">Present</option>
-                                                <option value=" 1 Month">1 Month</option>
-                                                <option value=" 2 Month">2 Month</option>
-                                                <option value=" 3 Month">3 Month</option>
-                                                <option value=" 4 Month">4 Month</option>
-                                                <option value=" 5 Month">5 Month</option>
-                                                <option value=" 6 Month">6 Month</option>
-                                                <option value=" 7 Month">7 Month</option>
-                                                <option value=" 8 Month">8 Month</option>
-                                                <option value=" 9 Month">9 Month</option>
-                                                <option value=" 10 Month">10 Month</option>
-                                                <option value=" 11 Month">11 Month</option>
-                                                <option value=" 12 Month">12 Month</option>
-                                            </select>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="companyName">Company Name :</label>
-                                            <input type="text" name="companyName" th:field="*{companyName}"
-                                                placeholder="Company Name" required />
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="companyLocation">Company Location :</label>
-                                            <input type="text" name="companyLocation" th:field="*{companyLocation}"
-                                                placeholder="Company Location" required />
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="designation">Designation :</label>
-                                            <input type="text" name="designation" th:field="*{designation}"
-                                                placeholder="Enter your designation" required />
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="joiningDate">Joining Date :</label>
-                                            <input type="date" name="joiningDate" th:field="*{joiningDate}" required />
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="workedTill">Worked Till :</label>
-                                            <input type="date" name="workedTill" th:field="*{workedTill}" required />
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="jobProfile">Job Profile :</label>
-                                            <textarea type="text" name="jobProfile" th:field="*{jobProfile}"
-                                                placeholder="Job Profile"></textarea>
-                                        </div>
-                                        <div class="form-group-btn">
-                                            <button class="btn btn-c1" type="submit">Submit</button>
-                                            <button class="btn btn-c1" id="closeExperience">Close</button>
-                                        </div>
-                                    </form>
-                                </div>
                             </div>
                         </div>
                         <div class="cart-style" th:each="employment : ${employments}">
@@ -392,118 +213,9 @@
                             <div class="space">
                                 <a href="">Project <i class="fa fa-pencil" aria-hidden="true"></i>
                                 </a>
-                                <!-- <a href="" id="addHeadlineBtn" style="color: blue;">Add Education</a> -->
-                                <button id="addProjectBtn">Add Project</button>
-                                <div id="cartProject" class="hidden">
-                                    <!-- <h2>Cart</h2> -->
-                                    <form id="cartForm" th:action="@{/home/project}" th:object="${project}" method="post">
-                                        <h2 style="margin:15px 0 15px">Project </h2>
-                                        <div class="form-group">
-                                            <label for="proejectTitle">Proeject Title :</label>
-                                            <input id="text" type="text" name="proejectTitle" th:field="*{proejectTitle}" 
-                                                placeholder="Proeject Title" />
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="workedTime">Worked Time :</label>
-                                            <select id="year" name="workedTime" th:field="*{workedTime}" >
-                                                <option value="Select">Select</option>
-                                                <option value="2023 ">2023</option>
-                                                <option value="2022 ">2022</option>
-                                                <option value="2021 ">2021</option>
-                                                <option value="2020 ">2020</option>
-                                                <option value="2019 ">2019</option>
-                                                <option value="2018 ">2018</option>
-                                                <option value="2017 ">2017</option>
-                                                <option value="2016 ">2016</option>
-                                                <option value="2015 ">2015</option>
-                                                <option value="2014 ">2014</option>
-                                                <option value="2013 ">2013</option>
-                                                <option value="2012 ">2012</option>
-                                                <option value="2011 ">2011</option>
-                                                <option value="2010 ">2010</option>
-                                                <option value="2009 ">2009</option>
-                                                <option value="2008 ">2008</option>
-                                                <option value="2007 ">2007</option>
-                                                <option value="2006 ">2006</option>
-                                                <option value="2005 ">2005</option>
-                                                <option value="2004 ">2004</option>
-                                                <option value="2003 ">2003</option>
-                                                <option value="2002 ">2002</option>
-                                                <option value="2001 ">2001</option>
-                                                <option value="2000 ">2000</option>
-                                            </select>
-                                            <select id="month" name="workedTime" th:field="*{workedTime}" >
-                                                <option value="Select">Select</option>
-                                                <option value=" January">January</option>
-                                                <option value=" February">February</option>
-                                                <option value=" March">March</option>
-                                                <option value=" April">April</option>
-                                                <option value=" May">May</option>
-                                                <option value=" June">June</option>
-                                                <option value=" July">July</option>
-                                                <option value=" August">August</option>
-                                                <option value=" September">September</option>
-                                                <option value=" October">October</option>
-                                                <option value=" November">November</option>
-                                                <option value=" December">December</option>
-                                            </select>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="workedFrom">Wrked From:</label>
-                                            <select id="year" name="workedFrom" th:field="*{workedFrom}" >
-                                                <option value="select">Select</option>
-                                                <option value="2023 ">2023</option>
-                                                <option value="2022 ">2022</option>
-                                                <option value="2021 ">2021</option>
-                                                <option value="2020 ">2020</option>
-                                                <option value="2019 ">2019</option>
-                                                <option value="2018 ">2018</option>
-                                                <option value="2017 ">2017</option>
-                                                <option value="2016 ">2016</option>
-                                                <option value="2015 ">2015</option>
-                                                <option value="2014 ">2014</option>
-                                                <option value="2013 ">2013</option>
-                                                <option value="2012 ">2012</option>
-                                                <option value="2011 ">2011</option>
-                                                <option value="2010 ">2010</option>
-                                                <option value="2009 ">2009</option>
-                                                <option value="2008 ">2008</option>
-                                                <option value="2007 ">2007</option>
-                                                <option value="2006 ">2006</option>
-                                                <option value="2005 ">2005</option>
-                                                <option value="2004 ">2004</option>
-                                                <option value="2003 ">2003</option>
-                                                <option value="2002 ">2002</option>
-                                                <option value="2001 ">2001</option>
-                                                <option value="2000 ">2000</option>
-                                            </select>
-                                            <select id="month" name="workedFrom" th:field="*{workedFrom}">
-                                                <option value="select month">Select Month</option>
-                                                <option value=" January">January</option>
-                                                <option value=" February">February</option>
-                                                <option value=" March">March</option>
-                                                <option value=" April">April</option>
-                                                <option value=" May">May</option>
-                                                <option value=" June">June</option>
-                                                <option value=" July">July</option>
-                                                <option value=" August">August</option>
-                                                <option value=" September">September</option>
-                                                <option value=" October">October</option>
-                                                <option value=" November">November</option>
-                                                <option value=" December">December</option>
-                                            </select>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="detailsOfroject">Details Of Project :</label>
-                                            <textarea type="text" name="detailsOfroject" th:field="*{detailsOfroject}"
-                                                placeholder="Enter your project details"></textarea>
-                                        </div>
-                                        <div class="form-group-btn">
-                                            <button class="btn btn-c1" type="submit">Submit</button>
-                                            <button class="btn btn-c1" id="closeProject">Close</button>
-                                        </div>
-                                    </form>
-                                </div>
+                                <a th:href="@{'/home/resume/project'}" style="color: blue;">Add Education</a>
+                                <!-- <button id="addProjectBtn">Add Project</button> -->
+
                             </div>
                         </div>
                         <div class="cart-style" th:each="project : ${projects}">
@@ -516,65 +228,9 @@
                     <div class="right-cart-hedline">
                         <div class="headline" id="itskil">
                             <div class="space">
-                                <a href="">IT Skill <i class="fa fa-pencil" aria-hidden="true"></i>
-                                </a>
-                                <!-- <a href="" id="addHeadlineBtn" style="color: blue;">Add Education</a> -->
-                                <button id="addITSkillBtn">Add Skill</button>
-                                <div id="cartITSkill" class="hidden">
-                                    <!-- <h2>Cart</h2> -->
-                                    <form id="cartForm" th:action="@{/home/itSkills}" th:object="${itSkills}" method="post">
-                                        <h2 style="margin:15px 0 15px">IT Skill </h2>
-                                        <div class="form-group">
-                                            <label for="skills">Skills :</label>
-                                            <input type="text" name="skills" placeholder="Skills" />
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="version">Version :</label>
-                                            <select id="software" name="version" th:field="*{version}">
-                                                <option value="none">Select</option>
-                                                <option value="java ">Java</option>
-                                                <option value="javascript ">JavaScript</option>
-                                                <option value="mysql ">MySQL</option>
-                                                <option value="html ">HTML</option>
-                                                <option value="php ">PHP</option>
-                                                <option value="python ">Python</option>
-                                            </select>
-                                            <select id="versions" name="version" th:field="*{version}"></select>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="experience">Experience :</label>
-                                            <select name="experience" id="year" th:field="*{experience}">
-                                                <option value="none">Select</option>
-                                                <option value="0 Year ">0 Year</option>
-                                                <option value="1 Year ">1 Year</option>
-                                                <option value="2 Year ">2 Year</option>
-                                                <option value="3 Year ">3 Year</option>
-                                                <option value="4 Year ">4 Year</option>
-                                                <option value="5 Year ">5 Year</option>
-                                            </select>
-                                            <select name="experience" id="month" th:field="*{experience}">
-                                                <option value="none">Select</option>
-                                                <option value=" 0 Month">0 Month</option>
-                                                <option value=" 1 Month">1 Month</option>
-                                                <option value=" 2 Month">2 Month</option>
-                                                <option value=" 3 Month">3 Month</option>
-                                                <option value=" 4 Month">4 Month</option>
-                                                <option value=" 5 Month">5 Month</option>
-                                                <option value=" 6 Month">6 Month</option>
-                                                <option value=" 7 Month">7 Month</option>
-                                                <option value=" 8 Month">8 Month</option>
-                                                <option value=" 9 Month">9 Month</option>
-                                                <option value=" 10 Month">10 Month</option>
-                                                <option value=" 11 Month">11 Month</option>
-                                                <option value=" 12 Month">12 Month</option>
-                                            </select>
-                                        </div>
-                                        <div class="form-group-btn">
-                                            <button class="btn btn-c1" type="submit">Submit</button>
-                                            <button class="btn btn-c1" id="closeITSkill">Close</button>
-                                        </div>
-                                    </form>
-                                </div>
+                                <a href="">It Skills <i class="fa fa-pencil" aria-hidden="true"></i>
+                                    <a th:href="@{'/home/resume/itSkills'}" style="color: blue;">Add Education</a>
+                                    <!-- <button id="addITSkillBtn">Add Skill</button> -->
                             </div>
                         </div>
                         <div class="tableitem">
@@ -589,7 +245,8 @@
                                     <td th:text="${itSkill.skills}"></td>
                                     <td th:text="${itSkill.version}"></td>
                                     <td th:text="${itSkill.experience}"></td>
-                                    <td></td>
+                                    <td><a href="">IT Skill <i class="fa fa-pencil" aria-hidden="true"></i>
+                                        </a></td>
                                 </tr>
                             </table>
                         </div>

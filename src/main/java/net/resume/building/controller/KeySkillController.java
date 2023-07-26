@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import net.resume.building.model.ITSkillsModel;
 import net.resume.building.model.KeySkillsModel;
 import net.resume.building.service.KeySkillService;
 
@@ -19,17 +20,28 @@ import net.resume.building.service.KeySkillService;
 @RequestMapping("/home")
 public class KeySkillController {
 
-    @Autowired
-    private KeySkillService keySkillService;
+	@Autowired
+	private KeySkillService keySkillService;
 
-    @PostMapping("/keySkills")
-    public String submitForm(HttpServletRequest request, @ModelAttribute KeySkillsModel keySkills) {
-        String skill = request.getParameter("skill");
+	@GetMapping("/resume/keySkills")
+	public String createNewForm(HttpServletRequest request, Model model) {
 
-        keySkills.setSkill(skill);
+		String skill = request.getParameter("skill");
 
-        keySkillService.saveAllFile(keySkills);
+		KeySkillsModel keySkills = new KeySkillsModel();
 
-        return "redirect:/home/resume";
-    }
+		keySkills.setSkill(skill);
+
+		model.addAttribute("keySkills", keySkills);
+
+		return "keySkills_post";
+	}
+
+	@PostMapping("/resume/keySkills")
+	public String submitForm(@ModelAttribute KeySkillsModel keySkills) {
+
+		keySkillService.saveAllFile(keySkills);
+
+		return "redirect:/home/resume";
+	}
 }

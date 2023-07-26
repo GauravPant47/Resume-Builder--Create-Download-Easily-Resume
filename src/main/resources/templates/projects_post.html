@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Create Professional Resume And Download Free</title>
+    <link rel="stylesheet" th:href="@{/css/homeStyle.css}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/css/resumeStyle.css}">
+</head>
+
+<body>
+    <!-- Create a navbar -->
+    <nav class="navbar">
+        <div class="navbar-left">
+            <a th:href="@{/home}">
+                <img th:src="@{'/images/logo.jpg'}" alt="Logo">
+            </a>
+        </div>
+        <div class="navbar-center">
+            <ul class="navbar-menu">
+                <li><a th:href="@{/home}">Home</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtns">Tools
+                        <i class="fa fa-sort-desc" aria-hidden="true"></i>
+                    </a>
+                    <div class="dropdown-content">
+                        <a th:href="@{/home/resume}">Resume</a>
+                        <a href="#">C.V</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="profile-dropdown">
+            <div class="dropbtn">
+                <img th:src="@{'/images/network.png'}" alt="">
+            </div>
+            <div class="profile-content">
+                <div sec:authorize="isAuthenticated()">
+                    <form th:action="@{/logout}" method="POST">
+                        <div>
+                            <label>Hi, <span sec:authentication="name">Username</span></label>
+                        </div>
+                        <button type="submit">Logout</button>
+                    </form>
+                </div>
+                <div sec:authorize="!isAuthenticated()">
+                    <a th:href="@{/home}">Home</a>
+                    <a th:href="@{/registra}">Sign Up</a>
+                    <a th:href="@{/login}">Log in</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- navbar end -->
+    <!-- Login Form -->
+    <!-- <h2>Cart</h2> -->
+
+    <!-- <h2>Cart</h2> -->
+    <form id="cartForm" th:action="@{'/home/resume/project'}" th:object="${projects}" method="post">
+        <h2 style="margin:15px 0 15px">Project </h2>
+        <div class="form-group">
+            <label for="proejectTitle">Proeject Title :</label>
+            <input id="text" type="text" name="proejectTitle" th:field="*{proejectTitle}"
+                placeholder="Proeject Title" />
+        </div>
+        <div class="form-group">
+            <label for="workedTime">Worked Time :</label>
+            <select id="year" name="workedTime" th:field="*{workedTime}">
+                <option value="Select">Select</option>
+                <option value="2023 ">2023</option>
+                <option value="2022 ">2022</option>
+                <option value="2021 ">2021</option>
+                <option value="2020 ">2020</option>
+                <option value="2019 ">2019</option>
+                <option value="2018 ">2018</option>
+                <option value="2017 ">2017</option>
+                <option value="2016 ">2016</option>
+                <option value="2015 ">2015</option>
+                <option value="2014 ">2014</option>
+                <option value="2013 ">2013</option>
+                <option value="2012 ">2012</option>
+                <option value="2011 ">2011</option>
+                <option value="2010 ">2010</option>
+                <option value="2009 ">2009</option>
+                <option value="2008 ">2008</option>
+                <option value="2007 ">2007</option>
+                <option value="2006 ">2006</option>
+                <option value="2005 ">2005</option>
+                <option value="2004 ">2004</option>
+                <option value="2003 ">2003</option>
+                <option value="2002 ">2002</option>
+                <option value="2001 ">2001</option>
+                <option value="2000 ">2000</option>
+            </select>
+            <select id="month" name="workedTime" th:field="*{workedTime}">
+                <option value="Select">Select</option>
+                <option value=" January">January</option>
+                <option value=" February">February</option>
+                <option value=" March">March</option>
+                <option value=" April">April</option>
+                <option value=" May">May</option>
+                <option value=" June">June</option>
+                <option value=" July">July</option>
+                <option value=" August">August</option>
+                <option value=" September">September</option>
+                <option value=" October">October</option>
+                <option value=" November">November</option>
+                <option value=" December">December</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="workedFrom">Wrked From:</label>
+            <select id="year" name="workedFrom" th:field="*{workedFrom}">
+                <option value="select">Select</option>
+                <option value="2023 ">2023</option>
+                <option value="2022 ">2022</option>
+                <option value="2021 ">2021</option>
+                <option value="2020 ">2020</option>
+                <option value="2019 ">2019</option>
+                <option value="2018 ">2018</option>
+                <option value="2017 ">2017</option>
+                <option value="2016 ">2016</option>
+                <option value="2015 ">2015</option>
+                <option value="2014 ">2014</option>
+                <option value="2013 ">2013</option>
+                <option value="2012 ">2012</option>
+                <option value="2011 ">2011</option>
+                <option value="2010 ">2010</option>
+                <option value="2009 ">2009</option>
+                <option value="2008 ">2008</option>
+                <option value="2007 ">2007</option>
+                <option value="2006 ">2006</option>
+                <option value="2005 ">2005</option>
+                <option value="2004 ">2004</option>
+                <option value="2003 ">2003</option>
+                <option value="2002 ">2002</option>
+                <option value="2001 ">2001</option>
+                <option value="2000 ">2000</option>
+            </select>
+            <select id="month" name="workedFrom" th:field="*{workedFrom}">
+                <option value="select month">Select Month</option>
+                <option value=" January">January</option>
+                <option value=" February">February</option>
+                <option value=" March">March</option>
+                <option value=" April">April</option>
+                <option value=" May">May</option>
+                <option value=" June">June</option>
+                <option value=" July">July</option>
+                <option value=" August">August</option>
+                <option value=" September">September</option>
+                <option value=" October">October</option>
+                <option value=" November">November</option>
+                <option value=" December">December</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="detailsOfroject">Details Of Project :</label>
+            <textarea type="text" name="detailsOfroject" th:field="*{detailsOfroject}"
+                placeholder="Enter your project details"></textarea>
+        </div>
+        <div class="form-group-btn">
+            <button class="btn btn-c1" type="submit">Submit</button>
+            <button class="btn btn-c1" id="closeProject">Close</button>
+        </div>
+    </form>
+
+    <!-- Login Form -->
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="resources">
+                <h3>Resources</h3>
+                <ul>
+                    <li><a th:href="@{/home/resume}">Resume</a></li>
+                    <li><a href="cv.html">CV</a></li>
+                </ul>
+            </div>
+            <div class="support">
+                <h3>Support</h3>
+                <ul>
+                    <li><a href="contact.html">Contact us</a></li>
+                    <li><a href="terms.html">Terms of Use</a></li>
+                    <li><a href="privacy.html">Privacy</a></li>
+                </ul>
+            </div>
+            <div class="additional-links">
+                <h3>Social Media</h3>
+                <ul>
+                    <li><a href="https://www.linkedin.com"><i class="fa fa-linkedin-square" aria-hidden="true"
+                                style="color: blue;"></i>
+                        </a></li>
+                    <li><a href="https://www.instagram.com"><i class="fa fa-instagram" aria-hidden="true"
+                                style="color: #C13584;"></i>
+                        </a></li>
+                    <li><a href="https://www.facebook.com"><i class="fa fa-facebook-square" aria-hidden="true"
+                                style="color: blue;"></i>
+                        </a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Footer -->
+</body>
+<script th:src="@{/js/jquery-3.7.0.min.js}"></script>
+<script th:src="@{/js/script.js}"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+
+</html>

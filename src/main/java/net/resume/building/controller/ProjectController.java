@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import net.resume.building.model.ProfileDetails;
 import net.resume.building.model.ProjectModel;
 import net.resume.building.service.ProjectService;
 
@@ -19,23 +20,33 @@ import net.resume.building.service.ProjectService;
 @RequestMapping("/home")
 public class ProjectController {
 
-    @Autowired
-    private ProjectService projectService;
+	@Autowired
+	private ProjectService projectService;
 
+	@GetMapping("/resume/project")
+	public String createNewForm(HttpServletRequest request, Model model) {
 
-    @PostMapping("/project")
-    public String submitForm(HttpServletRequest request, @ModelAttribute ProjectModel projectModel) {
-        String proejectTitle = request.getParameter("proejectTitle");
-        String workedTime = request.getParameter("workedTime");
-        String workedFrom = request.getParameter("workedFrom");
-        String detailsOfroject = request.getParameter("detailsOfroject");
+		String proejectTitle = request.getParameter("proejectTitle");
+		String workedTime = request.getParameter("workedTime");
+		String workedFrom = request.getParameter("workedFrom");
+		String detailsOfroject = request.getParameter("detailsOfroject");
 
-        projectModel.setProejectTitle(proejectTitle);
-        projectModel.setWorkedFrom(workedFrom);
-        projectModel.setWorkedTime(workedTime);
-        projectModel.setDetailsOfroject(detailsOfroject);
+		ProjectModel projects = new ProjectModel();
 
-        projectService.saveFile(projectModel);
-        return "redirect:/home/resume";
-    }
+		projects.setProejectTitle(proejectTitle);
+		projects.setWorkedFrom(workedFrom);
+		projects.setWorkedTime(workedTime);
+		projects.setDetailsOfroject(detailsOfroject);
+
+		model.addAttribute("projects", projects);
+
+		return "projects_post";
+	}
+
+	@PostMapping("/resume/project")
+	public String submitForm(@ModelAttribute ProjectModel projectModel) {
+
+		projectService.saveFile(projectModel);
+		return "redirect:/home/resume";
+	}
 }

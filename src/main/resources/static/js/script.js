@@ -9,13 +9,13 @@ $(document).ready(function () {
     toggleText();
 
     // Dropdown text
-    $('.dropbtns').click(function(e) {
+    $('.dropbtns').click(function (e) {
         e.stopPropagation();
         $(this).siblings('.dropdown-content').toggle();
     });
 
     // Close the dropdown when clicking outside of it
-    $(document).click(function(event) {
+    $(document).click(function (event) {
         var target = $(event.target);
         if (!target.closest('.dropdown').length) {
             $('.dropdown-content').hide();
@@ -149,5 +149,23 @@ $(document).ready(function () {
         e.preventDefault();
         cartPhoto.removeClass("visible");
     });
+
+
+    // mantian all resume items
+
+    function adjustCartLayout() {
+        var items = $(".item");
+        var itemsPerLine = 6; // Change this value if you want a different number of items per line
+
+        for (var i = 0; i < items.length; i += itemsPerLine) {
+            var lineItems = items.slice(i, i + itemsPerLine);
+            var lineHeight = Math.max(...lineItems.map(item => $(item).outerHeight()));
+            lineItems.css("height", lineHeight + "px");
+        }
+    }
+
+    $(window).on("resize", adjustCartLayout);
+    $(document).on("DOMContentLoaded", adjustCartLayout);
+
 
 });

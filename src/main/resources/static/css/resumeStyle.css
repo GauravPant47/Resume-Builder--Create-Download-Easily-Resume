@@ -12,7 +12,7 @@
 
 
 .container-user {
-    display: flex;
+    display: block;
     /* margin: 35px 0px 0px 45px; */
     height: 230px;
     width: auto;
@@ -78,11 +78,11 @@
 }
 
 .container-right {
-    display: inline;
-    align-items: center;
+    display: inline-flex;
     justify-content: space-around;
     position: relative;
-    top: 0;
+    top: -27vh;
+    align-items: self-end;
     /* left: 25%; */
 }
 
